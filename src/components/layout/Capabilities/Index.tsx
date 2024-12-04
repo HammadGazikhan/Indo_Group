@@ -84,7 +84,7 @@ export const Capabilities = (props: Layout242Props) => {
                 fontFamily: theme.typography.fontFamily,
                 color: theme.colors.primaryLight,
               }}
-              className='md:text-[1rem] text-[0.85rem]'
+              className='md:text-[1rem] text-[1rem]'
             >
               {description}{" "}
             </p>

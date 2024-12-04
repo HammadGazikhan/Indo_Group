@@ -77,7 +77,7 @@ export const ServicesCards = (props: Layout236Props) => {
               fontFamily: theme.typography.fontFamily,
               color: theme.colors.primaryLight,
             }}
-            className='md:text-[1rem] text-[0.85rem]'
+            className='md:text-[1rem] text-[1rem]'
           >
             {description}{" "}
           </p>
@@ -99,7 +99,7 @@ export const ServicesCards = (props: Layout236Props) => {
                 {section.heading}
               </h3>
               <p
-                className='text-[0.85rem] lg:text-[1rem]'
+                className='text-[1rem] lg:text-[1rem]'
                 style={{
                   fontFamily: theme.typography.fontFamily,
                   fontWeight: theme.typography.fontWeight.regular,

@@ -52,7 +52,7 @@ export const CommunityImpact = (props: Layout65Props) => {
     <section
       style={{ background: bg ? theme.colors.background : "" }}
       id='relume'
-      className='px-[5%] z-[99999] py-16 md:py-24 lg:py-28'
+      className='px-[5%] z-[99999] py-2 md:py-8 lg:py-28'
     >
       <div className='mx-auto max-w-[1280px]'>
         <div className='flex flex-col items-start gap-5 lg:flex-row md:gap-x-12 lg:gap-x-20'>
@@ -119,7 +119,7 @@ export const CommunityImpact = (props: Layout65Props) => {
                 fontFamily: theme.typography.fontFamily,
                 color: theme.colors.primaryLight,
               }}
-              className='md:text-[1rem] text-justify text-[0.85rem]'
+              className='md:text-[1rem] text-justify text-[1rem]'
             >
               {description}
             </p>
@@ -157,7 +157,7 @@ export const CommunityImpact = (props: Layout65Props) => {
                   </div>
 
                   <p
-                    className='text-[0.85rem] md:text-[1rem] w-full sm:w-auto '
+                    className='text-[1rem] md:text-[1rem] w-full sm:w-auto '
                     style={{
                       fontWeight: theme.typography.fontWeight.regular,
                       fontFamily: theme.typography.fontFamily,

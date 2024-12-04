@@ -79,7 +79,13 @@ export const Footer = (props: Footer3Props) => {
           <div>
             <div className='rb-6 mb-6 md:mb-8'>
               <a href={logo.url}>
-                <img src={logo.src} alt={logo.alt} className='inline-block' />
+                {/* <img src={logo.src} alt={logo.alt} className='inline-block' /> */}
+                <p
+                  style={{ fontFamily: theme.typography.fontFamilyHeading }}
+                  className='italic text-4xl text-[#ffffff]'
+                >
+                  Indo Groups
+                </p>
               </a>
             </div>
             <div className='rb-6 mb-6 md:mb-8'>
@@ -187,7 +193,7 @@ export const Footer3Defaults: Footer3Props = {
     { url: "#", icon: <BiLogoLinkedinSquare className='size-6' /> },
     { url: "#", icon: <BiLogoYoutube className='size-6' /> },
   ],
-  footerText: "© 2024 Relume. All rights reserved.",
+  footerText: "© FireFox Digital marketing. All rights reserved.",
   footerLinks: [
     { title: "Privacy Policy", url: "#" },
     { title: "Terms of Service", url: "#" },

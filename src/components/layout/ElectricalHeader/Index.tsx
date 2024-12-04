@@ -81,7 +81,7 @@ export const ElectricalHeader = (props: Header129Props) => {
               </span>
             </h1>
             <p
-              className='text-[0.85rem] md:text-[1rem]'
+              className='text-[1rem] md:text-[1rem]'
               style={{
                 fontFamily: theme.typography.fontFamily,
                 // fontSize: theme.typography.fontSize.base,

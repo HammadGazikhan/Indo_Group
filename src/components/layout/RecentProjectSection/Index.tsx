@@ -94,7 +94,7 @@ export const RecentProjectSection = (props: Layout406Props) => {
               fontFamily: theme.typography.fontFamily,
               color: theme.colors.primaryLight,
             }}
-            className='md:text-[1rem] text-[0.85rem]'
+            className='md:text-[1rem] text-[1rem]'
           >
             {description}
           </p>

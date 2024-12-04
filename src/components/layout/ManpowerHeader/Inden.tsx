@@ -171,7 +171,7 @@ export const ManpowerHeader = (props: Header142Props) => {
               </span>
             </h1>
             <p
-              className='text-[0.85rem] md:text-[1rem]'
+              className='text-[1rem] md:text-[1rem]'
               style={{
                 fontFamily: theme.typography.fontFamily,
                 fontWeight: theme.typography.fontWeight.regular,

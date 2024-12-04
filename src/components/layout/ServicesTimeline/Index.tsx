@@ -86,7 +86,7 @@ export const ServicesTimeline = (props: Timeline9Props) => {
                   fontFamily: theme.typography.fontFamily,
                   color: theme.colors.primaryLight,
                 }}
-                className='md:text-[1rem] text-center text-[0.85rem]'
+                className='md:text-[1rem] text-center text-[1rem]'
               >
                 {description}
               </p>
@@ -196,7 +196,7 @@ const TimelineContent = ({
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
       }}
-      className='mb-2 text-[0.85rem] leading-[1.2]  md:text-[1rem] '
+      className='mb-2 text-[1rem] leading-[1.2]  md:text-[1rem] '
     >
       {item.heading}
     </h3>

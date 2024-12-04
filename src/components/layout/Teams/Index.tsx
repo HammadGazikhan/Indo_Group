@@ -85,7 +85,7 @@ export const Team20 = (props: Team20Props) => {
                 fontFamily: theme.typography.fontFamily,
                 color: theme.colors.primaryLight,
               }}
-              className='md:text-[1rem] text-justify text-justify text-[0.85rem]'
+              className='md:text-[1rem] text-justify text-justify text-[1rem]'
             >
               {description}
             </p>

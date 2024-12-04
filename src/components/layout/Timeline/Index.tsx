@@ -106,7 +106,7 @@ export const Timeline = (props: Timeline13Props) => {
                   fontFamily: theme.typography.fontFamily,
                   color: theme.colors.primaryLight,
                 }}
-                className='md:text-[1rem] text-center text-[0.85rem]'
+                className='md:text-[1rem] text-center text-[1rem]'
               >
                 {description}
               </p>

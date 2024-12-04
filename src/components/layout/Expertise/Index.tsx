@@ -78,7 +78,7 @@ const Expertise: React.FC<ExpertiseSectionProps> = ({ data }) => {
           </h1>
           {data.description && (
             <p
-              className='text-[0.85rem] md:text-[1rem]'
+              className='text-[1rem] md:text-[1rem]'
               style={{
                 fontFamily: theme.typography.fontFamily,
                 fontWeight: theme.typography.fontWeight.regular,
@@ -115,7 +115,7 @@ const Expertise: React.FC<ExpertiseSectionProps> = ({ data }) => {
                   {card.heading}
                 </h1>
                 <p
-                  className='text-[0.85rem] md:text-[1rem] leading-7'
+                  className='text-[1rem] md:text-[1rem] leading-7'
                   style={{
                     fontWeight: theme.typography.fontWeight.regular,
                     color: theme.colors.primary,

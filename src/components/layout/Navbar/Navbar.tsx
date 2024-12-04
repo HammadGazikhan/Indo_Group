@@ -5,7 +5,7 @@
 import { useState } from "react";
 import { useMediaQuery } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, color, motion } from "framer-motion";
 import { RxChevronDown } from "react-icons/rx";
 import { theme } from "../../../constants/theme";
 import PrimaryButton from "../../inputs/primaryButton/Index";
@@ -55,7 +55,27 @@ export const Navbar = (props: Navbar1Props) => {
       <div className='size-full lg:flex lg:items-center lg:justify-between'>
         <div className='flex min-h-16 items-center justify-between px-[5%] md:min-h-18 lg:min-h-full lg:px-0'>
           <a href={logo.url}>
-            <img src={logo.src} alt={logo.alt} />
+            {/* <img src={logo.src} alt={logo.alt} /> */}
+            <p
+              style={{
+                fontFamily: theme.typography.fontFamilyHeading,
+                color: theme.colors.dark,
+                fontWeight: theme.typography.fontWeight.ExtraBold,
+              }}
+              className='italic text-4xl '
+            >
+              Indo{" "}
+              <span
+                style={{
+                  background: theme.colors.gradient,
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
+                {" "}
+                Groups
+              </span>
+            </p>
           </a>
           <button
             className='-mr-2 flex size-12 flex-col items-center justify-center lg:hidden'

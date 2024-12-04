@@ -108,7 +108,7 @@ export const FeatureSection = (props: Layout499Props) => {
               fontFamily: theme.typography.fontFamily,
               color: theme.colors.primaryLight,
             }}
-            className='md:text-[1rem] text-[0.85rem]'
+            className='md:text-[1rem] text-[1rem]'
           >
             {description}
           </p>
@@ -166,7 +166,7 @@ export const FeatureSection = (props: Layout499Props) => {
                     fontFamily: theme.typography.fontFamily,
                     color: theme.colors.primaryLight,
                   }}
-                  className='text-[0.85rem] md:text-[1rem]'
+                  className='text-[1rem] md:text-[1rem]'
                 >
                   {tab.description}
                 </p>
