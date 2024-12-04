@@ -1,5 +1,6 @@
 /** @format */
 
+import { Helmet } from "react-helmet-async";
 import { CommunityImpact } from "../../components/layout/CommunityImpact/Index";
 import { FeatureSection } from "../../components/layout/FeatureSection/Index";
 import { Gallery } from "../../components/layout/GallerySection/Index";
@@ -19,6 +20,9 @@ import {
 function Index() {
   return (
     <NavFoot>
+      <Helmet>
+        <title>Indo Group - Home</title>
+      </Helmet>
       <Header {...headerData} />
       <FeatureSection {...FeatureSectionData} />
       <ExpertiseSection data={expertiseData} />

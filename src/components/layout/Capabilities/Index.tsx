@@ -65,7 +65,7 @@ export const Capabilities = (props: Layout242Props) => {
                 fontFamily: theme.typography.fontFamilyHeading,
                 fontWeight: theme.typography.fontWeight.ExtraBold,
               }}
-              className='mb-5 text-5xl  md:mb-6 md:text-7xl lg:text-8xl'
+              className='mb-5 text-[2rem] md:text-[2.25rem] leading-8  md:mb-6  lg:text-8xl'
             >
               {heading}{" "}
               <span

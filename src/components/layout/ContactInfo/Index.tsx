@@ -46,7 +46,7 @@ export const ContactInfo = (props: Contact24Props) => {
               <div className='rb-5 mb-5 md:mb-6'>{contact.icon}</div>
               <h3
                 style={{ fontWeight: theme.typography.fontWeight.bold }}
-                className='mb-3 text-2xl  md:mb-4 md:text-3xl md:leading-[1.3] lg:text-4xl'
+                className='mb-3 text-xl  md:mb-4 md:text-3xl md:leading-[1.3] lg:text-4xl'
               >
                 {contact.title}
               </h3>

@@ -19,10 +19,14 @@ import {
   ServiceTimelineData,
   solarHeaderData,
 } from "../../../constants/data/services/indoSolar/data";
+import { Helmet } from "react-helmet-async";
 
 function IndoSolar() {
   return (
     <NavFoot>
+      <Helmet>
+        <title>Indo Group Services - Solar Solutions</title>
+      </Helmet>
       <SolarHeader {...solarHeaderData} />
       <ServicesCards {...(servicesData as any)} />
       <Expertise data={expertiseData} />

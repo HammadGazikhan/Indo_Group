@@ -73,7 +73,7 @@ export const ContactUs = (props: Contact7Props) => {
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
-              className='rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl'
+              className='rb-5 mb-5 text-[2rem] md:text-[2.25rem] leading-8 font-bold md:mb-6  lg:text-8xl'
             >
               {heading}
             </h2>

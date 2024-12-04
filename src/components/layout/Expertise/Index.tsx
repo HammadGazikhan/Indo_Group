@@ -59,7 +59,7 @@ const Expertise: React.FC<ExpertiseSectionProps> = ({ data }) => {
             {data.tagline}
           </p>
           <h1
-            className='mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-[3rem]'
+            className='mb-5 text-[2rem] md:text-[2.25rem] leading-8 font-bold md:mb-6  lg:text-[3rem]'
             style={{
               color: theme.colors.dark,
               fontFamily: theme.typography.fontFamilyHeading,

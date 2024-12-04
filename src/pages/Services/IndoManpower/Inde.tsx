@@ -18,10 +18,14 @@ import {
   servicesData,
   ServiceTimelineData,
 } from "../../../constants/data/services/indoManpower/data";
+import { Helmet } from "react-helmet-async";
 
 function IndoManpower() {
   return (
     <NavFoot>
+      <Helmet>
+        <title>Indo Group Services - Manpower</title>
+      </Helmet>
       <ManpowerHeader {...ManpowerHeaderData} />
       <ServicesCards {...(servicesData as any)} />
       <Expertise data={expertiseData} />

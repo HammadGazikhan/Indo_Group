@@ -86,7 +86,7 @@ export const Timeline = (props: Timeline13Props) => {
                   fontFamily: theme.typography.fontFamilyHeading,
                   fontWeight: theme.typography.fontWeight.ExtraBold,
                 }}
-                className='mb-10 text-5xl font-bold md:mb-6 md:text-[2.7rem] lg:text-[3rem]'
+                className='mb-10 text-[2rem] md:text-[2.25rem] leading-8 font-bold md:mb-6  lg:text-[3rem]'
               >
                 {heading}
                 <span

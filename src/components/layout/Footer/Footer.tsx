@@ -81,7 +81,10 @@ export const Footer = (props: Footer3Props) => {
               <a href={logo.url}>
                 {/* <img src={logo.src} alt={logo.alt} className='inline-block' /> */}
                 <p
-                  style={{ fontFamily: theme.typography.fontFamilyHeading }}
+                  style={{
+                    fontFamily: theme.typography.fontFamilyHeading,
+                    fontWeight: theme.typography.fontWeight.ExtraBold,
+                  }}
                   className='italic text-4xl text-[#ffffff]'
                 >
                   Indo Groups

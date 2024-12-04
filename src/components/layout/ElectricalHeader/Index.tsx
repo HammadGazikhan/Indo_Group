@@ -66,7 +66,7 @@ export const ElectricalHeader = (props: Header129Props) => {
                 color: theme.colors.dark,
                 fontFamily: theme.typography.fontFamilyHeading,
               }}
-              className='mb-5 text-6xl  font-bold md:mb-6 md:text-9xl lg:text-[3rem] '
+              className='mb-5 text-[2rem] md:text-[2.25rem] leading-8  font-bold md:mb-6  lg:text-[3rem] '
             >
               {heading}
               <span

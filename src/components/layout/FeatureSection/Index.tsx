@@ -3,7 +3,7 @@
 "use client";
 
 import clsx from "clsx";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Dialog,
@@ -59,7 +59,14 @@ export const FeatureSection = (props: Layout499Props) => {
   const [activeTab, setActiveTab] = useState(0);
   const [isIframeLoaded, setIsIframeLoaded] = useState(false);
   const md = useMediaQuery("(max-width:900px)");
+  // Automatically change tabs every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveTab((prevTab) => (prevTab + 1) % tabs.length); // Loop back to the first tab after the last one
+    }, 5000);
 
+    return () => clearInterval(interval); // Cleanup interval on component unmount
+  }, [tabs.length]);
   return (
     <section
       id='relume'
@@ -88,7 +95,7 @@ export const FeatureSection = (props: Layout499Props) => {
               fontFamily: theme.typography.fontFamilyHeading,
               fontWeight: theme.typography.fontWeight.ExtraBold,
             }}
-            className='mb-5 text-5xl  md:mb-6 md:text-7xl lg:text-8xl'
+            className='mb-5 text-[2rem] md:text-[2.25rem] leading-8 md:mb-6  lg:text-8xl'
           >
             {heading}
             <span

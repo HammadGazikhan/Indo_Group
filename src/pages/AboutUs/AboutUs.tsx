@@ -18,10 +18,14 @@ import {
   TeamData,
   TimelineData,
 } from "../../constants/data/about/data";
+import { Helmet } from "react-helmet-async";
 
 function AboutUs() {
   return (
     <NavFoot>
+      <Helmet>
+        <title>Indo Group - About us</title>
+      </Helmet>
       <AboutUsHeader
         title='aboutus'
         backgroundImage='https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg'

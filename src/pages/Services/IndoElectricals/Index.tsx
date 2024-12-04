@@ -14,10 +14,14 @@ import {
   serviceGalleryData,
   servicesData,
 } from "../../../constants/data/services/indoElectrical/data";
+import { Helmet } from "react-helmet-async";
 
 function IndoElectricals() {
   return (
     <NavFoot>
+      <Helmet>
+        <title>Indo Group Services - Electricals</title>
+      </Helmet>
       <ElectricalHeader {...ElectricalData} />
       <ElectricalLogos />
       <ServicesCards {...(servicesData as any)} />

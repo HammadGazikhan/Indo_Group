@@ -4,15 +4,8 @@
 
 import { useMediaQuery } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  MotionValue,
-  frame,
-} from "framer-motion";
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { theme } from "../../../constants/theme";
-import image from "../../../constants/image";
 import { Grid } from "@mui/material";
 
 type ImageProps = {
@@ -52,7 +45,7 @@ const useTransformValues = (
 };
 
 export const Gallery = (props: Header108Props) => {
-  const { subTitle, title, colorTitle, description, buttons, images, frame } = {
+  const { subTitle, title, colorTitle, description, images, frame } = {
     ...props,
   } as Props;
 
@@ -101,12 +94,11 @@ export const Gallery = (props: Header108Props) => {
   return (
     <section id='relume' className='relative h-[250vh]'>
       <div className='px-[5%] pt-16 md:pt-24 lg:pt-28'>
-        <div className=' space-y-8'>
+        <div className=' space-y-4 md:space-y-8'>
           <div className='mx-auto w-full max-w-2xl text-center'>
             <p
               className='uppercase mb-2 text-xs md:text-sm mt-5 md:mt-0'
               style={{
-                // fontSize: theme.typography.fontSize.small,
                 fontFamily: theme.typography.fontFamily,
                 fontWeight: theme.typography.fontWeight.regular,
                 background: theme.colors.gradient,
@@ -118,11 +110,10 @@ export const Gallery = (props: Header108Props) => {
             </p>
             <h1
               style={{
-                // fontSize: theme.typography.fontSize.xxLarge,
                 color: theme.colors.dark,
                 fontFamily: theme.typography.fontFamilyHeading,
               }}
-              className='mb-5 text-6xl  font-bold md:mb-6 md:text-9xl lg:text-[3rem] '
+              className='mb-5 text-[2rem] md:text-[2.25rem] leading-8 lg:text-[3rem] font-bold md:mb-6   '
             >
               {title}
               <span
@@ -140,24 +131,16 @@ export const Gallery = (props: Header108Props) => {
               className='text-[1rem] md:text-[1rem]'
               style={{
                 fontFamily: theme.typography.fontFamily,
-                // fontSize: theme.typography.fontSize.base,
                 fontWeight: theme.typography.fontWeight.regular,
                 color: theme.colors.primary,
               }}
             >
               {description}
             </p>{" "}
-            {/* <div className='mt-6 flex items-center justify-center gap-x-4 md:mt-8'>
-              {buttons.map((button, index) => (
-                <Button key={index} {...button}>
-                  {button.title}
-                </Button>
-              ))}
-            </div> */}
           </div>
           <Grid
             container
-            spacing={2} // Add spacing between grid items
+            spacing={2}
             justifyContent='center'
             alignItems='center'
             className='mx-auto w-full max-w-[100%]'

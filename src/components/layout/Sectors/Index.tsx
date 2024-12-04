@@ -73,7 +73,7 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ data }) => {
               color: theme.colors.dark,
               fontFamily: theme.typography.fontFamilyHeading,
             }}
-            className='text-[2.3rem] leading-10 font-bold md:text-9xl lg:text-[3rem]'
+            className='text-[2rem] md:text-[2.25rem] leading-8  font-bold md:text-9xl lg:text-[3rem]'
           >
             Our Expertise Across
             <span
@@ -172,7 +172,7 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ data }) => {
                     color: theme.colors.dark,
                     fontFamily: theme.typography.fontFamily,
                   }}
-                  className='text-[1.5rem] md:text-[2rem] leading-6 '
+                  className='text-[1.5rem] md:text-[2rem] leading-7 '
                 >
                   {item.title}
                 </h3>
