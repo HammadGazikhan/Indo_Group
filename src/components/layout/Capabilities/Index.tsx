@@ -46,7 +46,7 @@ export const Capabilities = (props: Layout242Props) => {
         <div className='flex flex-col items-center'>
           <div className='rb-12 mb-12 w-full max-w-xxl text-center md:mb-18 lg:mb-20'>
             <p
-              className='uppercase mb-2 text-xs md:text-sm mt-5 md:mt-0'
+              className='uppercase mb-2 text-sm md:text-md mt-5 md:mt-0'
               style={{
                 // fontSize: theme.typography.fontSize.small,
                 fontFamily: theme.typography.fontFamily,
@@ -65,7 +65,7 @@ export const Capabilities = (props: Layout242Props) => {
                 fontFamily: theme.typography.fontFamilyHeading,
                 fontWeight: theme.typography.fontWeight.ExtraBold,
               }}
-              className='mb-5 text-[2rem] md:text-[2.25rem] leading-8  md:mb-6  lg:text-8xl'
+              className='mb-5 text-[2.2rem] md:text-[2.7rem] leading-9 md:leading-[42px]  md:mb-6  lg:text-[3.2rem]'
             >
               {heading}{" "}
               <span
@@ -84,7 +84,7 @@ export const Capabilities = (props: Layout242Props) => {
                 fontFamily: theme.typography.fontFamily,
                 color: theme.colors.primaryLight,
               }}
-              className='md:text-[1rem] text-[1rem]'
+              className='md:text-[1.125rem] text-[1rem]'
             >
               {description}{" "}
             </p>
@@ -108,7 +108,7 @@ export const Capabilities = (props: Layout242Props) => {
                     fontFamily: theme.typography.fontFamily,
                     color: theme.colors.dark,
                   }}
-                  className='mb-5 text-xl  md:mb-6 md:text-2xl'
+                  className='mb-5 text-2xl  md:mb-6 md:text-3xl'
                 >
                   {section.heading}
                 </h3>
@@ -118,7 +118,7 @@ export const Capabilities = (props: Layout242Props) => {
                     fontFamily: theme.typography.fontFamily,
                     color: theme.colors.primaryLight,
                   }}
-                  className='mb-5 text-[1rem] md:mb-6'
+                  className='mb-5 text-[1rem] md:text-[1.125rem] md:mb-6'
                 >
                   {section.description}
                 </p>

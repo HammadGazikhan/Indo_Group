@@ -140,7 +140,7 @@ export const ManpowerHeader = (props: Header142Props) => {
         <div className='container max-w-lg'>
           <div className='relative z-10 text-center'>
             <p
-              className='uppercase mb-2 text-xs md:text-sm mt-5 md:mt-0'
+              className='uppercase mb-2 text-sm md:text-md mt-5 md:mt-0'
               style={{
                 fontFamily: theme.typography.fontFamily,
                 fontWeight: theme.typography.fontWeight.regular,
@@ -156,7 +156,7 @@ export const ManpowerHeader = (props: Header142Props) => {
                 color: theme.colors.dark,
                 fontFamily: theme.typography.fontFamilyHeading,
               }}
-              className='mb-5 text-[2rem] md:text-[2.25rem] leading-8 font-bold md:mb-6  lg:text-[3rem]'
+              className='mb-5 text-[2.2rem] md:text-[2.7rem] leading-9 md:leading-[42px] font-bold md:mb-6  lg:text-[3.2rem]'
             >
               {heading}
               <span
@@ -171,7 +171,7 @@ export const ManpowerHeader = (props: Header142Props) => {
               </span>
             </h1>
             <p
-              className='text-[1rem] md:text-[1rem]'
+              className='text-[1rem] md:text-[1.125rem]'
               style={{
                 fontFamily: theme.typography.fontFamily,
                 fontWeight: theme.typography.fontWeight.regular,

@@ -64,7 +64,7 @@ export const Navbar = (props: Navbar1Props) => {
               }}
               className='italic text-4xl '
             >
-              Indo{" "}
+              logo{" "}
               <span
                 style={{
                   background: theme.colors.gradient,
@@ -73,7 +73,7 @@ export const Navbar = (props: Navbar1Props) => {
                 }}
               >
                 {" "}
-                Groups
+                {/* Groups */}
               </span>
             </p>
           </a>
@@ -159,10 +159,10 @@ export const Navbar = (props: Navbar1Props) => {
                 <PrimaryButton
                   key={index}
                   sx={{
-                    background:
-                      "linear-gradient(90deg, #EF4444 0%, #B91C1C 100%)",
+                    background: theme.colors.gradient,
                     color: theme.colors.secondary,
                     fontWeight: theme.typography.fontWeight.bold,
+                    fontSize: "16px",
                     height: "40px",
                     width: "123px",
                   }}
@@ -208,7 +208,7 @@ const SubMenu = ({
             WebkitTextFillColor: isSubMenuActive ? "transparent" : undefined,
             color: isSubMenuActive ? undefined : theme.colors.primary,
             borderBottom: isSubMenuActive ? "3px solid " : "",
-            borderColor: isSubMenuActive ? theme.colors.border : "",
+            borderColor: isSubMenuActive ? "red" : "",
           }}
         >
           {navLink.title}
@@ -296,15 +296,16 @@ export const Navbar1Defaults: Navbar1Props = {
       title: "Services",
       url: "#",
       subMenuLinks: [
-        { title: "Indo Electricals", url: "/services/indo-electricals" },
-        {
-          title: "Indo Solar Solutions",
-          url: "/services/indo-solar-solutions",
-        },
-        { title: "Indo Manpower", url: "/services/indo-manpower" },
         {
           title: "Indo Constructions & Developers",
           url: "/services/indo-construction&Developers",
+        },
+        { title: "Indo Electricals", url: "/services/indo-electricals" },
+        { title: "Indo Manpower", url: "/services/indo-manpower" },
+
+        {
+          title: "Indo Energy Solutions",
+          url: "/services/indo-energy-solutions",
         },
       ],
     },

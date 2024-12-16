@@ -7,7 +7,7 @@ export const headerData = {
   heading: "Wellcome to ",
   colorHeading: "Indo Group",
   description:
-    "Indo Group is a dynamic consortium specializing in Electrical Services, Skilled Manpower Supply, Solar Solutions & Construction. With a mission to drive innovation, sustainability & community development, we provide cutting-edge solutions tailored to your needs. Explore how our diverse sectors work together to empower industries & build a brighter, greener future.",
+    "Indo Group is a dynamic consortium specializing in Electrical Services, Skilled Manpower Supply, Energy Solutions & Construction. With a mission to drive innovation, sustainability & community development, we provide cutting-edge solutions tailored to your needs. Explore how our diverse sectors work together to empower industries & build a brighter, greener future.",
   buttons: [{ title: "Get in touch", route: "/contact" }],
   images: [
     {
@@ -224,33 +224,13 @@ export const GalleryData = {
 export const expertiseData = [
   {
     id: 1,
-    title: "Indo Manpower",
+    title: "Indo Construction & Developers",
     description:
-      "Contributing highly skilled ITI graduates and engineers to meet the evolving demands of the electrical sector in Maharashtra.",
+      "Modernizing Pune’s Peth areas with eco-friendly construction projects designed for sustainable living.",
     buttonLabel: "View Details",
-    buttonRoute: "/services/indo-manpower",
-    icon: image.Manpower, // Replace with actual image path
-    image: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-    images: [
-      {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-        alt: "Manpower 1",
-      },
-      {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-        alt: "Manpower 2",
-      },
-    ],
-  },
-  {
-    id: 2,
-    title: "Indo Solar Solutions",
-    description:
-      "Transforming the energy landscape with innovative solar installations that reduce costs and promote environmental sustainability.",
-    buttonLabel: "View Details",
-    buttonRoute: "/services/indo-solar-solutions",
+    buttonRoute: "/services/indo-construction&developers",
 
-    icon: image.Solar,
+    icon: image.Building,
     image: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
     images: [
       {
@@ -264,7 +244,7 @@ export const expertiseData = [
     ],
   },
   {
-    id: 3,
+    id: 2,
     title: "Indo Electricals",
     description:
       "From transformer installations to electrical consulting, Indo Electricals delivers reliable solutions for industrial, commercial and residential clients.",
@@ -285,14 +265,34 @@ export const expertiseData = [
     ],
   },
   {
-    id: 4,
-    title: "Indo Construction & Developers",
+    id: 3,
+    title: "Indo Manpower",
     description:
-      "Modernizing Pune’s Peth areas with eco-friendly construction projects designed for sustainable living.",
+      "Contributing highly skilled ITI graduates and engineers to meet the evolving demands of the electrical sector in Maharashtra.",
     buttonLabel: "View Details",
-    buttonRoute: "/services/indo-construction&developers",
+    buttonRoute: "/services/indo-manpower",
+    icon: image.Manpower, // Replace with actual image path
+    image: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+    images: [
+      {
+        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        alt: "Manpower 1",
+      },
+      {
+        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        alt: "Manpower 2",
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "Indo Energy Solutions",
+    description:
+      "Transforming the energy landscape with innovative solar installations that reduce costs and promote environmental sustainability.",
+    buttonLabel: "View Details",
+    buttonRoute: "/services/indo-energy-solutions",
 
-    icon: image.Building,
+    icon: image.Solar,
     image: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
     images: [
       {
@@ -305,6 +305,7 @@ export const expertiseData = [
       },
     ],
   },
+
   // Add other items here...
 ];
 export const FeatureSectionData = {
@@ -325,6 +326,16 @@ export const FeatureSectionData = {
       },
     },
     {
+      projects: "46477 ",
+      heading: "sq ft Constructed",
+      description:
+        "Successfully completed construction projects, transforming communities with sustainable infrastructure.",
+      image: {
+        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        alt: "Relume placeholder image 3",
+      },
+    },
+    {
       projects: "1500",
       heading: "Solar Panels Installed",
       description:
@@ -342,16 +353,6 @@ export const FeatureSectionData = {
       heading: "Manpower Deployed Every Year",
       description:
         "ITI graduates and engineers deployed across Maharashtra to support the electrical sector’s workforce needs.",
-      image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-        alt: "Relume placeholder image 3",
-      },
-    },
-    {
-      projects: "56",
-      heading: "Units",
-      description:
-        "Successfully completed construction projects, transforming communities with sustainable infrastructure.",
       image: {
         src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
         alt: "Relume placeholder image 3",

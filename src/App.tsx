@@ -36,7 +36,7 @@ function App() {
             element={<IndoElectricals />}
           />
           <Route
-            path='/services/indo-Solar-Solutions'
+            path='/services/indo-energy-solutions'
             element={<IndoSolar />}
           />
           <Route path='/services/indo-Manpower' element={<IndoManpower />} />

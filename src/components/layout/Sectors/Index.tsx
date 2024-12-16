@@ -50,14 +50,14 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ data }) => {
 
   return (
     <section
-      style={{ background: "linear-gradient(90deg, #FEF2F2 0%, #FEE2E2 100%)" }}
+      style={{ background: theme.colors.background }}
       className='py-[100px]  md:py-[150px] '
     >
       <div className='container max-w-[1280px] px-[5%]  mx-auto '>
         {/* Header Section */}
         <div className='mx-auto w-full max-w-2xl space-y-4 text-center'>
           <p
-            className='uppercase text-xs md:text-sm md:mt-0'
+            className='uppercase text-sm md:text-md md:mt-0'
             style={{
               fontFamily: theme.typography.fontFamily,
               fontWeight: theme.typography.fontWeight.regular,
@@ -73,7 +73,7 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ data }) => {
               color: theme.colors.dark,
               fontFamily: theme.typography.fontFamilyHeading,
             }}
-            className='text-[2rem] md:text-[2.25rem] leading-8  font-bold md:text-9xl lg:text-[3rem]'
+            className='text-[2.2rem] md:text-[2.8rem] leading-9 md:leading-[42px]  font-bold md:text-9xl lg:text-[3.2rem]'
           >
             Our Expertise Across
             <span
@@ -88,7 +88,7 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ data }) => {
             </span>
           </h1>
           <p
-            className='text-[1rem] md:text-[1rem]'
+            className='text-[1rem] md:text-[1.125rem]'
             style={{
               fontFamily: theme.typography.fontFamily,
               fontWeight: theme.typography.fontWeight.regular,
@@ -172,7 +172,7 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ data }) => {
                     color: theme.colors.dark,
                     fontFamily: theme.typography.fontFamily,
                   }}
-                  className='text-[1.5rem] md:text-[2rem] leading-7 '
+                  className='text-[1.7rem] md:text-[2.2rem] leading-7 '
                 >
                   {item.title}
                 </h3>
@@ -182,7 +182,7 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ data }) => {
                     color: theme.colors.primaryLight,
                     fontFamily: theme.typography.fontFamily,
                   }}
-                  className='text-[1rem] text-center md:text-[1rem] mb-4'
+                  className='text-[1rem] text-center md:text-[1.125rem] mb-4'
                 >
                   {item.description}
                 </p>
@@ -191,7 +191,7 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ data }) => {
                     sx={{
                       width: md ? "140px" : "164px",
                       height: md ? "45px" : "51px",
-                      fontSize: md ? "16px" : "18px",
+                      fontSize: md ? "18px" : "20px",
                       fontWeight: theme.typography.fontWeight.medium,
                     }}
                   >

@@ -49,7 +49,7 @@ export const ServicesTimeline = (props: Timeline9Props) => {
           <div className='mb-12 text-center md:mb-18 lg:mb-20'>
             <div className='relative z-10 w-full max-w-xxl'>
               <p
-                className='uppercase mb-2 text-xs md:text-sm mt-5 md:mt-0'
+                className='uppercase mb-2 text-sm md:text-md mt-5 md:mt-0'
                 style={{
                   fontFamily: theme.typography.fontFamily,
                   fontWeight: theme.typography.fontWeight.regular,
@@ -66,7 +66,7 @@ export const ServicesTimeline = (props: Timeline9Props) => {
                   fontFamily: theme.typography.fontFamilyHeading,
                   fontWeight: theme.typography.fontWeight.ExtraBold,
                 }}
-                className='mb-10 text-[2rem] md:text-[2.25rem] leading-8 font-bold md:mb-6  lg:text-[3rem]'
+                className='mb-10 text-[2.2rem] md:text-[2.7rem] leading-9 md:leading-[42px] font-bold md:mb-6  lg:text-[3.2rem]'
               >
                 {heading}
                 <span
@@ -86,7 +86,7 @@ export const ServicesTimeline = (props: Timeline9Props) => {
                   fontFamily: theme.typography.fontFamily,
                   color: theme.colors.primaryLight,
                 }}
-                className='md:text-[1rem] text-center text-[1rem]'
+                className='md:text-[1.125rem] text-center text-[1rem]'
               >
                 {description}
               </p>
@@ -196,7 +196,7 @@ const TimelineContent = ({
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
       }}
-      className='mb-2 text-[1rem] leading-[1.2]  md:text-[1rem] '
+      className='mb-2 text-[1rem] leading-[1.2]  md:text-[1.125rem] '
     >
       {item.heading}
     </h3>
@@ -204,11 +204,12 @@ const TimelineContent = ({
       style={{
         fontWeight: theme.typography.fontWeight.bold,
       }}
-      className='mb-4 text-xl md:text-4xl'
+      className='mb-4 text-2xl md:text-4xl'
     >
       {item.title}
     </h4>
     <p
+      className='text-[1rem] md:text-[1.125rem]'
       style={{
         color: theme.colors.textSecondary,
         fontWeight: theme.typography.fontWeight.regular,

@@ -31,8 +31,8 @@ function AboutUs() {
         backgroundImage='https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg'
       />
       <CommunityImpact {...CommunityImpactData} />
-      <Timeline {...(TimelineData as any)} />
       <Team20 {...TeamData} />
+      <Timeline {...(TimelineData as any)} />
       <FeatureSection {...FeatureSectionData} />
       <Expertise data={expertiseData} />
       <Contact bg={true} {...Contactdata} />

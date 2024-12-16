@@ -76,7 +76,7 @@ export const FeatureSection = (props: Layout499Props) => {
       <div className='container'>
         <div className='mx-auto mb-12 w-full max-w-xl text-center md:mb-18 md:w-auto lg:mb-20'>
           <p
-            className='uppercase mb-2 text-xs md:text-sm mt-5 md:mt-0'
+            className='uppercase mb-2 text-sm md:text-md mt-5 md:mt-0'
             style={{
               // fontSize: theme.typography.fontSize.small,
               fontFamily: theme.typography.fontFamily,
@@ -95,7 +95,7 @@ export const FeatureSection = (props: Layout499Props) => {
               fontFamily: theme.typography.fontFamilyHeading,
               fontWeight: theme.typography.fontWeight.ExtraBold,
             }}
-            className='mb-5 text-[2rem] md:text-[2.25rem] leading-8 md:mb-6  lg:text-8xl'
+            className='mb-5 text-[2.2rem] md:text-[2.8rem] leading-8 md:leading-[42px] md:mb-6  lg:text-[3.2rem]'
           >
             {heading}
             <span
@@ -115,7 +115,7 @@ export const FeatureSection = (props: Layout499Props) => {
               fontFamily: theme.typography.fontFamily,
               color: theme.colors.primaryLight,
             }}
-            className='md:text-[1rem] text-[1rem]'
+            className='md:text-[1.125rem] text-[1rem]'
           >
             {description}
           </p>
@@ -162,7 +162,7 @@ export const FeatureSection = (props: Layout499Props) => {
                     fontFamily: theme.typography.fontFamily,
                     color: theme.colors.dark,
                   }}
-                  className='mb-1 text-[1.1rem] font-bold md:mb-2  md:leading-[1.3] lg:text-[20px]'
+                  className='mb-1 text-[1.3rem] font-bold md:mb-2  md:leading-[1.3] lg:text-[1.6rem]'
                 >
                   {tab.heading}
                 </h3>
@@ -173,7 +173,7 @@ export const FeatureSection = (props: Layout499Props) => {
                     fontFamily: theme.typography.fontFamily,
                     color: theme.colors.primaryLight,
                   }}
-                  className='text-[1rem] md:text-[1rem]'
+                  className='text-[1rem] md:text-[1.125rem]'
                 >
                   {tab.description}
                 </p>

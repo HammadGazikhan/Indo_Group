@@ -40,7 +40,7 @@ export const Team20 = (props: Team20Props) => {
   } as Props;
   return (
     <section
-      // style={{ background: theme.colors.background }}
+      style={{ background: theme.colors.background }}
       id='relume'
       className='px-[5%] py-16 md:py-24 lg:py-28'
     >
@@ -48,7 +48,7 @@ export const Team20 = (props: Team20Props) => {
         <div className='grid grid-cols-1 items-start md:grid-flow-row md:grid-cols-[.5fr_1fr] md:gap-x-12 lg:gap-x-20'>
           <div className='rb-12 mb-12 max-w-lg md:mb-18 lg:mb-20'>
             <p
-              className='uppercase mb-2 text-xs md:text-sm mt-5 md:mt-0'
+              className='uppercase mb-2 text-sm md:text-md mt-5 md:mt-0'
               style={{
                 fontFamily: theme.typography.fontFamily,
                 fontWeight: theme.typography.fontWeight.regular,
@@ -65,7 +65,7 @@ export const Team20 = (props: Team20Props) => {
                 fontFamily: theme.typography.fontFamilyHeading,
                 fontWeight: theme.typography.fontWeight.ExtraBold,
               }}
-              className='mb-10 text-[2rem] md:text-[2.25rem] leading-8 lg:leading-[50px] font-bold md:mb-6  lg:text-[3rem]'
+              className='mb-4 text-[2.2rem] md:text-[2.7rem] leading-none lg:leading-[50px] font-bold md:mb-6  lg:text-[3.2rem]'
             >
               {heading}
               <span
@@ -85,7 +85,7 @@ export const Team20 = (props: Team20Props) => {
                 fontFamily: theme.typography.fontFamily,
                 color: theme.colors.primaryLight,
               }}
-              className='md:text-[1rem] text-justify text-justify text-[1rem]'
+              className='md:text-[1.125rem] text-pretty  text-[1rem]'
             >
               {description}
             </p>
@@ -120,7 +120,7 @@ const TeamMember = ({ member }: { member: TeamMember }) => {
             color: theme.colors.dark,
             fontWeight: theme.typography.fontWeight.bold,
           }}
-          className='text-md  md:text-lg'
+          className='text-[1.25rem]  md:text-[1.5rem]'
         >
           {member.name}
         </h5>
@@ -129,7 +129,7 @@ const TeamMember = ({ member }: { member: TeamMember }) => {
             color: theme.colors.lightRed,
             fontWeight: theme.typography.fontWeight.regular,
           }}
-          className='md:text-md text-sm'
+          className='md:text-[1.25rem] text-[1.125rem]'
         >
           {member.jobTitle}
         </h6>
@@ -139,7 +139,7 @@ const TeamMember = ({ member }: { member: TeamMember }) => {
           color: theme.colors.primaryLight,
           fontWeight: theme.typography.fontWeight.regular,
         }}
-        className='text-[1rem] text-justify md:text-[1rem]'
+        className='text-[1rem] text-pretty md:text-[1.125rem]'
       >
         {member.description}
       </p>

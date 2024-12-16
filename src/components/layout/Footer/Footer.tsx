@@ -87,18 +87,24 @@ export const Footer = (props: Footer3Props) => {
                   }}
                   className='italic text-4xl text-[#ffffff]'
                 >
-                  Indo Groups
+                  Logo
                 </p>
               </a>
             </div>
             <div className='rb-6 mb-6 md:mb-8'>
               <div>
-                <p className='mb-1 text-sm font-semibold'>{address.label}</p>
-                <p className='mb-5 text-sm md:mb-6'>{address.value}</p>
+                <p className='mb-1 text-sm md:text-md font-semibold'>
+                  {address.label}
+                </p>
+                <p className='mb-5 text-sm md:text-md md:mb-6'>
+                  {address.value}
+                </p>
               </div>
               <div>
-                <p className='mb-1 text-sm font-semibold'>{contact.label}</p>
-                <p className='flex flex-col text-sm underline decoration-black underline-offset-1 md:mb-6'>
+                <p className='mb-1 text-sm md:text-md font-semibold'>
+                  {contact.label}
+                </p>
+                <p className='flex flex-col text-sm md:text-md underline decoration-black underline-offset-1 md:mb-6'>
                   <a href={`tel:${contact.phone}`}>{contact.phone}</a>
                   <a href={`mailto:${contact.email}`}>{contact.email}</a>
                 </p>
@@ -122,9 +128,11 @@ export const Footer = (props: Footer3Props) => {
                       fontSize: theme.typography.fontSize.small,
                       fontWeight: theme.typography.fontWeight.regular,
                     }}
-                    className='py-2 text-sm font-semibold'
+                    className='py-2  font-semibold'
                   >
-                    <a href={link.url}>{link.title}</a>
+                    <a className='text-sm md:text-md' href={link.url}>
+                      {link.title}
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -135,11 +143,11 @@ export const Footer = (props: Footer3Props) => {
           className='h-px w-full '
           style={{ background: theme.colors.secondaryLigth }}
         />
-        <div className='flex flex-col-reverse items-start justify-between pb-4 pt-6 text-sm md:flex-row md:items-center md:pb-0 md:pt-8'>
+        <div className='flex flex-col-reverse items-start justify-between pb-4 pt-6 text-sm md:text-md md:flex-row md:items-center md:pb-0 md:pt-8'>
           <p className='mt-8 md:mt-0'>{footerText}</p>
-          <ul className='grid grid-flow-row grid-cols-[max-content] justify-center gap-y-4 text-sm md:grid-flow-col md:gap-x-6 md:gap-y-0'>
+          <ul className='grid grid-flow-row grid-cols-[max-content] justify-center gap-y-4 text-sm md:text-md md:grid-flow-col md:gap-x-6 md:gap-y-0'>
             {footerLinks.map((link, index) => (
-              <li key={index} className='underline'>
+              <li key={index} className='underline text-nowrap'>
                 <a href={link.url}>{link.title}</a>
               </li>
             ))}
@@ -158,7 +166,8 @@ export const Footer3Defaults: Footer3Props = {
   },
   address: {
     label: "Address:",
-    value: "Shop No.2, Indo Homes, 367 B, Mahatma Phule Peth, Pune - 42",
+    value:
+      "Office No. 103+104, Landmark Building, 490/491 Nana Peth, Pune, Maharashtra - 411002",
   },
   contact: {
     label: "Contact:",
@@ -178,8 +187,8 @@ export const Footer3Defaults: Footer3Props = {
       links: [
         { title: "Indo Electricals", url: "/services/indo-electricals" },
         {
-          title: "Indo Solar Solutions",
-          url: "/services/indo-Solar-Solutions",
+          title: "Indo Energy Solutions",
+          url: "/services/indo-energy-solutions",
         },
         { title: "Indo Manpower", url: "/services/indo-Manpower" },
         {
@@ -190,11 +199,11 @@ export const Footer3Defaults: Footer3Props = {
     },
   ],
   socialMediaLinks: [
-    { url: "#", icon: <BiLogoFacebookCircle className='size-6' /> },
-    { url: "#", icon: <BiLogoInstagram className='size-6' /> },
-    { url: "#", icon: <FaXTwitter className='size-6 p-0.5' /> },
-    { url: "#", icon: <BiLogoLinkedinSquare className='size-6' /> },
-    { url: "#", icon: <BiLogoYoutube className='size-6' /> },
+    { url: "#", icon: <BiLogoFacebookCircle className='size-6 md:size-8' /> },
+    { url: "#", icon: <BiLogoInstagram className='size-6 md:size-8' /> },
+    { url: "#", icon: <FaXTwitter className='size-6 md:size-8 p-0.5' /> },
+    { url: "#", icon: <BiLogoLinkedinSquare className='size-6 md:size-8' /> },
+    { url: "#", icon: <BiLogoYoutube className='size-6 md:size-8' /> },
   ],
   footerText: "© FireFox Digital marketing. All rights reserved.",
   footerLinks: [

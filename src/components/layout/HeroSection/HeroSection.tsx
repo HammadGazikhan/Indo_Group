@@ -37,7 +37,7 @@ export const Header = (props: Header76Props) => {
     >
       <div className='mx-[5%] max-w-[40rem] justify-self-start lg:ml-[5vw] lg:mr-20 lg:justify-self-end'>
         <p
-          className='uppercase mb-2 text-xs md:text-sm mt-5 md:mt-0'
+          className='uppercase mb-2 text-sm md:text-md mt-5 md:mt-0'
           style={{
             // fontSize: theme.typography.fontSize.small,
             fontFamily: theme.typography.fontFamily,
@@ -55,7 +55,7 @@ export const Header = (props: Header76Props) => {
             color: theme.colors.dark,
             fontFamily: theme.typography.fontFamilyHeading,
           }}
-          className='mb-5 text-[2rem] md:text-[2.25rem] leading-8 font-bold md:mb-6  lg:text-[3rem] '
+          className='mb-5 text-[2.2rem] md:text-[2.8rem] leading-8 md:leading-[42px]   font-bold md:mb-6  lg:text-[3.2rem] '
         >
           {heading}
           <span
@@ -70,7 +70,7 @@ export const Header = (props: Header76Props) => {
           </span>
         </h1>
         <p
-          className='text-[1rem] md:text-[1rem]'
+          className='text-[1rem] md:text-[1.125rem]'
           style={{
             fontFamily: theme.typography.fontFamily,
             // fontSize: theme.typography.fontSize.base,
@@ -87,7 +87,7 @@ export const Header = (props: Header76Props) => {
                 sx={{
                   width: md ? "160px" : "193px",
                   height: md ? "45px" : "51px",
-                  fontSize: md ? "16px" : "18px",
+                  fontSize: md ? "18px" : "20px",
                   fontWeight: theme.typography.fontWeight.medium,
                 }}
                 key={index}

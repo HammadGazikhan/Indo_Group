@@ -46,13 +46,13 @@ export const ContactInfo = (props: Contact24Props) => {
               <div className='rb-5 mb-5 md:mb-6'>{contact.icon}</div>
               <h3
                 style={{ fontWeight: theme.typography.fontWeight.bold }}
-                className='mb-3 text-xl  md:mb-4 md:text-3xl md:leading-[1.3] lg:text-4xl'
+                className='mb-3 text-xl  md:mb-4 md:text-[1.8rem] md:leading-[1.3] lg:text-[2.2rem]'
               >
                 {contact.title}
               </h3>
               <p
                 style={{ color: theme.colors.primaryLight }}
-                className='mb-5 md:mb-6'
+                className='mb-5 md:mb-6 text-[1rem] md:text-[1.125rem]'
               >
                 {contact.description}
               </p>
@@ -62,7 +62,7 @@ export const ContactInfo = (props: Contact24Props) => {
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}
-                className='underline'
+                className='underline text-[1rem] md:text-[1.125rem]'
                 href={contact.link.url}
               >
                 {contact.link.label}

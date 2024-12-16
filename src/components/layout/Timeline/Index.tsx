@@ -61,7 +61,7 @@ export const Timeline = (props: Timeline13Props) => {
   return (
     <section
       id='relume'
-      style={{ background: theme.colors.background }}
+      // style={{ background: theme.colors.background }}
       className='px-[5%] py-16 md:py-24 lg:py-28'
     >
       <div className='container'>
@@ -69,7 +69,7 @@ export const Timeline = (props: Timeline13Props) => {
           <div className='mb-12 text-center md:mb-18 lg:mb-20'>
             <div className='relative z-10 w-full max-w-lg'>
               <p
-                className='uppercase mb-2 text-xs md:text-sm mt-5 md:mt-0'
+                className='uppercase mb-2 text-sm md:text-md mt-5 md:mt-0'
                 style={{
                   fontFamily: theme.typography.fontFamily,
                   fontWeight: theme.typography.fontWeight.regular,
@@ -86,7 +86,7 @@ export const Timeline = (props: Timeline13Props) => {
                   fontFamily: theme.typography.fontFamilyHeading,
                   fontWeight: theme.typography.fontWeight.ExtraBold,
                 }}
-                className='mb-10 text-[2rem] md:text-[2.25rem] leading-8 font-bold md:mb-6  lg:text-[3rem]'
+                className='mb-10 text-[2.2rem] md:text-[2.7rem] leading-10 md:leading-[42px]  md:mb-6  lg:text-[3.2rem]'
               >
                 {heading}
                 <span
@@ -106,7 +106,7 @@ export const Timeline = (props: Timeline13Props) => {
                   fontFamily: theme.typography.fontFamily,
                   color: theme.colors.primaryLight,
                 }}
-                className='md:text-[1rem] text-center text-[1rem]'
+                className='md:text-[1.125rem] text-center text-[1rem]'
               >
                 {description}
               </p>
@@ -231,8 +231,11 @@ const TimelineContent = ({
     >
       {item.heading}
     </h3>
-    <h4 className='mb-3 text-xl md:mb-4 md:text-2xl'>{item.title}</h4>
+    <h4 className='mb-3 text-[1.4rem] md:mb-4 md:text-[1.8rem]'>
+      {item.title}
+    </h4>
     <p
+      className='text-[1rem] md:text-[1.125rem]'
       style={{
         color: theme.colors.textSecondary,
         fontWeight: theme.typography.fontWeight.regular,
@@ -247,8 +250,8 @@ const TimelineContent = ({
             background: "linear-gradient(90deg, #EF4444 0%, #B91C1C 100%)",
             color: theme.colors.secondary,
             fontWeight: theme.typography.fontWeight.bold,
-            height: "40px",
-            width: "123px",
+            height: "45px",
+            // width: "123px",
           }}
         >
           {item.primaryButton.title}

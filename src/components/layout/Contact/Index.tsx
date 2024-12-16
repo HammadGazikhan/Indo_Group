@@ -60,7 +60,7 @@ export const Contact = (props: Contact14Props) => {
       <div className='container'>
         <div className='mx-auto mb-12 w-full max-w-xl text-center md:mb-18 md:w-auto lg:mb-20'>
           <p
-            className='uppercase mb-2 text-xs md:text-sm mt-5 md:mt-0'
+            className='uppercase mb-2 text-sm md:text-md mt-5 md:mt-0'
             style={{
               // fontSize: theme.typography.fontSize.small,
               fontFamily: theme.typography.fontFamily,
@@ -79,7 +79,7 @@ export const Contact = (props: Contact14Props) => {
               fontFamily: theme.typography.fontFamilyHeading,
               fontWeight: theme.typography.fontWeight.ExtraBold,
             }}
-            className='mb-5 text-[2rem] md:text-[2.25rem] leading-8 md:mb-6  lg:text-8xl'
+            className='mb-5 text-[2.2rem] md:text-[2.7rem] leading-8 md:mb-6  lg:text-[3.2rem]'
           >
             {heading}
             <span
@@ -99,7 +99,7 @@ export const Contact = (props: Contact14Props) => {
               fontFamily: theme.typography.fontFamily,
               color: theme.colors.primaryLight,
             }}
-            className='md:text-[1rem] text-[1rem]'
+            className='md:text-[1.125rem] text-[1rem]'
           >
             {description}
           </p>
@@ -115,7 +115,7 @@ export const Contact = (props: Contact14Props) => {
                     fontFamily: theme.typography.fontFamily,
                     color: theme.colors.dark,
                   }}
-                  className='mb-2 text-md font-bold leading-[1.4] md:text-xl'
+                  className='mb-2 text-md font-bold leading-[1.4] md:text-2xl'
                 >
                   {contact.title}
                 </h3>
@@ -125,7 +125,7 @@ export const Contact = (props: Contact14Props) => {
                     fontFamily: theme.typography.fontFamily,
                     color: theme.colors.textSecondary,
                   }}
-                  className='mb-2'
+                  className='mb-2 text-[1rem] md:text-[1.125rem]'
                 >
                   {contact?.description}
                 </p>
@@ -154,7 +154,7 @@ export const Contact = (props: Contact14Props) => {
                         fontFamily: theme.typography.fontFamily,
                         color: theme.colors.textSecondary,
                       }}
-                      className=''
+                      className=' text-[1rem] md:text-[1.125rem]'
                     >
                       {contact.link.label}
                     </p>

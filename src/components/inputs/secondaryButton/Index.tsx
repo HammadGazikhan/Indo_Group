@@ -3,6 +3,7 @@
 import React, { ReactNode } from "react";
 import { Button, CircularProgress, ButtonProps } from "@mui/material";
 import { theme } from "../../../constants/theme";
+import { useMediaQuery } from "@relume_io/relume-ui";
 
 interface SecondaryButtonProps extends ButtonProps {
   children?: ReactNode;
@@ -29,6 +30,8 @@ const SecondaryButton: React.FC<SecondaryButtonProps> = ({
   isLoading,
   ...otherProps
 }) => {
+  const md = useMediaQuery("(max-width:900px)");
+
   return (
     <Button
       className='text-[14px] !capitalize   md:text-[1rem]'
@@ -39,6 +42,8 @@ const SecondaryButton: React.FC<SecondaryButtonProps> = ({
         display: "flex",
         alignItems: "center",
         border: "none",
+        fontSize: md ? "18px" : "20px",
+
         position: "relative",
         textDecoration: "capitalize",
         "&:hover": {

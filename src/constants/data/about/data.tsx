@@ -114,7 +114,7 @@ export const TimelineData = {
     },
     {
       heading: "2014",
-      title: "Expansion into Solar Solutions",
+      title: "Expansion into Energy Solutions",
       description:
         "Entered the renewable energy market with the launch of Indo Solar Solutions. Focused on providing sustainable solar installations, the company has contributed to reducing carbon footprints for numerous clients across sectors.",
       primaryButton: {
@@ -211,7 +211,7 @@ export const TeamData = {
         alt: "Relume placeholder image 4",
       },
       name: "Miss Azra N. Sundke",
-      jobTitle: "Manager, Indo Solar Solutions",
+      jobTitle: "Manager, Indo energy Solutions",
       description:
         "Passionate about clean energy, Miss Azra oversees solar projects, promoting green solutions for a sustainable future.",
       socialLinks: [
@@ -247,7 +247,7 @@ export const expertiseData = {
       ],
     },
     {
-      heading: "Indo Solar Solutions",
+      heading: "Indo Energy Solutions",
       description:
         "Residential and commercial solar installations promoting clean energy and reduced utility costs.",
       image: {
@@ -258,7 +258,7 @@ export const expertiseData = {
         {
           title: "View More",
           iconRight: <RxChevronRight className='ms-1 text-red-600 size-4' />,
-          route: "/services/indo-solar-solutions",
+          route: "/services/indo-energy-solutions",
         },
       ],
     },
@@ -370,8 +370,7 @@ export const Contactdata = {
       title: "Phone",
       description: "",
       link: {
-        label:
-          "+91 7378-666-783   ,  +91 7378-666-783     +91 7378-666-783   ,  +91 7378-666-783",
+        label: "+91 7378-666-783  ",
         url: "#",
       },
     },

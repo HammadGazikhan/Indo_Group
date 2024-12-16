@@ -13,7 +13,8 @@ import { useState } from "react";
 import { theme } from "../../../constants/theme";
 import PrimaryButton from "../../inputs/primaryButton/Index";
 import { FaArrowRightLong } from "react-icons/fa6";
-
+import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
 type ImageProps = {
   src: string;
   alt?: string;
@@ -46,14 +47,45 @@ export const ContactUs = (props: Contact7Props) => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log({
+
+    // Validation
+    if (!name || !email || !phone_number || !selectedService || !message) {
+      toast.error("Please fill in all required fields.");
+      return;
+    }
+    if (!acceptTerms) {
+      toast.error("You must accept the Terms & Conditions.");
+      return;
+    }
+
+    // EmailJS Configuration
+    const serviceID = "service_py8eg29"; // Replace with your EmailJS service ID
+    const templateID = "template_y1hi0ow"; // Replace with your EmailJS template ID
+    const publicKey = "8FVoCmWi63PSx8lPJ"; // Replace with your EmailJS public key
+
+    const templateParams = {
       name,
-      phone_number,
       email,
+      phone_number,
       selectedService,
       message,
-      acceptTerms,
-    });
+    };
+
+    // Sending email via EmailJS
+    emailjs
+      .send(serviceID, templateID, templateParams, publicKey)
+      .then(() => {
+        toast.success("Message sent successfully!");
+        setName("");
+        setEmail("");
+        setPhone_number("");
+        setSelectedService("");
+        setMessage("");
+        setAcceptTerms(false);
+      })
+      .catch(() => {
+        toast.error("Failed to send message. Please try again.");
+      });
   };
   const md = useMediaQuery("(max-width:900px)");
 
@@ -73,25 +105,32 @@ export const ContactUs = (props: Contact7Props) => {
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
-              className='rb-5 mb-5 text-[2rem] md:text-[2.25rem] leading-8 font-bold md:mb-6  lg:text-8xl'
+              className='rb-5 mb-5 text-[2.2rem] md:text-[2.7rem]  font-bold md:mb-6  lg:text-[3.2rem]'
             >
               {heading}
             </h2>
           </div>
           <form className='flex flex-col gap-10' onSubmit={handleSubmit}>
-            {/* Form Fields Container */}
             <div className='grid grid-cols-1 gap-y-10 gap-6 lg:grid-cols-2'>
-              {/* Name Field */}
               <div className='w-full h-[48px] items-center'>
                 <Label
                   style={{
                     color: theme.colors.dark,
                     fontWeight: theme.typography.fontWeight.regular,
                   }}
-                  className=' ms-1 text-[1rem]'
+                  className=' ms-1 text-[1rem] md:text-[1.125rem]'
                   htmlFor='name'
                 >
-                  Name
+                  Name{" "}
+                  <span
+                    style={{
+                      background: theme.colors.gradient,
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }}
+                  >
+                    *
+                  </span>
                 </Label>
                 <Input
                   type='text'
@@ -104,40 +143,56 @@ export const ContactUs = (props: Contact7Props) => {
                 />
               </div>
 
-              {/* Another Name Field */}
               <div className='w-full h-[48px] items-center'>
                 <Label
                   style={{
                     color: theme.colors.dark,
                     fontWeight: theme.typography.fontWeight.regular,
                   }}
-                  className=' ms-1 text-[1rem]'
+                  className=' ms-1 text-[1rem] md:text-[1.125rem]'
                   htmlFor='name2'
                 >
-                  Email
+                  Email{" "}
+                  <span
+                    style={{
+                      background: theme.colors.gradient,
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }}
+                  >
+                    *
+                  </span>
                 </Label>
                 <Input
-                  type='text'
+                  type='email'
                   placeholder='Enter email'
                   id='email'
                   className='w-full rounded bg-[#FEE2E263] focus:shadow-medium focus:bg-transparent border-[2px]'
                   style={{ borderColor: theme.colors.border }}
                   value={email}
-                  onChange={(e) => setName(e.target.value)}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
 
-              {/* Email Field */}
               <div className='w-full h-[48px] items-center'>
                 <Label
-                  htmlFor='email'
+                  htmlFor='number'
                   style={{
                     color: theme.colors.dark,
                     fontWeight: theme.typography.fontWeight.regular,
                   }}
-                  className=' ms-1 text-[1rem]'
+                  className=' ms-1 text-[1rem] md:text-[1.125rem]'
                 >
-                  Phone No
+                  Phone No{" "}
+                  <span
+                    style={{
+                      background: theme.colors.gradient,
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }}
+                  >
+                    *
+                  </span>
                 </Label>
                 <Input
                   type='number'
@@ -146,21 +201,29 @@ export const ContactUs = (props: Contact7Props) => {
                   className='w-full rounded bg-[#FEE2E263] focus:shadow-medium focus:bg-transparent border-[2px]'
                   style={{ borderColor: theme.colors.border }}
                   value={phone_number}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => setPhone_number(e.target.value)}
                 />
               </div>
 
-              {/* Another Email Field */}
               <div className='w-full h-[48px] items-center'>
                 <Label
-                  htmlFor='email2'
+                  htmlFor='serivces'
                   style={{
                     color: theme.colors.dark,
                     fontWeight: theme.typography.fontWeight.regular,
                   }}
-                  className=' ms-1 text-[1rem]'
+                  className=' ms-1 text-[1rem] md:text-[1.125rem]'
                 >
-                  Services
+                  Services{" "}
+                  <span
+                    style={{
+                      background: theme.colors.gradient,
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }}
+                  >
+                    *
+                  </span>
                 </Label>
                 <select
                   id='services'
@@ -182,7 +245,6 @@ export const ContactUs = (props: Contact7Props) => {
               </div>
             </div>
 
-            {/* Message Field */}
             <div className='w-full items-center'>
               <Label
                 htmlFor='message'
@@ -190,9 +252,18 @@ export const ContactUs = (props: Contact7Props) => {
                   color: theme.colors.dark,
                   fontWeight: theme.typography.fontWeight.regular,
                 }}
-                className=' ms-1 text-[1rem]'
+                className=' ms-1 text-[1rem] md:text-[1.125rem]'
               >
-                Message
+                Message{" "}
+                <span
+                  style={{
+                    background: theme.colors.gradient,
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
+                  *
+                </span>
               </Label>
               <Textarea
                 id='message'
@@ -204,7 +275,6 @@ export const ContactUs = (props: Contact7Props) => {
               />
             </div>
 
-            {/* Terms Checkbox */}
             <div className=' flex items-center space-x-2 text-sm '>
               <Checkbox
                 id='terms'
@@ -215,28 +285,34 @@ export const ContactUs = (props: Contact7Props) => {
               <Label
                 style={{ fontWeight: theme.typography.fontWeight.regular }}
                 htmlFor='terms'
-                className='cursor-pointer ms-1 text-[1rem]'
+                className='cursor-pointer ms-1 text-[1rem] md:text-[1.125rem]'
               >
                 I accept the{" "}
                 <a
                   style={{
                     fontWeight: theme.typography.fontWeight.medium,
-                    color: "red",
-                    // background: theme.colors.gradient,
-                    // WebkitBackgroundClip: "text",
-                    // WebkitTextFillColor: "transparent",
                   }}
-                  className='ms-1 text-[1rem] !underline'
+                  className='ms-1 text-[1rem] text-red-600 md:text-[1.125rem] !underline'
                   href='#'
                 >
                   Terms & Conditions
-                </a>
+                </a>{" "}
+                <span
+                  style={{
+                    background: theme.colors.gradient,
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
+                  *
+                </span>
               </Label>
             </div>
 
             {/* Submit Button */}
             <div className='flex justify-start'>
               <PrimaryButton
+                type='submit'
                 sx={{
                   width: md ? "160px" : "154px",
                   height: md ? "45px" : "51px",

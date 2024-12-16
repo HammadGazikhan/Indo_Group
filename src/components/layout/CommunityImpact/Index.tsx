@@ -58,7 +58,7 @@ export const CommunityImpact = (props: Layout65Props) => {
         <div className='flex flex-col items-start gap-5 lg:flex-row md:gap-x-12 lg:gap-x-20'>
           <div className={`w-full ${width ? " lg:w-[30%]" : " lg:w-[35%]"}`}>
             <p
-              className='uppercase mb-2 text-xs md:text-sm mt-5 md:mt-0'
+              className='uppercase mb-2 text-sm md:text-md mt-5 md:mt-0'
               style={{
                 fontFamily: theme.typography.fontFamily,
                 fontWeight: theme.typography.fontWeight.regular,
@@ -75,7 +75,7 @@ export const CommunityImpact = (props: Layout65Props) => {
                 fontFamily: theme.typography.fontFamilyHeading,
                 fontWeight: theme.typography.fontWeight.ExtraBold,
               }}
-              className='mb-10 text-[2rem] md:text-[2.25rem] leading-8 lg:leading-[50px] font-bold md:mb-6  lg:text-[3rem]'
+              className='mb-10 text-[2.2rem] md:text-[2.7rem] leading-10 lg:leading-[50px] font-bold md:mb-6  lg:text-[3.2rem]'
             >
               {heading}
               <span
@@ -96,7 +96,7 @@ export const CommunityImpact = (props: Layout65Props) => {
                   sx={{
                     width: md ? "160px" : "193px",
                     height: md ? "45px" : "51px",
-                    fontSize: md ? "16px" : "18px",
+                    fontSize: md ? "18px" : "20px",
                     fontWeight: theme.typography.fontWeight.medium,
                   }}
                   key={index}
@@ -119,7 +119,7 @@ export const CommunityImpact = (props: Layout65Props) => {
                 fontFamily: theme.typography.fontFamily,
                 color: theme.colors.primaryLight,
               }}
-              className='md:text-[1rem] text-justify text-[1rem]'
+              className='md:text-[1.125rem] text-justify text-[1rem]'
             >
               {description}
             </p>
@@ -145,7 +145,7 @@ export const CommunityImpact = (props: Layout65Props) => {
                       />
                     </div>
                     <span
-                      className='text-nowrap'
+                      className='text-nowrap text-[1rem] md:text-[1.125rem] '
                       style={{
                         fontWeight: theme.typography.fontWeight.medium,
                         fontFamily: theme.typography.fontFamily,
@@ -157,7 +157,7 @@ export const CommunityImpact = (props: Layout65Props) => {
                   </div>
 
                   <p
-                    className='text-[1rem] md:text-[1rem] w-full sm:w-auto '
+                    className='text-[1rem] md:text-[1.125rem] w-full sm:w-auto '
                     style={{
                       fontWeight: theme.typography.fontWeight.regular,
                       fontFamily: theme.typography.fontFamily,

@@ -14,7 +14,7 @@ export const theme = {
     dark: "#262626",
     lightRed: "#F87171",
     paragraph: "#000000",
-    background: "linear-gradient(90deg, #FEF2F2 0%, #FEE2E2 100%)", // Light gray
+    background: "#f2f2f2", // Light gray
     backgroundFooter: "#171717",
     textPrimary: "#1F2937", // Dark gray
     textSecondary: "#525252", // Medium gray

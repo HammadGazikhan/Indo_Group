@@ -49,13 +49,13 @@ export const RecentProjectSection = (props: Layout406Props) => {
   return (
     <section
       id='relume'
-      style={{ background: "linear-gradient(90deg, #FEF2F2 0%, #FEE2E2 100%)" }}
+      style={{ background: theme.colors.background }}
       className='px-[5%] py-16 md:py-24 lg:py-28 mt-12 md:mt-20'
     >
       <div className='container'>
         <div className='mx-auto mb-12 w-full max-w-xl text-center md:mb-18 lg:mb-20'>
           <p
-            className='uppercase mb-2 text-xs md:text-sm mt-5 md:mt-0'
+            className='uppercase mb-2 text-sm md:text-md mt-5 md:mt-0'
             style={{
               // fontSize: theme.typography.fontSize.small,
               fontFamily: theme.typography.fontFamily,
@@ -74,7 +74,7 @@ export const RecentProjectSection = (props: Layout406Props) => {
               fontFamily: theme.typography.fontFamilyHeading,
               fontWeight: theme.typography.fontWeight.ExtraBold,
             }}
-            className='mb-5 text-[2rem] md:text-[2.25rem] leading-8 font-bold md:mb-6  lg:text-8xl'
+            className='mb-5 text-[2.2rem] md:text-[2.7rem] leading-8 md:leading-[42px] font-bold md:mb-6  lg:text-[3.2rem]'
           >
             {heading}
             <span
@@ -94,7 +94,7 @@ export const RecentProjectSection = (props: Layout406Props) => {
               fontFamily: theme.typography.fontFamily,
               color: theme.colors.primaryLight,
             }}
-            className='md:text-[1rem] text-[1rem]'
+            className='md:text-[1.125rem] text-[1rem]'
           >
             {description}
           </p>
@@ -125,7 +125,7 @@ export const RecentProjectSection = (props: Layout406Props) => {
                 onClick={() => setActiveTab(tab.value)}
                 className={`flex w-full flex-col gap-1 ease-in-out rounded-lg lg:rounded-full whitespace-normal border-0  px-6 py-4 text-center duration-300  data-[state=active]:bg-transparent `}
               >
-                <h3 className='text-[1rem] md:text-[1.1rem]   leading-[1.4] md:text-xl'>
+                <h3 className='text-[1rem] md:text-[1.4rem] text-nowrap   leading-[1.4] '>
                   {tab.trigger.heading}
                 </h3>
                 {/* <p>{tab.trigger.description}</p> */}

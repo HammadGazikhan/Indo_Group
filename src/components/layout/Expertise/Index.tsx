@@ -47,7 +47,7 @@ const Expertise: React.FC<ExpertiseSectionProps> = ({ data }) => {
         {/* Header Section */}
         <div className='space-y-4 text-center'>
           <p
-            className='uppercase mb-2 text-xs md:text-sm mt-5 md:mt-0'
+            className='uppercase mb-2 text-sm md:text-md mt-5 md:mt-0'
             style={{
               fontFamily: theme.typography.fontFamily,
               fontWeight: theme.typography.fontWeight.regular,
@@ -59,7 +59,7 @@ const Expertise: React.FC<ExpertiseSectionProps> = ({ data }) => {
             {data.tagline}
           </p>
           <h1
-            className='mb-5 text-[2rem] md:text-[2.25rem] leading-8 font-bold md:mb-6  lg:text-[3rem]'
+            className='mb-5 text-[2.2rem] md:text-[2.7rem] leading-8 font-bold md:mb-6  lg:text-[3.2rem]'
             style={{
               color: theme.colors.dark,
               fontFamily: theme.typography.fontFamilyHeading,
@@ -78,7 +78,7 @@ const Expertise: React.FC<ExpertiseSectionProps> = ({ data }) => {
           </h1>
           {data.description && (
             <p
-              className='text-[1rem] md:text-[1rem]'
+              className='text-[1rem] md:text-[1.125rem]'
               style={{
                 fontFamily: theme.typography.fontFamily,
                 fontWeight: theme.typography.fontWeight.regular,
@@ -101,12 +101,12 @@ const Expertise: React.FC<ExpertiseSectionProps> = ({ data }) => {
                 <img
                   src={card.image.src}
                   alt={card.image.alt || "Card image"}
-                  className='size-full md:w-[200px] rounded'
+                  className='size-full md:w-[240px] rounded'
                 />
               )}
               <div className='space-y-2 size-full'>
                 <h1
-                  className='text-lg md:text-2xl'
+                  className='text-[1.4rem] leading-[32px] md:text-[1.8rem]'
                   style={{
                     color: theme.colors.dark,
                     fontWeight: theme.typography.fontWeight.bold,
@@ -115,7 +115,7 @@ const Expertise: React.FC<ExpertiseSectionProps> = ({ data }) => {
                   {card.heading}
                 </h1>
                 <p
-                  className='text-[1rem] md:text-[1rem] leading-7'
+                  className='text-[1rem] md:text-[1.125rem] leading-7'
                   style={{
                     fontWeight: theme.typography.fontWeight.regular,
                     color: theme.colors.primary,

@@ -97,7 +97,7 @@ export const Gallery = (props: Header108Props) => {
         <div className=' space-y-4 md:space-y-8'>
           <div className='mx-auto w-full max-w-2xl text-center'>
             <p
-              className='uppercase mb-2 text-xs md:text-sm mt-5 md:mt-0'
+              className='uppercase mb-2 text-sm md:text-md mt-5 md:mt-0'
               style={{
                 fontFamily: theme.typography.fontFamily,
                 fontWeight: theme.typography.fontWeight.regular,
@@ -113,7 +113,7 @@ export const Gallery = (props: Header108Props) => {
                 color: theme.colors.dark,
                 fontFamily: theme.typography.fontFamilyHeading,
               }}
-              className='mb-5 text-[2rem] md:text-[2.25rem] leading-8 lg:text-[3rem] font-bold md:mb-6   '
+              className='mb-5 text-[2.2rem] md:text-[2.7rem] leading-8 md:leading-[42px] lg:text-[3.2rem] font-bold md:mb-6   '
             >
               {title}
               <span
@@ -128,7 +128,7 @@ export const Gallery = (props: Header108Props) => {
               </span>
             </h1>
             <p
-              className='text-[1rem] md:text-[1rem]'
+              className='text-[1rem] md:text-[1.125rem]'
               style={{
                 fontFamily: theme.typography.fontFamily,
                 fontWeight: theme.typography.fontWeight.regular,
@@ -166,7 +166,7 @@ export const Gallery = (props: Header108Props) => {
                     fontWeight: theme.typography.fontWeight.medium,
                     color: theme.colors.dark,
                   }}
-                  className='text-[1rem] md:text-[1rem]'
+                  className='text-[1rem] md:text-[1.125rem] text-nowrap'
                 >
                   {frame.title}
                 </p>

@@ -3,6 +3,7 @@
 import { Button, CircularProgress, ButtonProps } from "@mui/material";
 import { SxProps, Theme } from "@mui/system";
 import { theme } from "../../../constants/theme";
+import { useMediaQuery } from "@relume_io/relume-ui";
 
 interface PrimaryButtonProps extends ButtonProps {
   isLoading?: boolean;
@@ -16,6 +17,8 @@ const PrimaryButton = ({
   isLoading,
   ...otherProps
 }: PrimaryButtonProps) => {
+  const md = useMediaQuery("(max-width:900px)");
+
   return (
     <Button
       variant='contained'
@@ -25,6 +28,8 @@ const PrimaryButton = ({
         background: theme.colors.gradient,
         color: theme.colors.secondary,
         fontWeight: theme.typography.fontWeight.bold,
+        fontSize: md ? "18px" : "20px",
+
         textTransform: "none",
         borderRadius: "5px",
         boxShadow: "none",
