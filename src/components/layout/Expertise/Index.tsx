@@ -108,7 +108,9 @@ const Expertise: React.FC<ExpertiseSectionProps> = ({ data }) => {
                 <h1
                   className='text-[1.4rem] leading-[32px] md:text-[1.8rem]'
                   style={{
-                    color: theme.colors.dark,
+                    background: theme.colors.gradient,
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
                     fontWeight: theme.typography.fontWeight.bold,
                   }}
                 >

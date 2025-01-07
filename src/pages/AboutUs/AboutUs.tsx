@@ -26,10 +26,7 @@ function AboutUs() {
       <Helmet>
         <title>Indo Group - About us</title>
       </Helmet>
-      <AboutUsHeader
-        title='aboutus'
-        backgroundImage='https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg'
-      />
+      <AboutUsHeader title='aboutus' backgroundImage={image.AboutHeader} />
       <CommunityImpact {...CommunityImpactData} />
       <Team20 {...TeamData} />
       <Timeline {...(TimelineData as any)} />

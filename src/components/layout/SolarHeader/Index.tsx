@@ -6,6 +6,7 @@ import { theme } from "../../../constants/theme";
 import PrimaryButton from "../../inputs/primaryButton/Index";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import image from "../../../constants/image";
 
 type ImageProps = {
   src: string;
@@ -40,7 +41,15 @@ export const SolarHeader = (props: Header126Props) => {
   const md = useMediaQuery("(max-width:900px)");
 
   return (
-    <section id='relume' className='px-[5%] py-16 md:py-24 lg:py-28'>
+    <section id='relume' className='px-[5%] relative py-16 md:py-24 lg:py-28'>
+      <div
+        style={{
+          backgroundImage: `url(${
+            md ? image.BgFeaturedSmall : image.BgFeatured
+          })`,
+        }}
+        className='absolute bg-cover  bg-center object-fill lg:w-[85%] lg:h-full lg:right-0 w-[90%] h-[100%] bottom-0 right-0 -z-10   '
+      ></div>
       <div className='container'>
         <div className='grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-16'>
           <div>
@@ -116,14 +125,21 @@ export const SolarHeader = (props: Header126Props) => {
             <div className='mr-[30%]'>
               <img
                 src={firstImage.src}
-                className='aspect-[2/3] size-full object-cover'
+                className='aspect-[2/3] rounded-md size-full object-cover'
                 alt={firstImage.alt}
               />
             </div>
-            <div className='absolute bottom-auto left-auto right-0 top-[10%] w-1/2'>
+            <div className='absolute bottom-auto left-auto right-0 top-[20%] w-1/2'>
               <img
                 src={secondImage.src}
-                className='aspect-square size-full object-cover'
+                style={{
+                  border: "10px solid",
+                  borderImageSource:
+                    "linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 100%)",
+                  borderImageSlice: 1,
+                  borderRadius: "15px", // Adjust the value to control the roundness
+                }}
+                className='aspect-square rounded-lg size-full object-cover'
                 alt={secondImage.alt}
               />
             </div>

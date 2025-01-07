@@ -118,11 +118,14 @@ export const ServicesGallery = (props: Gallery13Props) => {
       >
         <CarouselContent className='ml-0'>
           {images.map((image, index) => (
-            <CarouselItem key={index} className='relative h-dvh pl-0'>
+            <CarouselItem
+              key={index}
+              className='relative rounded-md h-dvh pl-0'
+            >
               <img
                 src={image.src}
                 alt={image.alt}
-                className='absolute inset-0 size-full object-cover'
+                className='absolute inset-0 rounded-md size-full object-cover'
               />
             </CarouselItem>
           ))}
@@ -136,7 +139,7 @@ export const ServicesGallery = (props: Gallery13Props) => {
               onClick={() => api?.scrollTo(index)}
               className={clsx(
                 "relative mx-[3px] inline-block size-2 rounded-full",
-                current === index + 1 ? "bg-red-300" : "bg-gray-400"
+                current === index + 1 ? "bg-[#0E7490]" : "bg-[#85beb2]"
               )}
             />
           ))}

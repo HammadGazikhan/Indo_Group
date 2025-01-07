@@ -6,6 +6,7 @@ import { theme } from "../../../constants/theme";
 import { FaArrowRightLong } from "react-icons/fa6";
 import PrimaryButton from "../../inputs/primaryButton/Index";
 import { Link } from "react-router-dom";
+import image from "../../../constants/image";
 
 type ImageProps = {
   src: string;
@@ -50,19 +51,22 @@ export const CommunityImpact = (props: Layout65Props) => {
   } as Props;
   return (
     <section
-      style={{ background: bg ? theme.colors.background : "" }}
+      style={{
+        // background: theme.colors.secondaryBackground,
+        backgroundImage: bg ? "" : `url(${image.BackgroundImage})`,
+      }}
       id='relume'
-      className='px-[5%] z-[99999] py-16 md:py-24 lg:py-28'
+      className='px-[5%] bg-cover  bg-center object-fill py-16 md:py-24 lg:py-28 relative'
     >
-      <div className='mx-auto max-w-[1280px]'>
-        <div className='flex flex-col items-start gap-5 lg:flex-row md:gap-x-12 lg:gap-x-20'>
+      <div className='mx-auto max-w-[1380px]'>
+        <div className='flex flex-col  items-start gap-5 lg:flex-row md:gap-x-12 lg:gap-x-20'>
           <div className={`w-full ${width ? " lg:w-[30%]" : " lg:w-[35%]"}`}>
             <p
               className='uppercase mb-2 text-sm md:text-md mt-5 md:mt-0'
               style={{
                 fontFamily: theme.typography.fontFamily,
                 fontWeight: theme.typography.fontWeight.regular,
-                background: theme.colors.gradient,
+                background: bg ? theme.colors.gradient : theme.colors.heading,
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
@@ -71,16 +75,16 @@ export const CommunityImpact = (props: Layout65Props) => {
             </p>
             <h1
               style={{
-                color: theme.colors.dark,
+                color: bg ? theme.colors.dark : theme.colors.secondaryHeading,
                 fontFamily: theme.typography.fontFamilyHeading,
                 fontWeight: theme.typography.fontWeight.ExtraBold,
               }}
-              className='mb-10 text-[2.2rem] md:text-[2.7rem] leading-10 lg:leading-[50px] font-bold md:mb-6  lg:text-[3.2rem]'
+              className='mb-10 text-[2.2rem] md:text-[2.7rem] leading-10 lg:leading-[59px] font-bold md:mb-6  lg:text-[3.2rem]'
             >
               {heading}
               <span
                 style={{
-                  background: theme.colors.gradient,
+                  background: bg ? theme.colors.gradient : theme.colors.heading,
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}
@@ -98,6 +102,11 @@ export const CommunityImpact = (props: Layout65Props) => {
                     height: md ? "45px" : "51px",
                     fontSize: md ? "18px" : "20px",
                     fontWeight: theme.typography.fontWeight.medium,
+                    color: bg ? theme.colors.secondaryHeading : "#0E7490",
+
+                    background: bg
+                      ? theme.colors.gradient
+                      : theme.colors.heading,
                   }}
                   key={index}
                 >
@@ -105,7 +114,7 @@ export const CommunityImpact = (props: Layout65Props) => {
                   <FaArrowRightLong
                     style={{
                       marginLeft: "2px",
-                      color: theme.colors.secondary,
+                      color: bg ? theme.colors.secondaryHeading : "#0E7490",
                     }}
                   />
                 </PrimaryButton>
@@ -117,7 +126,9 @@ export const CommunityImpact = (props: Layout65Props) => {
               style={{
                 fontWeight: theme.typography.fontWeight.regular,
                 fontFamily: theme.typography.fontFamily,
-                color: theme.colors.primaryLight,
+                color: bg
+                  ? theme.colors.textSecondary
+                  : theme.colors.secondaryHeading,
               }}
               className='md:text-[1.125rem] text-justify text-[1rem]'
             >
@@ -147,9 +158,13 @@ export const CommunityImpact = (props: Layout65Props) => {
                     <span
                       className='text-nowrap text-[1rem] md:text-[1.125rem] '
                       style={{
-                        fontWeight: theme.typography.fontWeight.medium,
+                        fontWeight: theme.typography.fontWeight.bold,
                         fontFamily: theme.typography.fontFamily,
-                        color: theme.colors.dark,
+                        background: bg
+                          ? theme.colors.dark
+                          : theme.colors.heading,
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
                       }}
                     >
                       {feature.boldParagraph}
@@ -161,7 +176,9 @@ export const CommunityImpact = (props: Layout65Props) => {
                     style={{
                       fontWeight: theme.typography.fontWeight.regular,
                       fontFamily: theme.typography.fontFamily,
-                      color: theme.colors.primaryLight,
+                      color: bg
+                        ? theme.colors.textSecondary
+                        : theme.colors.secondaryHeading,
                     }}
                   >
                     {feature.paragraph}

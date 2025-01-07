@@ -1,11 +1,20 @@
 /** @format */
 
 import { BiEnvelope, BiMessageDetail, BiPhone } from "react-icons/bi";
+import { theme } from "../../theme";
 
 export const ContactInfoData = {
   contacts: [
     {
-      icon: <BiPhone className='size-12 text-red-600' />,
+      icon: (
+        <BiPhone
+          style={{
+            color: theme.colors.secondaryHeading,
+            filter: "drop-shadow(0 0 8px rgba(255, 255, 255, 0.8))", // Glow effect
+          }}
+          className='size-12 '
+        />
+      ),
       title: "Phone",
       description:
         "Speak directly with one of our team members for immediate assistance, or discuss your project requirements in detail.",
@@ -19,7 +28,15 @@ export const ContactInfoData = {
       },
     },
     {
-      icon: <BiEnvelope className='size-12 text-red-600' />,
+      icon: (
+        <BiEnvelope
+          style={{
+            color: theme.colors.secondaryHeading,
+            filter: "drop-shadow(0 0 8px rgba(255, 255, 255, 0.8))", // Glow effect
+          }}
+          className='size-12 '
+        />
+      ),
       title: "Email",
       description:
         "Our team is here to help you with any inquiries or support you may need. For direct assistance, feel free to drop us an email.",
@@ -33,7 +50,15 @@ export const ContactInfoData = {
       },
     },
     {
-      icon: <BiMessageDetail className='size-12 text-red-600' />,
+      icon: (
+        <BiMessageDetail
+          style={{
+            color: theme.colors.secondaryHeading,
+            filter: "drop-shadow(0 0 8px rgba(255, 255, 255, 0.8))", // Glow effect
+          }}
+          className='size-12 '
+        />
+      ),
       title: "Live chat",
       description:
         "Need instant assistance? Our live chat support is available during business hours to answer your questions in real time.",

@@ -3,6 +3,7 @@
 import { BiEnvelope, BiMap, BiPhone } from "react-icons/bi";
 import { RxChevronRight } from "react-icons/rx";
 import image from "../../../image";
+import { theme } from "../../../theme";
 export const solarHeaderData = {
   tagline: "Empowering Sustainable Energy",
   heading: "Indo ",
@@ -11,11 +12,11 @@ export const solarHeaderData = {
     "Indo Solar Solutions is committed to transforming the energy landscape with sustainable, cost-effective solar systems for residential, commercial, and industrial clients. We work closely with each client to maximize their investment in renewable energy and reduce their environmental footprint.",
   buttons: [{ title: " Get in touch", route: "/contact" }],
   firstImage: {
-    src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+    src: image.SolarHeader1,
     alt: "Relume placeholder image 1",
   },
   secondImage: {
-    src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-portrait-dim.png",
+    src: image.SolarHeader2,
     alt: "Relume placeholder image 2",
   },
 };
@@ -28,7 +29,7 @@ export const servicesData = {
   sections: [
     {
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
+        src: image.SolarServices1,
         alt: "Relume placeholder image 1",
       },
       heading: "On-Grid Systems",
@@ -37,7 +38,7 @@ export const servicesData = {
     },
     {
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
+        src: image.SolarServices2,
         alt: "Relume placeholder image 2",
       },
       heading: "Off-Grid Systems",
@@ -46,7 +47,7 @@ export const servicesData = {
     },
     {
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
+        src: image.SolarServices3,
         alt: "Relume placeholder image 3",
       },
       heading: "Hybrid Systems",
@@ -55,7 +56,7 @@ export const servicesData = {
     },
     {
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
+        src: image.SolarServices4,
         alt: "Relume placeholder image 1",
       },
       heading: "Solar Consultation",
@@ -64,7 +65,7 @@ export const servicesData = {
     },
     {
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
+        src: image.SolarServices5,
         alt: "Relume placeholder image 2",
       },
       heading: "Solar Battery Storage Solutions",
@@ -73,7 +74,7 @@ export const servicesData = {
     },
     {
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
+        src: image.SolarServices6,
         alt: "Relume placeholder image 3",
       },
       heading: "Installation and Maintenance",
@@ -96,7 +97,7 @@ export const expertiseData = {
       description:
         "We guide clients through the subsidy process, from application to approval, ensuring they receive full financial benefits.",
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        src: image.SolarAmenities1,
         alt: "Relume placeholder image 1",
       },
     },
@@ -105,7 +106,7 @@ export const expertiseData = {
       description:
         "Our team helps you leverage rebates and incentives, making it more affordable to adopt sustainable energy solutions.",
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        src: image.SolarAmenities2,
         alt: "Relume placeholder image 1",
       },
     },
@@ -114,7 +115,7 @@ export const expertiseData = {
       description:
         "With extensive experience working with local authorities, we ensure all regulatory requirements are met for a smooth installation and subsidy process.",
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        src: image.SolarAmenities3,
         alt: "Relume placeholder image 1",
       },
     },
@@ -123,7 +124,7 @@ export const expertiseData = {
       description:
         "We assist clients in understanding and leveraging tax benefits related to solar installations, helping maximize savings and make eco-friendly choices more affordable.",
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        src: image.SolarAmenities4,
         alt: "Relume placeholder image 1",
       },
     },
@@ -186,7 +187,7 @@ export const CommunityImpactData = {
   features: [
     {
       icon: {
-        src: image.Package,
+        src: image.SolarIcon3,
         alt: "Package",
       },
       boldParagraph: "High-Quality Materials: ",
@@ -195,7 +196,7 @@ export const CommunityImpactData = {
     },
     {
       icon: {
-        src: image.PencilRuler,
+        src: image.SolarIcon2,
         alt: "PencilRuler",
       },
       boldParagraph: "Expert Installation Teams:",
@@ -204,7 +205,7 @@ export const CommunityImpactData = {
     },
     {
       icon: {
-        src: image.SecurityCamera,
+        src: image.SolarIcon4,
         alt: "SecurityCamera",
       },
       boldParagraph: "Advanced Monitoring Solutions:",
@@ -213,7 +214,7 @@ export const CommunityImpactData = {
     },
     {
       icon: {
-        src: image.Headset,
+        src: image.SolarIcon1,
         alt: "Headset",
       },
       boldParagraph: "Ongoing Maintenance Support: ",
@@ -248,7 +249,7 @@ export const CapabilitiesData = {
     },
     {
       icon: {
-        src: image.Innovation,
+        src: image.SolarIcon5,
         alt: "Innovation",
       },
       heading: "Environmental Impact",
@@ -257,7 +258,7 @@ export const CapabilitiesData = {
     },
     {
       icon: {
-        src: image.Users,
+        src: image.SolarIcon6,
         alt: "Users",
       },
       heading: "Reliable Partnership",
@@ -275,7 +276,7 @@ export const CapabilitiesData = {
     },
     {
       icon: {
-        src: image.Solar,
+        src: image.SolarIcon7,
         alt: "Solar",
       },
       heading: "Cutting-Edge Technology",
@@ -292,12 +293,52 @@ export const serviceGalleryData = {
     "Indo Solar Solutions has completed several successful projects, each one contributing to a cleaner, greener future. Here are a few highlights of our recent work.",
   images: [
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+      src: image.solar1,
       alt: "Relume placeholder image 1",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-      alt: "Relume placeholder image 2",
+      src: image.solar2,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.solar3,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.solar4,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.solar5,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.solar6,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.solar7,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.solar8,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.solar9,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.solar10,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.solar11,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.solar12,
+      alt: "Relume placeholder image 1",
     },
   ],
   subTitle: "Residential Solar Installation in Pune",
@@ -312,7 +353,12 @@ export const Contactdata = {
     "Whether you’re interested in solar for your home, business, or industrial site, our team is ready to help. Contact us to learn more about the benefits of going solar and how Indo Solar Solutions can assist.",
   contacts: [
     {
-      icon: <BiEnvelope className='size-8 text-red-600' />,
+      icon: (
+        <BiEnvelope
+          style={{ color: theme.colors.border }}
+          className='size-8 '
+        />
+      ),
       title: "Email",
       description: "",
       link: {
@@ -321,7 +367,9 @@ export const Contactdata = {
       },
     },
     {
-      icon: <BiPhone className='size-8 text-red-600' />,
+      icon: (
+        <BiPhone style={{ color: theme.colors.border }} className='size-8 ' />
+      ),
       title: "Phone",
       description: "+91 9822-054-197   Mr. Naeem A. Sundke",
       link: {
@@ -330,7 +378,9 @@ export const Contactdata = {
       },
     },
     {
-      icon: <BiMap className='size-8 text-red-600' />,
+      icon: (
+        <BiMap style={{ color: theme.colors.border }} className='size-8 ' />
+      ),
       title: "Office",
       description:
         "Office No. 103+104, Landmark Building, 490/491 Nana Peth, Pune, Maharashtra - 411002.",
@@ -338,7 +388,12 @@ export const Contactdata = {
         title: "Get Directions",
         variant: "link",
         size: "link",
-        iconRight: <RxChevronRight className='text-red-600 size-4' />,
+        iconRight: (
+          <RxChevronRight
+            style={{ color: theme.colors.border }}
+            className=' size-4'
+          />
+        ),
       },
     },
   ],

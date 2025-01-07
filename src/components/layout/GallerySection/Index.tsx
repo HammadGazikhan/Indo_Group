@@ -7,6 +7,7 @@ import type { ButtonProps } from "@relume_io/relume-ui";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { theme } from "../../../constants/theme";
 import { Grid } from "@mui/material";
+import image from "../../../constants/image";
 
 type ImageProps = {
   src: string;
@@ -39,7 +40,7 @@ const useTransformValues = (
 ) => {
   return useTransform(
     scrollYProgress,
-    [0, 1],
+    [1, 10],
     isMobile ? mobileValues : desktopValues
   );
 };
@@ -92,7 +93,11 @@ export const Gallery = (props: Header108Props) => {
   };
 
   return (
-    <section id='relume' className='relative h-[250vh]'>
+    <section
+      style={{ backgroundImage: `url(${image.BgFeaturedSmall})` }}
+      id='relume'
+      className='relative h-[250vh]'
+    >
       <div className='px-[5%] pt-16 md:pt-24 lg:pt-28'>
         <div className=' space-y-4 md:space-y-8'>
           <div className='mx-auto w-full max-w-2xl text-center'>

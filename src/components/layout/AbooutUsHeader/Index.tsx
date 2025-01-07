@@ -11,10 +11,13 @@ interface Header69Props {
 // Header Component
 const AboutUsHeader: React.FC<Header69Props> = ({ backgroundImage }) => {
   return (
-    <header
-      className='relative flex items-center justify-center h-[50vh] bg-cover bg-center text-center text-white'
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-    ></header>
+    <header className='relative flex items-center justify-center h-[50vh] text-center text-white overflow-hidden'>
+      <img
+        src={backgroundImage}
+        alt='Header Image'
+        className='absolute top-0 left-0 w-full h-full object-cover'
+      />
+    </header>
   );
 };
 

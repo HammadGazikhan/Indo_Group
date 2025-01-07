@@ -3,6 +3,7 @@
 import type { ButtonProps } from "@relume_io/relume-ui";
 
 import { theme } from "../../../constants/theme";
+import { useEffect, useRef, useState } from "react";
 
 type ImageProps = {
   src: string;
@@ -102,8 +103,21 @@ export const Team20 = (props: Team20Props) => {
 };
 
 const TeamMember = ({ member }: { member: TeamMember }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [isTruncated, setIsTruncated] = useState(false);
+  const descriptionRef = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    // Check if description exceeds 3 lines
+    const element = descriptionRef.current;
+    if (element) {
+      setIsTruncated(element.scrollHeight > element.clientHeight);
+    }
+  }, [member.description]);
+
   return (
     <div className='flex flex-col'>
+      {/* Image Section */}
       <div className='relative mb-5 aspect-square size-full overflow-hidden md:mb-6 md:pt-[100%]'>
         <img
           src={member.image.src}
@@ -111,40 +125,63 @@ const TeamMember = ({ member }: { member: TeamMember }) => {
           className='absolute inset-0 size-full object-cover'
         />
       </div>
+
+      {/* Name and Job Title */}
       <div
-        style={{ fontFamily: theme.typography.fontFamily }}
         className='mb-3 md:mb-4'
+        style={{ fontFamily: theme.typography.fontFamily }}
       >
         <h5
+          className='text-[1.25rem] md:text-[1.5rem]'
           style={{
             color: theme.colors.dark,
             fontWeight: theme.typography.fontWeight.bold,
           }}
-          className='text-[1.25rem]  md:text-[1.5rem]'
         >
           {member.name}
         </h5>
         <h6
+          className='md:text-[1.25rem] text-[1.125rem]'
           style={{
-            color: theme.colors.lightRed,
+            color: theme.colors.lightBlue,
             fontWeight: theme.typography.fontWeight.regular,
           }}
-          className='md:text-[1.25rem] text-[1.125rem]'
         >
           {member.jobTitle}
         </h6>
       </div>
-      <p
-        style={{
-          color: theme.colors.primaryLight,
-          fontWeight: theme.typography.fontWeight.regular,
-        }}
-        className='text-[1rem] text-pretty md:text-[1.125rem]'
-      >
-        {member.description}
-      </p>
+
+      {/* Description with Read More */}
+      <div>
+        <p
+          ref={descriptionRef}
+          style={{
+            color: theme.colors.primaryLight,
+            fontWeight: theme.typography.fontWeight.regular,
+            display: "-webkit-box",
+            WebkitLineClamp: isExpanded ? "none" : 3,
+            WebkitBoxOrient: "vertical",
+            overflow: "hidden",
+          }}
+          className='text-[1rem] text-pretty md:text-[1.125rem]'
+        >
+          {member.description}
+        </p>
+        {/* Read More / Read Less Button */}
+        {isTruncated && (
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            style={{ color: theme.colors.dark }}
+            className='text-[1rem] ease-in-out duration-100 md:text-[1.125rem] mt-2'
+          >
+            {isExpanded ? "Read Less" : "Read More"}
+          </button>
+        )}
+      </div>
+
+      {/* Social Links */}
       <div className='mt-6 grid grid-flow-col grid-cols-[max-content] gap-3 self-start'>
-        {member.socialLinks.map((link, index) => (
+        {member.socialLinks.map((link: any, index: any) => (
           <a key={index} href={link.href}>
             {link.icon}
           </a>
@@ -153,5 +190,7 @@ const TeamMember = ({ member }: { member: TeamMember }) => {
     </div>
   );
 };
+
+export default TeamMember;
 
 // const teamMembersData: TeamMember[] = [];

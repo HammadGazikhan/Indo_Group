@@ -6,6 +6,7 @@ import PrimaryButton from "../../inputs/primaryButton/Index";
 import { theme } from "../../../constants/theme";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import image from "../../../constants/image";
 
 type ImageProps = {
   src: string;
@@ -13,6 +14,7 @@ type ImageProps = {
 };
 
 type Props = {
+  bg: boolean;
   tagline: string;
   heading: string;
   colorHeading: string;
@@ -28,6 +30,7 @@ export type Header129Props = React.ComponentPropsWithoutRef<"section"> &
 
 export const ElectricalHeader = (props: Header129Props) => {
   const {
+    bg,
     tagline,
     heading,
     description,
@@ -43,7 +46,15 @@ export const ElectricalHeader = (props: Header129Props) => {
   const md = useMediaQuery("(max-width:900px)");
 
   return (
-    <section id='relume' className='px-[5%] py-16 md:py-24 lg:py-28'>
+    <section id='relume' className='px-[5%] relative py-16 md:py-24 lg:py-28'>
+      <div
+        style={{
+          backgroundImage: `url(${
+            md ? image.BgFeaturedSmall : image.BgFeatured
+          })`,
+        }}
+        className='absolute bg-cover  bg-center object-fill lg:w-[85%] lg:h-full lg:right-0 w-[100%] h-[100%] lg:bottom-0 -bottom-24 right-0 -z-10   '
+      ></div>
       <div className='container'>
         <div className='grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-16'>
           <div>
@@ -118,22 +129,38 @@ export const ElectricalHeader = (props: Header129Props) => {
           <div className='relative flex w-full'>
             <div className='absolute bottom-[10%] left-0 w-[35%]'>
               <img
+                style={{
+                  border: bg ? "" : "10px solid",
+                  borderImageSource: bg
+                    ? ""
+                    : "linear-gradient(270deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 100%)",
+                  borderImageSlice: bg ? "" : 1, // Ensures the gradient is applied correctly
+                }}
                 src={firstImage.src}
-                className='aspect-square size-full object-cover'
+                className='aspect-square size-full rounded-md object-cover'
                 alt={firstImage.alt}
               />
             </div>
             <div className='mx-[10%] w-full'>
               <img
                 src={secondImage.src}
-                className='aspect-square size-full object-cover'
+                className='aspect-square size-full rounded-md object-cover'
                 alt={secondImage.alt}
               />
             </div>
             <div className='absolute right-0 top-[10%] w-2/5'>
               <img
+                style={{
+                  border: bg ? "" : "10px solid",
+                  borderImageSource: bg
+                    ? ""
+                    : "linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 100%)",
+                  borderImageSlice: bg
+                    ? ""
+                    : 1 /* Ensures the border image is applied */,
+                }}
                 src={thirdImage.src}
-                className='aspect-[3/2] size-full object-cover'
+                className='aspect-[3/3]  size-full rounded-md object-cover'
                 alt={thirdImage.alt}
               />
             </div>

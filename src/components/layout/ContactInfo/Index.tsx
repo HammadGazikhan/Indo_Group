@@ -1,5 +1,6 @@
 /** @format */
 
+import image from "../../../constants/image";
 import { theme } from "../../../constants/theme";
 
 type LinkProps = {
@@ -28,7 +29,7 @@ export const ContactInfo = (props: Contact24Props) => {
   } as Props;
   return (
     <section
-      style={{ background: theme.colors.background }}
+      style={{ backgroundImage: `url(${image.BackgroundImage})` }}
       id='relume'
       className='px-[5%] py-16 md:py-24 lg:py-28'
     >
@@ -45,20 +46,25 @@ export const ContactInfo = (props: Contact24Props) => {
             >
               <div className='rb-5 mb-5 md:mb-6'>{contact.icon}</div>
               <h3
-                style={{ fontWeight: theme.typography.fontWeight.bold }}
+                style={{
+                  background: theme.colors.heading,
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  fontWeight: theme.typography.fontWeight.bold,
+                }}
                 className='mb-3 text-xl  md:mb-4 md:text-[1.8rem] md:leading-[1.3] lg:text-[2.2rem]'
               >
                 {contact.title}
               </h3>
               <p
-                style={{ color: theme.colors.primaryLight }}
+                style={{ color: theme.colors.secondaryHeading }}
                 className='mb-5 md:mb-6 text-[1rem] md:text-[1.125rem]'
               >
                 {contact.description}
               </p>
               <a
                 style={{
-                  background: theme.colors.gradient,
+                  background: theme.colors.heading,
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}
@@ -70,7 +76,7 @@ export const ContactInfo = (props: Contact24Props) => {
               <br />
               <a
                 style={{
-                  background: theme.colors.gradient,
+                  background: theme.colors.heading,
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}

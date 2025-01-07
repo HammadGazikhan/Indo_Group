@@ -8,6 +8,8 @@ import {
   BiLogoYoutube,
 } from "react-icons/bi";
 import { theme } from "../../../constants/theme";
+import image from "../../../constants/image";
+import { Link } from "react-router-dom";
 
 type ImageProps = {
   url?: string;
@@ -78,18 +80,9 @@ export const Footer = (props: Footer3Props) => {
         <div className='grid grid-cols-1 gap-x-[4vw] gap-y-12 pb-8 md:gap-y-16 md:pb-8 lg:grid-cols-[1fr_0.6fr] lg:gap-y-4 lg:pb-4'>
           <div>
             <div className='rb-6 mb-6 md:mb-8'>
-              <a href={logo.url}>
-                {/* <img src={logo.src} alt={logo.alt} className='inline-block' /> */}
-                <p
-                  style={{
-                    fontFamily: theme.typography.fontFamilyHeading,
-                    fontWeight: theme.typography.fontWeight.ExtraBold,
-                  }}
-                  className='italic text-4xl text-[#ffffff]'
-                >
-                  Logo
-                </p>
-              </a>
+              <Link to={`${logo.url}`}>
+                <img src={logo.src} alt={logo.alt} className='inline-block' />
+              </Link>
             </div>
             <div className='rb-6 mb-6 md:mb-8'>
               <div>
@@ -144,14 +137,14 @@ export const Footer = (props: Footer3Props) => {
           style={{ background: theme.colors.secondaryLigth }}
         />
         <div className='flex flex-col-reverse items-start justify-between pb-4 pt-6 text-sm md:text-md md:flex-row md:items-center md:pb-0 md:pt-8'>
-          <p className='mt-8 md:mt-0'>{footerText}</p>
-          <ul className='grid grid-flow-row grid-cols-[max-content] justify-center gap-y-4 text-sm md:text-md md:grid-flow-col md:gap-x-6 md:gap-y-0'>
+          <p className='mt-0 md:mt-0'>{footerText}</p>
+          {/* <ul className='grid grid-flow-row grid-cols-[max-content] justify-center gap-y-4 text-sm md:text-md md:grid-flow-col md:gap-x-6 md:gap-y-0'>
             {footerLinks.map((link, index) => (
               <li key={index} className='underline text-nowrap'>
                 <a href={link.url}>{link.title}</a>
               </li>
             ))}
-          </ul>
+          </ul> */}
         </div>
       </div>
     </footer>
@@ -160,8 +153,8 @@ export const Footer = (props: Footer3Props) => {
 
 export const Footer3Defaults: Footer3Props = {
   logo: {
-    url: "#",
-    src: "https://d22po4pjz3o32e.cloudfront.net/logo-image.svg",
+    url: "/",
+    src: image.FooterLogo,
     alt: "Logo image",
   },
   address: {
@@ -207,8 +200,8 @@ export const Footer3Defaults: Footer3Props = {
   ],
   footerText: "© FireFox Digital marketing. All rights reserved.",
   footerLinks: [
-    { title: "Privacy Policy", url: "#" },
-    { title: "Terms of Service", url: "#" },
-    { title: "Cookies Settings", url: "#" },
+    { title: "", url: "" },
+    { title: "", url: "" },
+    { title: "", url: "" },
   ],
 };

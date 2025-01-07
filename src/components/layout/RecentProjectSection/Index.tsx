@@ -100,7 +100,7 @@ export const RecentProjectSection = (props: Layout406Props) => {
           </p>
         </div>
         <Tabs defaultValue={defaultTabValue}>
-          <TabsList className='mb-4 flex-col md:mb-4 lg:flex-row'>
+          <TabsList className='mb-4 flex-col bg-[#0000000D] lg:rounded-full md:mb-4 lg:flex-row'>
             {tabs.map((tab, index) => (
               <TabsTrigger
                 key={index}
@@ -115,7 +115,7 @@ export const RecentProjectSection = (props: Layout406Props) => {
                   fontFamily: theme.typography.fontFamily,
                   color:
                     tab.value === activeTab
-                      ? theme.colors.secondary
+                      ? theme.colors.heading
                       : theme.colors.dark,
                   background:
                     tab.value === activeTab
@@ -123,7 +123,7 @@ export const RecentProjectSection = (props: Layout406Props) => {
                       : "transparent",
                 }}
                 onClick={() => setActiveTab(tab.value)}
-                className={`flex w-full flex-col gap-1 ease-in-out rounded-lg lg:rounded-full whitespace-normal border-0  px-6 py-4 text-center duration-300  data-[state=active]:bg-transparent `}
+                className={`flex w-full flex-col gap-1 ease-in-out rounded-lg lg:rounded-full whitespace-normal border-0  px-6 py-3.5  text-center duration-300  data-[state=active]:bg-transparent `}
               >
                 <h3 className='text-[1rem] md:text-[1.4rem] text-nowrap   leading-[1.4] '>
                   {tab.trigger.heading}

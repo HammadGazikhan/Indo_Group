@@ -10,6 +10,7 @@ import { RxChevronDown } from "react-icons/rx";
 import { theme } from "../../../constants/theme";
 import PrimaryButton from "../../inputs/primaryButton/Index";
 import { Link } from "react-router-dom";
+import image from "../../../constants/image";
 
 type ImageProps = {
   url?: string;
@@ -54,29 +55,9 @@ export const Navbar = (props: Navbar1Props) => {
     >
       <div className='size-full lg:flex lg:items-center lg:justify-between'>
         <div className='flex min-h-16 items-center justify-between px-[5%] md:min-h-18 lg:min-h-full lg:px-0'>
-          <a href={logo.url}>
-            {/* <img src={logo.src} alt={logo.alt} /> */}
-            <p
-              style={{
-                fontFamily: theme.typography.fontFamilyHeading,
-                color: theme.colors.dark,
-                fontWeight: theme.typography.fontWeight.ExtraBold,
-              }}
-              className='italic text-4xl '
-            >
-              logo{" "}
-              <span
-                style={{
-                  background: theme.colors.gradient,
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-              >
-                {" "}
-                {/* Groups */}
-              </span>
-            </p>
-          </a>
+          <Link to={`${logo.url}`}>
+            <img src={logo.src} alt={logo.alt} />
+          </Link>
           <button
             className='-mr-2 flex size-12 flex-col items-center justify-center lg:hidden'
             onClick={() => setIsMobileMenuOpen((prev) => !prev)}
@@ -143,7 +124,8 @@ export const Navbar = (props: Navbar1Props) => {
                     fontSize: theme.typography.fontSize.base,
                     borderBottom:
                       currentPath === navLink.url ? "3px solid " : "",
-                    borderColor: currentPath === navLink.url ? "red" : "",
+                    borderColor:
+                      currentPath === navLink.url ? theme.colors.border : "",
                   }}
                   to={navLink.url}
                   className={`block py-3  lg:px-4 lg:py-2 lg:text-base `}
@@ -194,7 +176,7 @@ const SubMenu = ({
   return (
     <div
       onMouseEnter={() => !isMobile && setIsDropdownOpen(true)}
-      onMouseLeave={() => !isMobile && setIsDropdownOpen(false)}
+      // onMouseLeave={() => !isMobile && setIsDropdownOpen(false)}
     >
       <button
         className='flex w-full  items-center font-roboto justify-between gap-2 py-3 text-left text-md lg:flex-none lg:justify-start lg:px-4 lg:py-2 lg:text-base'
@@ -208,7 +190,7 @@ const SubMenu = ({
             WebkitTextFillColor: isSubMenuActive ? "transparent" : undefined,
             color: isSubMenuActive ? undefined : theme.colors.primary,
             borderBottom: isSubMenuActive ? "3px solid " : "",
-            borderColor: isSubMenuActive ? "red" : "",
+            borderColor: isSubMenuActive ? theme.colors.border : "",
           }}
         >
           {navLink.title}
@@ -284,8 +266,8 @@ const SubMenu = ({
 
 export const Navbar1Defaults: Navbar1Props = {
   logo: {
-    url: "#",
-    src: "https://d22po4pjz3o32e.cloudfront.net/logo-image.svg",
+    url: "/",
+    src: image.Logo,
     alt: "Logo image",
   },
   navLinks: [

@@ -14,24 +14,26 @@ const SwiperComponent: React.FC<SwiperComponentProps> = ({ images }) => {
   return (
     <Swiper
       modules={[Autoplay, Pagination]}
-      autoplay={{ delay: 3000, disableOnInteraction: false }}
-      pagination={{
-        clickable: true,
-        renderBullet: (index: number, className: string) =>
-          `<li class="${className} hidden md:block custom-bullet"></li>`,
-      }}
+      autoplay={{ delay: 5000, disableOnInteraction: false }}
+      // pagination={{
+      //   clickable: true,
+      //   renderBullet: (index: number, className: string) =>
+      //     `<li class="${className} hidden md:block custom-bullet"></li>`,
+      // }}
       loop={true}
-      style={{ width: "100%", height: "100%" }}
+      className='h-[400px] md:h-[600px] lg:h-[700px]'
+      style={{ width: "100%" }}
     >
       {images.map((image, index) => (
         <SwiperSlide key={index}>
           <img
             src={image.src}
             alt={image.alt}
+            className='bg-cover  bg-center object-fill'
             style={{
               width: "100%",
               height: "100%",
-              objectFit: "cover",
+              // objectFit: "cover",
             }}
           />
         </SwiperSlide>

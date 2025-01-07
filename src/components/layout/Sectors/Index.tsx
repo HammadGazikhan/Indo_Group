@@ -2,9 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import { theme } from "../../../constants/theme";
-import image from "../../../constants/image";
 import { useMediaQuery } from "@relume_io/relume-ui";
-import clsx from "clsx"; // Ensure clsx is imported
+import clsx from "clsx";
 import {
   Carousel,
   CarouselContent,
@@ -27,9 +26,9 @@ interface ExpertiseItem {
   description: string;
   buttonLabel: string;
   buttonRoute: string;
-  icon: string; // Path to the icon image
-  image: string; // Path to the card image
-  images?: ImageProps[]; // Optional array for carousel images
+  icon: string;
+  image: string;
+  images?: ImageProps[];
 }
 
 interface ExpertiseSectionProps {
@@ -41,19 +40,26 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ data }) => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
+  // Automatically scroll carousel every 3 seconds
   useEffect(() => {
     if (!api) return;
 
-    setCurrent(api.selectedScrollSnap() + 1);
-    api.on("select", () => setCurrent(api.selectedScrollSnap() + 1));
-  }, [api]);
+    const intervalId = setInterval(() => {
+      const nextIndex = (current % (data[0]?.images?.length || 1)) + 1;
+      api.scrollTo(nextIndex - 1);
+      setCurrent(nextIndex);
+    }, 3000); // 3 seconds interval
+
+    // Clear the interval on component unmount
+    return () => clearInterval(intervalId);
+  }, [api, current, data]);
 
   return (
     <section
       style={{ background: theme.colors.background }}
-      className='py-[100px]  md:py-[150px] '
+      className='py-[100px] md:py-[150px]'
     >
-      <div className='container max-w-[1280px] px-[5%]  mx-auto '>
+      <div className='container max-w-[1280px] px-[5%] mx-auto'>
         {/* Header Section */}
         <div className='mx-auto w-full max-w-2xl space-y-4 text-center'>
           <p
@@ -73,7 +79,7 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ data }) => {
               color: theme.colors.dark,
               fontFamily: theme.typography.fontFamilyHeading,
             }}
-            className='text-[2.2rem] md:text-[2.8rem] leading-9 md:leading-[42px]  font-bold md:text-9xl lg:text-[3.2rem]'
+            className='text-[2.2rem] md:text-[2.8rem] leading-9 md:leading-[42px] font-bold md:text-9xl lg:text-[3.2rem]'
           >
             Our Expertise Across
             <span
@@ -104,7 +110,7 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ data }) => {
           {data.map((item, index) => (
             <div
               key={item.id}
-              className={`flex  lg:h-[640px]  flex-col  ${
+              className={`flex lg:h-[640px] flex-col ${
                 index % 2 === 0 ? "lg:flex-row-reverse" : "lg:flex-row"
               } items-center bg-white shadow-md rounded-lg overflow-hidden`}
             >
@@ -140,9 +146,14 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ data }) => {
                         <button
                           key={index}
                           onClick={() => api?.scrollTo(index)}
+                          style={{
+                            background:
+                              current === index + 1
+                                ? theme.colors.border
+                                : theme.colors.primaryLight,
+                          }}
                           className={clsx(
-                            "relative mx-[3px] z-30 inline-block size-2 rounded-full",
-                            current === index + 1 ? "bg-red-400" : "bg-white/40"
+                            "relative mx-[3px] z-30 inline-block size-2 rounded-full"
                           )}
                         />
                       ))}
@@ -158,7 +169,18 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ data }) => {
               </div>
 
               {/* Text Section */}
-              <div className='size-full flex flex-col justify-center items-center lg:w-1/2 p-12 gap-3 text-center '>
+              <div
+                style={{ background: theme.colors.gradient }}
+                className='relative size-full flex flex-col justify-center items-center lg:w-1/2 p-12 gap-3 text-center '
+              >
+                <div
+                  className='absolute top-0 inset-0 pointer-events-none'
+                  style={{
+                    background:
+                      "radial-gradient(circle at 50% -14%, rgba(231, 253, 255, 0.8), transparent 40%)", // Adjusted position to 50% 10%
+                    mixBlendMode: "screen", // Use "screen" to brighten the background image
+                  }}
+                ></div>
                 <div className='flex items-center justify-center md:justify-start'>
                   <img
                     src={item.icon}
@@ -169,7 +191,7 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ data }) => {
                 <h3
                   style={{
                     fontWeight: theme.typography.fontWeight.bold,
-                    color: theme.colors.dark,
+                    color: theme.colors.heading,
                     fontFamily: theme.typography.fontFamily,
                   }}
                   className='text-[1.7rem] md:text-[2.2rem] leading-7 '
@@ -179,7 +201,7 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ data }) => {
                 <p
                   style={{
                     fontWeight: theme.typography.fontWeight.regular,
-                    color: theme.colors.primaryLight,
+                    color: theme.colors.secondaryHeading,
                     fontFamily: theme.typography.fontFamily,
                   }}
                   className='text-[1rem] text-center md:text-[1.125rem] mb-4'
@@ -189,6 +211,8 @@ const ExpertiseSection: React.FC<ExpertiseSectionProps> = ({ data }) => {
                 <Link to={item.buttonRoute}>
                   <PrimaryButton
                     sx={{
+                      background: theme.colors.heading,
+                      color: "#0E7490",
                       width: md ? "140px" : "164px",
                       height: md ? "45px" : "51px",
                       fontSize: md ? "18px" : "20px",

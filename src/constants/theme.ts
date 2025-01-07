@@ -6,20 +6,24 @@ import { fontFamily, useMediaQuery } from "@mui/system";
 // const tablet = useMediaQuery("(max-width : 1365px)");
 export const theme = {
   colors: {
+    heading: "#EEE8A9",
+    secondaryHeading: "#F5F5F5",
     primary: "#4E4E4D",
     primaryLight: "#737373",
     primaryDark: "#B91C1C",
     secondary: "#FFFFFF", // Blue
     secondaryLigth: "#FAFAFA",
     dark: "#262626",
-    lightRed: "#F87171",
+    lightBlue: "#0E7490",
     paragraph: "#000000",
-    background: "#f2f2f2", // Light gray
+    background: "#E6F4F1", // Light gray
+    secondaryBackground: "#0E7490",
     backgroundFooter: "#171717",
     textPrimary: "#1F2937", // Dark gray
+    fieldBackground: "#00000005",
     textSecondary: "#525252", // Medium gray
-    gradient: "linear-gradient(90deg, #EF4444 0%, #B91C1C 100%)",
-    border: "#FCA5A5", // Light gray
+    gradient: "linear-gradient(90deg, #0E7490 0%, #139ABF 100%)",
+    border: "#0E7490", // Light gray
     success: "#10B981", // Green
     warning: "#F59E0B", // Yellow
     error: "#DC2626", // Red

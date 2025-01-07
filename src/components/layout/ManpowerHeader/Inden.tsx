@@ -29,16 +29,16 @@ export type Header142Props = React.ComponentPropsWithoutRef<"section"> &
 
 const imagePositions = {
   group1: [
-    "bottom-[5%] left-[-8%] z-10 max-w-[18%] sm:bottom-[10%] lg:bottom-auto",
-    "left-[30%] top-[8%] z-10 max-w-[18%] sm:top-[10%] sm:max-w-[12%] lg:left-[40%] lg:top-[5%]",
-    "bottom-[-5%] right-[-5%] z-10 max-w-[25%] lg:max-w-[18%]",
-    "bottom-[-2%] left-[20%] z-10 max-w-[18%] sm:bottom-[-5%] sm:max-w-[16%] lg:bottom-[-10%]",
+    "bottom-[5%] left-[-2%] z-10 max-w-[24%] sm:bottom-[10%] lg:bottom-auto",
+    "left-[30%] top-[12%] z-10 max-w-[38%] sm:top-[10%] sm:max-w-[20%] lg:left-[40%] lg:top-[5%]",
+    "bottom-[-5%] right-[-5%] z-10 max-w-[35%] lg:max-w-[24%]",
+    "bottom-[-2%] left-[20%] z-10 max-w-[28%] sm:bottom-[-5%] sm:max-w-[20%] lg:bottom-[-10%]",
   ],
   group2: [
-    "left-[2%] top-[-5%] max-w-[30%] sm:left-[5%] sm:max-w-[18%] lg:left-[10%] lg:top-[-10%]",
-    "right-[20%] top-[-2%] max-w-[25%] sm:top-[5%] sm:max-w-[16%] lg:right-[20%] lg:top-[-10%]",
-    "right-[-5%] top-[10%] max-w-[20%] sm:max-w-[15%] lg:top-[25%]",
-    "bottom-[5%] right-[32%] max-w-[18%] sm:right-[30%] sm:max-w-[15%] lg:bottom-[5%] lg:max-w-[12%]",
+    "left-[2%] top-[-5%] max-w-[30%] sm:left-[5%] sm:max-w-[22%] lg:left-[10%] lg:top-[-10%]",
+    "right-[20%] top-[-2%] max-w-[25%] sm:top-[5%] sm:max-w-[20%] lg:right-[20%] lg:top-[-10%]",
+    "right-[-5%] top-[10%] max-w-[20%] sm:max-w-[25%] lg:top-[25%]",
+    "bottom-[5%] right-[32%] max-w-[18%] sm:right-[30%] sm:max-w-[25%] lg:bottom-[5%] lg:max-w-[12%]",
   ],
 };
 

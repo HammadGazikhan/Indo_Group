@@ -5,8 +5,10 @@ import { BiLogoFacebook, BiLogoLinkedinSquare } from "react-icons/bi";
 import { FaXTwitter } from "react-icons/fa6";
 import { RxChevronRight } from "react-icons/rx";
 import image from "../../image";
+import { theme } from "../../theme";
 
 export const CommunityImpactData = {
+  bg: true,
   heading: "Our Values  ",
   colorHeading: "That Define Us",
   description:
@@ -15,7 +17,7 @@ export const CommunityImpactData = {
   features: [
     {
       icon: {
-        src: image.Integrity,
+        src: image.AboutIcon1,
         alt: "Relume logo 1",
       },
       boldParagraph: "Integrity: ",
@@ -23,7 +25,7 @@ export const CommunityImpactData = {
     },
     {
       icon: {
-        src: image.Innovation,
+        src: image.SolarIcon5,
         alt: "Relume logo 2",
       },
       boldParagraph: "Innovation:",
@@ -31,7 +33,7 @@ export const CommunityImpactData = {
     },
     {
       icon: {
-        src: image.Sustainability,
+        src: image.AboutIcon2,
         alt: "Relume logo 3",
       },
       boldParagraph: "Sustainability:",
@@ -39,7 +41,7 @@ export const CommunityImpactData = {
     },
     {
       icon: {
-        src: image.Customer_Centric,
+        src: image.AboutIcon3,
         alt: "Relume logo 3",
       },
       boldParagraph: "Customer-Centric Approach: ",
@@ -84,7 +86,12 @@ export const TimelineData = {
       },
       secondaryButton: {
         title: "Contact Us",
-        iconRight: <RxChevronRight className='ms-1 text-red-600 size-4' />,
+        iconRight: (
+          <RxChevronRight
+            style={{ color: theme.colors.border }}
+            className='  size-5'
+          />
+        ),
         route: "/contact",
       },
       image: {
@@ -104,7 +111,12 @@ export const TimelineData = {
       },
       secondaryButton: {
         title: "Contact Us",
-        iconRight: <RxChevronRight className='ms-1 text-red-600 size-4' />,
+        iconRight: (
+          <RxChevronRight
+            style={{ color: theme.colors.border }}
+            className='  size-5'
+          />
+        ),
         route: "/contact",
       },
       image: {
@@ -123,7 +135,12 @@ export const TimelineData = {
       },
       secondaryButton: {
         title: "Contact Us",
-        iconRight: <RxChevronRight className='ms-1 text-red-600 size-4' />,
+        iconRight: (
+          <RxChevronRight
+            style={{ color: theme.colors.border }}
+            className='  size-5'
+          />
+        ),
         route: "/contact",
       },
       image: {
@@ -142,7 +159,12 @@ export const TimelineData = {
       },
       secondaryButton: {
         title: "Contact Us",
-        iconRight: <RxChevronRight className='ms-1 text-red-600 size-4' />,
+        iconRight: (
+          <RxChevronRight
+            style={{ color: theme.colors.border }}
+            className='  size-5'
+          />
+        ),
         route: "/contact",
       },
       image: {
@@ -168,7 +190,7 @@ export const TeamData = {
       name: "Mr. Naeem Ayaz Sundke",
       jobTitle: "Founder and Chairperson, Indo Group & Indo Electricals",
       description:
-        "From humble beginnings in electrical repair, Mr. Sundke has established Indo Electricals, setting the foundation for INDO Group's growth across various sectors.",
+        "Naeem Sundke started his financial career at a very young age working in a shop repairing radios and TVs. Then worked as an electrical labour. After gaining experience he finally established his own electrical contracting company called Indo Electricals. As years passed by the company grew and expanded and started doing business in different sectors.",
       socialLinks: [
         { href: "#", icon: <BiLogoLinkedinSquare className='size-6' /> },
         { href: "#", icon: <FaXTwitter className='size-6 p-0.5' /> },
@@ -183,7 +205,7 @@ export const TeamData = {
       name: "Mr. Iftekar Ayaz Sundke",
       jobTitle: "Proprietor of Indo Manpower, Partner in Indo Construction",
       description:
-        "An experienced software engineer, Mr. Iftekar has expanded INDO Group’s services, strengthening manpower and construction offerings.",
+        "Started his career as a software engineer. Worked as a soft engineer in Saudi Arabia for 5 years while his elder brother was setting up a new business. After 5 years he returned to India to join his brother's business and took control over a newly established sector of the indo group - Indo Manpower. Under his control Indo Manpower progressed to become one of Maharashtra's leading Manpower Supplier working for MSEDCL.",
       socialLinks: [
         { href: "#", icon: <BiLogoLinkedinSquare className='size-6' /> },
         { href: "#", icon: <FaXTwitter className='size-6 p-0.5' /> },
@@ -211,9 +233,9 @@ export const TeamData = {
         alt: "Relume placeholder image 4",
       },
       name: "Miss Azra N. Sundke",
-      jobTitle: "Manager, Indo energy Solutions",
+      jobTitle: "Proprietor, Indo Energy Solutions",
       description:
-        "Passionate about clean energy, Miss Azra oversees solar projects, promoting green solutions for a sustainable future.",
+        "Miss Azra, a BE graduate in Electrical Engineering, is Passionate about clean energy, Miss Azra oversees solar projects, promoting green solutions for a sustainable future.",
       socialLinks: [
         { href: "#", icon: <BiLogoLinkedinSquare className='size-6' /> },
         { href: "#", icon: <FaXTwitter className='size-6 p-0.5' /> },
@@ -235,13 +257,18 @@ export const expertiseData = {
       description:
         "Transforming Pune’s Peth areas into modern living spaces with sustainable building practices.",
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        src: image.AboutSector1,
         alt: "Relume placeholder image 1",
       },
       button: [
         {
           title: "View More",
-          iconRight: <RxChevronRight className='ms-1 text-red-600 size-4' />,
+          iconRight: (
+            <RxChevronRight
+              style={{ color: theme.colors.border }}
+              className='  size-5'
+            />
+          ),
           route: "/services/indo-construction&developers",
         },
       ],
@@ -251,13 +278,18 @@ export const expertiseData = {
       description:
         "Residential and commercial solar installations promoting clean energy and reduced utility costs.",
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        src: image.AboutSector2,
         alt: "Relume placeholder image 1",
       },
       button: [
         {
           title: "View More",
-          iconRight: <RxChevronRight className='ms-1 text-red-600 size-4' />,
+          iconRight: (
+            <RxChevronRight
+              style={{ color: theme.colors.border }}
+              className='  size-5'
+            />
+          ),
           route: "/services/indo-energy-solutions",
         },
       ],
@@ -267,13 +299,18 @@ export const expertiseData = {
       description:
         "Comprehensive electrical services, from transformers to low/high-tension installations.",
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        src: image.AboutSector3,
         alt: "Relume placeholder image 1",
       },
       button: [
         {
           title: "View More",
-          iconRight: <RxChevronRight className='ms-1 text-red-600 size-4' />,
+          iconRight: (
+            <RxChevronRight
+              style={{ color: theme.colors.border }}
+              className='  size-5'
+            />
+          ),
           route: "/services/indo-electricals",
         },
       ],
@@ -283,13 +320,18 @@ export const expertiseData = {
       description:
         "Skilled and dedicated workforce supply for Maharashtra’s electrical sector, with a focus on MSEDCL contracts.",
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        src: image.AboutSector4,
         alt: "Relume placeholder image 1",
       },
       button: [
         {
           title: "View More",
-          iconRight: <RxChevronRight className='ms-1 text-red-600 size-4' />,
+          iconRight: (
+            <RxChevronRight
+              style={{ color: theme.colors.border }}
+              className='  size-5'
+            />
+          ),
           route: "/services/indo-manpower",
         },
       ],
@@ -311,7 +353,7 @@ export const FeatureSectionData = {
       description:
         "Through Indo Solar Solutions, we help clients access subsidies and invest in renewable energy.",
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        src: image.AboutImpact1,
         alt: "Relume placeholder image 1",
       },
     },
@@ -320,12 +362,10 @@ export const FeatureSectionData = {
       heading: "Community Redevelopment",
       description:
         "Focused on transforming old buildings in Pune into modern, sustainable spaces.",
-      video: {
-        image: {
-          src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-video-thumbnail.svg",
-          alt: "Relume placeholder image 2",
-        },
-        url: "https://www.youtube.com/embed/8DKLYsikxTs?si=Ch9W0KrDWWUiCMMW",
+
+      image: {
+        src: image.AboutImpact2,
+        alt: "Relume placeholder image 2",
       },
     },
     {
@@ -334,7 +374,7 @@ export const FeatureSectionData = {
       description:
         "Supporting our workforce through timely pay, benefits and celebrations of significant milestones..",
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        src: image.AboutImpact3,
         alt: "Relume placeholder image 3",
       },
     },
@@ -357,7 +397,12 @@ export const Contactdata = {
     "Whether you have questions about our services, want to discuss a potential project or need assistance, our team at INDO Group is here to help. Reach out to us using the contact form below or find our direct contact information.",
   contacts: [
     {
-      icon: <BiEnvelope className='size-8 text-red-600' />,
+      icon: (
+        <BiEnvelope
+          style={{ color: theme.colors.border }}
+          className='size-8 '
+        />
+      ),
       title: "Email",
       description: "",
       link: {
@@ -366,7 +411,9 @@ export const Contactdata = {
       },
     },
     {
-      icon: <BiPhone className='size-8 text-red-600' />,
+      icon: (
+        <BiPhone style={{ color: theme.colors.border }} className='size-8 ' />
+      ),
       title: "Phone",
       description: "",
       link: {
@@ -375,7 +422,9 @@ export const Contactdata = {
       },
     },
     {
-      icon: <BiMap className='size-8 text-red-600' />,
+      icon: (
+        <BiMap style={{ color: theme.colors.border }} className='size-8 ' />
+      ),
       title: "Office",
       description:
         "Shop No.2, Indo Homes, 367 B, Mahatma Phule Peth, Pune, Maharashtra - 411042",
@@ -383,7 +432,7 @@ export const Contactdata = {
         title: "Get Directions",
         variant: "link",
         size: "link",
-        iconRight: <RxChevronRight className='text-red-600' />,
+        iconRight: <RxChevronRight style={{ color: theme.colors.border }} />,
       },
     },
   ],

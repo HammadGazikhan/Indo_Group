@@ -3,8 +3,10 @@
 import { BiEnvelope, BiMap, BiPhone } from "react-icons/bi";
 import { RxChevronRight } from "react-icons/rx";
 import image from "../../../image";
+import { theme } from "../../../theme";
 
 export const ConstructionData = {
+  bg: false,
   tagline: "Transforming Communities, Building the Future",
   heading: "Indo ",
   colorHeading: "Construction & Developers",
@@ -12,15 +14,15 @@ export const ConstructionData = {
     "Indo Construction and Developers is committed to revitalizing Pune’s historic areas with modern, sustainable infrastructure. Our projects blend quality, innovation, and community focus, transforming neighborhoods while preserving their unique character.",
   buttons: [{ title: "Get in touch", route: "/contact" }],
   firstImage: {
-    src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-dim.png",
+    src: image.ConHeader3,
     alt: "Relume placeholder image 1",
   },
   secondImage: {
-    src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+    src: image.ConHeader1,
     alt: "Relume placeholder image 2",
   },
   thirdImage: {
-    src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape-dim.png",
+    src: image.ConHeader2,
     alt: "Relume placeholder image 3",
   },
 };
@@ -33,7 +35,7 @@ export const servicesData = {
   sections: [
     {
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
+        src: image.ConServices2,
         alt: "Relume placeholder image 1",
       },
       heading: "Residential Buildings",
@@ -42,7 +44,7 @@ export const servicesData = {
     },
     {
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
+        src: image.ConServices1,
         alt: "Relume placeholder image 2",
       },
       heading: "Commercial Spaces",
@@ -51,7 +53,7 @@ export const servicesData = {
     },
     {
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
+        src: image.ConServices3,
         alt: "Relume placeholder image 3",
       },
       heading: "Redevelopment Projects",
@@ -68,12 +70,52 @@ export const serviceGalleryData = {
     "Indo Construction and Developers is currently working on exciting projects that redefine urban living. Our projects INDO HOMES and PATEL ACORN are examples of our commitment to quality, functionality and sustainability.",
   images: [
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+      src: image.HmClConstruction,
       alt: "Relume placeholder image 1",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-      alt: "Relume placeholder image 2",
+      src: image.HmClConstruction1,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.HmClConstruction2,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.HmClConstruction3,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.HmClConstruction4,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.HmClConstruction5,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.HmClConstruction6,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.HmClConstruction7,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.HmClConstruction8,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.HmClConstruction9,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.HmClConstruction10,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.HmClConstruction11,
+      alt: "Relume placeholder image 1",
     },
   ],
   subTitle: "INDO HOMES",
@@ -93,7 +135,7 @@ export const expertiseData = {
       description:
         "Modern elevators with automatic doors, ensuring easy and safe access for all residents.",
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        src: image.ConAmenities1,
         alt: "Relume placeholder image 1",
       },
     },
@@ -102,7 +144,7 @@ export const expertiseData = {
       description:
         "Reliable backup systems for uninterrupted access to essential services during power outages.",
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        src: image.ConAmenities2,
         alt: "Relume placeholder image 1",
       },
     },
@@ -111,7 +153,7 @@ export const expertiseData = {
       description:
         "Solar panels provide energy to common areas, reducing electricity costs and supporting sustainable practices.",
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        src: image.ConAmenities3,
         alt: "Relume placeholder image 1",
       },
     },
@@ -120,7 +162,7 @@ export const expertiseData = {
       description:
         "Green spaces on the terrace offer a peaceful retreat and play area for children.",
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        src: image.ConAmenities4,
         alt: "Relume placeholder image 1",
       },
     },
@@ -129,7 +171,7 @@ export const expertiseData = {
       description:
         "Efficient drainage systems that address one of Pune’s common challenges, helping prevent flooding and water accumulation.",
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        src: image.ConAmenities5,
         alt: "Relume placeholder image 1",
       },
     },
@@ -138,7 +180,7 @@ export const expertiseData = {
       description:
         "Round-the-clock CCTV monitoring and secure access points to ensure the safety and peace of mind of all residents.",
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        src: image.ConAmenities6,
         alt: "Relume placeholder image 1",
       },
     },
@@ -209,7 +251,7 @@ export const CapabilitiesData = {
   ],
 };
 export const CommunityImpactData = {
-  bg: true,
+  bg: false,
   width: true,
   tagline: "Our Vision for Pune’s Future",
   heading: "A Vision for Inclusive & ",
@@ -264,7 +306,12 @@ export const Contactdata = {
     "Whether you’re looking to invest in real estate or redevelop property, Indo Construction and Developers is here to make your vision a reality. Contact us today to discuss how we can work together to shape the future.",
   contacts: [
     {
-      icon: <BiEnvelope className='size-8 text-red-600' />,
+      icon: (
+        <BiEnvelope
+          style={{ color: theme.colors.border }}
+          className='size-8 '
+        />
+      ),
       title: "Email",
       description: "",
       link: {
@@ -273,7 +320,9 @@ export const Contactdata = {
       },
     },
     {
-      icon: <BiPhone className='size-8 text-red-600' />,
+      icon: (
+        <BiPhone style={{ color: theme.colors.border }} className='size-8 ' />
+      ),
       title: "Phone",
       description: "+91 7378-666-783",
       link: {
@@ -282,7 +331,9 @@ export const Contactdata = {
       },
     },
     {
-      icon: <BiMap className='size-8 text-red-600' />,
+      icon: (
+        <BiMap style={{ color: theme.colors.border }} className='size-8 ' />
+      ),
       title: "Office",
       description:
         "Office No. 02, Indo Homes, 367B Mahatma Phule Peth, Pune, Maharashtra - 411042.",
@@ -290,7 +341,12 @@ export const Contactdata = {
         title: "Get Directions",
         variant: "link",
         size: "link",
-        iconRight: <RxChevronRight className='text-red-600 size-4' />,
+        iconRight: (
+          <RxChevronRight
+            style={{ color: theme.colors.border }}
+            className=' size-4'
+          />
+        ),
       },
     },
   ],

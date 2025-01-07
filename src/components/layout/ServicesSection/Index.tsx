@@ -84,15 +84,24 @@ export const ServicesCards = (props: Layout236Props) => {
         </div>
         <div className='grid grid-cols-1 items-start gap-y-12 md:grid-cols-3 md:gap-x-8 md:gap-y-16 lg:gap-x-12'>
           {sections.map((section, index) => (
-            <div className='text-center' key={index}>
+            <div
+              className='text-center flex flex-col items-center '
+              key={index}
+            >
               <div className='rb-6 mb-6 md:mb-8'>
-                <img src={section.image.src} alt={section.image.alt} />
+                <img
+                  src={section.image.src}
+                  className='rounded-md'
+                  alt={section.image.alt}
+                />
               </div>
               <h3
                 style={{
                   fontFamily: theme.typography.fontFamily,
                   fontWeight: theme.typography.fontWeight.medium,
-                  color: theme.colors.dark,
+                  background: theme.colors.gradient,
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
                 }}
                 className='mb-3 text-xl leading-[20px]  md:mb-4 lg:text-2xl'
               >

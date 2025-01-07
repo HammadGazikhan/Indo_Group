@@ -3,8 +3,10 @@
 import image from "../../../image";
 import { BiEnvelope, BiMap, BiPhone } from "react-icons/bi";
 import { RxChevronRight } from "react-icons/rx";
+import { theme } from "../../../theme";
 
 export const ElectricalData = {
+  bg: true,
   tagline: "Your Trusted Partner in Electrical Solutions",
   heading: "Indo ",
   colorHeading: "Electricals",
@@ -12,15 +14,15 @@ export const ElectricalData = {
     "Since 1996, Indo Electricals has been dedicated to delivering quality-driven, reliable electrical services to industrial, commercial & residential clients. With over two decades of experience, we ensure efficiency, safety & customer satisfaction in every project we undertake.",
   buttons: [{ title: "Get in touch", route: "/contact" }],
   firstImage: {
-    src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-dim.png",
+    src: image.ElHeader1,
     alt: "Relume placeholder image 1",
   },
   secondImage: {
-    src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+    src: image.ElHeader3,
     alt: "Relume placeholder image 2",
   },
   thirdImage: {
-    src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape-dim.png",
+    src: image.ElHeader2,
     alt: "Relume placeholder image 3",
   },
 };
@@ -33,7 +35,7 @@ export const servicesData = {
   sections: [
     {
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
+        src: image.ElServices1,
         alt: "Relume placeholder image 1",
       },
       heading: "Transformer Installations",
@@ -42,7 +44,7 @@ export const servicesData = {
     },
     {
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
+        src: image.ElServices2,
         alt: "Relume placeholder image 2",
       },
       heading: "Feeder Pillar Installations",
@@ -51,7 +53,7 @@ export const servicesData = {
     },
     {
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
+        src: image.ElServices3,
         alt: "Relume placeholder image 3",
       },
       heading: "Overhead & Underground Cables",
@@ -60,7 +62,7 @@ export const servicesData = {
     },
     {
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
+        src: image.ElServices4,
         alt: "Relume placeholder image 1",
       },
       heading: "Internal & External Wiring",
@@ -69,7 +71,7 @@ export const servicesData = {
     },
     {
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
+        src: image.ElServices5,
         alt: "Relume placeholder image 2",
       },
       heading: "Meter Sanctioning and Installation",
@@ -78,7 +80,7 @@ export const servicesData = {
     },
     {
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
+        src: image.ElServices6,
         alt: "Relume placeholder image 3",
       },
       heading: "Street Lighting Installations",
@@ -95,12 +97,64 @@ export const serviceGalleryData = {
     "Indo Electricals has successfully completed a variety of projects that showcase our expertise and dedication to quality. Here’s a look at some of our most impactful projects.",
   images: [
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+      src: image.Electrical2,
       alt: "Relume placeholder image 1",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-      alt: "Relume placeholder image 2",
+      src: image.Electrical3,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.Electrical4,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.Electrical5,
+      alt: "Relume placeholer image 1",
+    },
+    {
+      src: image.Electrical6,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.Electrical7,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.Electrical8,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.Electrical9,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.Electrical10,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.Electrical11,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.Electrical2,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.Electrical3,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.Electrical4,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.Electrical5,
+      alt: "Relume placeholder image 1",
+    },
+    {
+      src: image.Electrical16,
+      alt: "Relume placeholder image 1",
     },
   ],
   subTitle: "High-Tension Cable Installation for MSEDCL",
@@ -115,7 +169,12 @@ export const Contactdata = {
     "Whether you’re looking for reliable electrical installations or consulting services, our team is here to help. Get in touch to discuss how Indo Electricals can add value to your project.",
   contacts: [
     {
-      icon: <BiEnvelope className='size-8 text-red-600' />,
+      icon: (
+        <BiEnvelope
+          style={{ color: theme.colors.border }}
+          className='size-8 '
+        />
+      ),
       title: "Email",
       description: "",
       link: {
@@ -124,7 +183,9 @@ export const Contactdata = {
       },
     },
     {
-      icon: <BiPhone className='size-8 text-red-600' />,
+      icon: (
+        <BiPhone style={{ color: theme.colors.border }} className='size-8 ' />
+      ),
       title: "Phone",
       description: "+91 9822-054-197",
       link: {
@@ -133,7 +194,9 @@ export const Contactdata = {
       },
     },
     {
-      icon: <BiMap className='size-8 text-red-600' />,
+      icon: (
+        <BiMap style={{ color: theme.colors.border }} className='size-8 ' />
+      ),
       title: "Office",
       description:
         "Office No. 103+104, Landmark Building, 490/491 Nana Peth, Pune, Maharashtra - 411002.",
@@ -141,7 +204,12 @@ export const Contactdata = {
         title: "Get Directions",
         variant: "link",
         size: "link",
-        iconRight: <RxChevronRight className='text-red-600 size-4' />,
+        iconRight: (
+          <RxChevronRight
+            style={{ color: theme.colors.border }}
+            className=' size-4'
+          />
+        ),
       },
     },
   ],
@@ -190,7 +258,7 @@ export const CapabilitiesData = {
     },
     {
       icon: {
-        src: image.Manpower,
+        src: image.UserThreeElectrical,
         alt: "Relume logo 3",
       },
       heading: "Certified Professionals",

@@ -3,6 +3,7 @@
 import { BiEnvelope, BiMap, BiPhone } from "react-icons/bi";
 import { RxChevronRight } from "react-icons/rx";
 import image from "../../../image";
+import { theme } from "../../../theme";
 
 export const ManpowerHeaderData = {
   tagline: "Skilled Manpower for Power Sector",
@@ -13,38 +14,38 @@ export const ManpowerHeaderData = {
   buttons: [{ title: "Get in touch", route: "/contact" }],
   group1Images: [
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+      src: image.MPHeader1,
       alt: "Relume placeholder image 1",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+      src: image.MPHeader3,
       alt: "Relume placeholder image 2",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+      src: image.MPHeader2,
       alt: "Relume placeholder image 3",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+      src: image.MPHeader4,
       alt: "Relume placeholder image 4",
     },
   ],
   group2Images: [
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
-      alt: "Relume placeholder image 5",
+      src: image.MPHeader5,
+      alt: "Relume placeholder image 1",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-      alt: "Relume placeholder image 6",
+      src: image.MPHeader6,
+      alt: "Relume placeholder image 2",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
-      alt: "Relume placeholder image 7",
+      src: image.MPHeader7,
+      alt: "Relume placeholder image 3",
     },
     {
-      src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
-      alt: "Relume placeholder image 8",
+      src: image.MPHeader8,
+      alt: "Relume placeholder image 4",
     },
   ],
 };
@@ -57,7 +58,7 @@ export const servicesData = {
   sections: [
     {
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
+        src: image.MPService1,
         alt: "Relume placeholder image 1",
       },
       heading: "ITI Graduates",
@@ -67,7 +68,7 @@ export const servicesData = {
 
     {
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
+        src: image.MPService2,
         alt: "Relume placeholder image 3",
       },
       heading: "Diploma Holders",
@@ -76,7 +77,7 @@ export const servicesData = {
     },
     {
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
+        src: image.MPService3,
         alt: "Relume placeholder image 1",
       },
       heading: "Engineers",
@@ -85,7 +86,7 @@ export const servicesData = {
     },
     {
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
+        src: image.MPService4,
         alt: "Relume placeholder image 2",
       },
       heading: "Unskilled Labour",
@@ -94,7 +95,7 @@ export const servicesData = {
     },
     {
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
+        src: image.MPService5,
         alt: "Relume placeholder image 3",
       },
       heading: "Site Supervisors",
@@ -103,7 +104,7 @@ export const servicesData = {
     },
     {
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
+        src: image.MPService6,
         alt: "Relume placeholder image 2",
       },
       heading: "Electricians",
@@ -126,7 +127,7 @@ export const expertiseData = {
       description:
         "Decades-long partnership with MSEDCL highlights our reliability and expertise.",
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        src: image.MPAmenities1,
         alt: "Relume placeholder image 1",
       },
     },
@@ -135,7 +136,7 @@ export const expertiseData = {
       description:
         "Each member is selected for their technical skills and commitment to quality.",
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        src: image.MPAmenities2,
         alt: "Relume placeholder image 1",
       },
     },
@@ -144,7 +145,7 @@ export const expertiseData = {
       description:
         "Our rigorous selection and training ensure consistent performance across all roles.",
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        src: image.MPAmenities3,
         alt: "Relume placeholder image 1",
       },
     },
@@ -153,7 +154,7 @@ export const expertiseData = {
       description:
         "We tailor our services to match the specific staffing needs of each client.",
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        src: image.MPAmenities4,
         alt: "Relume placeholder image 1",
       },
     },
@@ -313,7 +314,12 @@ export const Contactdata = {
     "Whether you need skilled engineers or unskilled support staff, Indo Manpower can connect you with the professionals you need to succeed. Get in touch with us to learn more about our workforce solutions.",
   contacts: [
     {
-      icon: <BiEnvelope className='size-8 text-red-600' />,
+      icon: (
+        <BiEnvelope
+          style={{ color: theme.colors.border }}
+          className='size-8 '
+        />
+      ),
       title: "Email",
       description: "",
       link: {
@@ -322,7 +328,9 @@ export const Contactdata = {
       },
     },
     {
-      icon: <BiPhone className='size-8 text-red-600' />,
+      icon: (
+        <BiPhone style={{ color: theme.colors.border }} className='size-8 ' />
+      ),
       title: "Phone",
       description: "+91 9970-392-823",
       link: {
@@ -331,7 +339,9 @@ export const Contactdata = {
       },
     },
     {
-      icon: <BiMap className='size-8 text-red-600' />,
+      icon: (
+        <BiMap style={{ color: theme.colors.border }} className='size-8 ' />
+      ),
       title: "Office",
       description:
         "Office No. 103+104, Landmark Building, 490/491 Nana Peth, Pune, Maharashtra - 411002.",
@@ -339,7 +349,12 @@ export const Contactdata = {
         title: "Get Directions",
         variant: "link",
         size: "link",
-        iconRight: <RxChevronRight className='text-red-600 size-4' />,
+        iconRight: (
+          <RxChevronRight
+            style={{ color: theme.colors.border }}
+            className=' size-4'
+          />
+        ),
       },
     },
   ],

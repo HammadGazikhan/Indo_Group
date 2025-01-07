@@ -98,15 +98,19 @@ export const ContactLocation = (props: Layout499Props) => {
                 key={index}
                 onClick={() => setActiveTab(index)}
                 className={clsx("cursor-pointer py-4 pl-6 md:pl-8", {
-                  "border-l-2 border-black": activeTab === index,
-                  "border-l-2 border-transparent": activeTab !== index,
+                  "border-l-4 md:border-l-8 border-[#EEE8A9]":
+                    activeTab === index,
+                  "border-l-4 md:border-l-8 border-transparent":
+                    activeTab !== index,
                 })}
               >
                 <h3
                   style={{
                     fontWeight: theme.typography.fontWeight.bold,
                     fontFamily: theme.typography.fontFamily,
-                    color: theme.colors.dark,
+                    background: theme.colors.gradient,
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
                   }}
                   className='text-[24px] flex items-center md:mb-2 md:text-[30px] md:leading-[1.3] lg:text-[32px]'
                 >

@@ -11,7 +11,6 @@ import {
   DialogTrigger,
   DialogPortal,
   DialogOverlay,
-  useMediaQuery,
 } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { FaArrowRightLong, FaCirclePlay } from "react-icons/fa6";
@@ -20,6 +19,8 @@ import { theme } from "../../../constants/theme";
 import { FiPlus } from "react-icons/fi";
 import PrimaryButton from "../../inputs/primaryButton/Index";
 import { Link } from "react-router-dom";
+import image from "../../../constants/image";
+import { useMediaQuery } from "@mui/system";
 
 type ImageProps = {
   src: string;
@@ -67,12 +68,27 @@ export const FeatureSection = (props: Layout499Props) => {
 
     return () => clearInterval(interval); // Cleanup interval on component unmount
   }, [tabs.length]);
+
   return (
     <section
       id='relume'
-      style={{ background: reverse ? theme.colors.background : "" }}
-      className='px-[5%] py-16 md:py-24 lg:py-28'
+      style={{
+        background: reverse ? theme.colors.background : " ",
+        backgroundSize: "cover", // Ensure the background image covers the entire area
+        backgroundRepeat: "no-repeat", // Prevent the background image from repeating
+        backgroundPosition: "center", // Center the background image
+      }}
+      className='px-[5%] relative py-16 md:py-24 lg:py-28'
     >
+      <div
+        style={{
+          backgroundImage: `url(${
+            md ? image.BgFeaturedSmall : image.BgFeatured
+          })`,
+        }}
+        className='absolute bg-cover  bg-center object-fill lg:w-[75%] lg:h-full lg:right-16 w-[100%] h-[100%] -bottom-24 lg:bottom-0 right-0 -z-10   '
+      ></div>
+
       <div className='container'>
         <div className='mx-auto mb-12 w-full max-w-xl text-center md:mb-18 md:w-auto lg:mb-20'>
           <p
@@ -121,7 +137,7 @@ export const FeatureSection = (props: Layout499Props) => {
           </p>
         </div>
         <div
-          className={`grid grid-cols-1 items-center gap-y-12  lg:grid-cols-2
+          className={`grid grid-cols-1  items-center gap-y-12  lg:grid-cols-2
            md:gap-x-12 lg:gap-x-20`}
         >
           <div
@@ -134,8 +150,10 @@ export const FeatureSection = (props: Layout499Props) => {
                 key={index}
                 onClick={() => setActiveTab(index)}
                 className={clsx("cursor-pointer py-4 pl-6 md:pl-8", {
-                  "border-l-2 border-black": activeTab === index,
-                  "border-l-2 border-transparent": activeTab !== index,
+                  "border-l-4 md:border-l-8 border-[#EEE8A9]":
+                    activeTab === index,
+                  "border-l-4 md:border-l-8 border-transparent":
+                    activeTab !== index,
                 })}
               >
                 {reverse ? (
@@ -205,7 +223,7 @@ export const FeatureSection = (props: Layout499Props) => {
             )}
           </div>
           <div
-            className={`max-size-full flex items-center justify-center overflow-hidden ${
+            className={`max-size-full flex items-center justify-center  overflow-hidden ${
               reverse ? "order-2 lg:order-1" : "order-1 lg:order-2"
             }`}
           >
@@ -224,7 +242,7 @@ export const FeatureSection = (props: Layout499Props) => {
                       <img
                         src={tab.image.src}
                         alt={tab.image.alt}
-                        className={`size-full ${
+                        className={`size-full rounded-lg ${
                           reverse ? "" : "lg:h-[780px]"
                         }  object-cover`}
                       />
@@ -234,7 +252,7 @@ export const FeatureSection = (props: Layout499Props) => {
                         <DialogTrigger asChild>
                           <div className='relative flex w-full items-center justify-center'>
                             <img
-                              className='size-full object-cover'
+                              className='size-full object-cover rounded-lg'
                               src={tab.video.image.src}
                               alt={tab.video.image.alt}
                             />

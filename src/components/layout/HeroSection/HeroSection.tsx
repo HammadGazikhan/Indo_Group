@@ -6,6 +6,7 @@ import { useMediaQuery } from "@mui/system";
 import PrimaryButton from "../../inputs/primaryButton/Index";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import image from "../../../constants/image";
 
 type ImageProps = {
   src: string;
@@ -32,19 +33,40 @@ export const Header = (props: Header76Props) => {
   return (
     <section
       id='relume'
-      style={{ background: theme.colors.background }}
-      className=' grid grid-cols-1 gap-y-16 pt-16 md:grid-flow-row md:pt-24 lg:grid-flow-col lg:grid-cols-2 lg:items-center lg:pt-0'
+      style={{
+        backgroundImage: `url(${image.BackgroundImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+      className='relative grid grid-cols-1 gap-y-16 pt-16 md:grid-flow-row md:pt-24 lg:grid-flow-col lg:grid-cols-2 lg:items-center lg:pt-0'
     >
-      <div className='mx-[5%] max-w-[40rem] justify-self-start lg:ml-[5vw] lg:mr-20 lg:justify-self-end'>
+      {/* Light Effect Layer */}
+      <div
+        className='absolute top-0 inset-0 pointer-events-none'
+        style={{
+          background:
+            "radial-gradient(circle at 40% -10%, rgba(231, 253, 255, 0.8), transparent 35%)", // Adjusted position to 50% 10%
+          mixBlendMode: "screen", // Use "screen" to brighten the background image
+        }}
+      ></div>
+      <div
+        className='absolute bottom-0 z-10 inset-0 pointer-events-none'
+        style={{
+          background:
+            "radial-gradient(circle at 100% 100%, rgba(231, 253, 255, 0.8), transparent 30%)", // Adjusted position to 50% 10%
+          mixBlendMode: "screen", // Use "screen" to brighten the background image
+        }}
+      ></div>
+
+      <div className='mx-[5%]  max-w-[40rem] justify-self-start lg:ml-[5vw] lg:mr-20 lg:justify-self-end'>
         <p
           className='uppercase mb-2 text-sm md:text-md mt-5 md:mt-0'
           style={{
             // fontSize: theme.typography.fontSize.small,
             fontFamily: theme.typography.fontFamily,
             fontWeight: theme.typography.fontWeight.regular,
-            background: theme.colors.gradient,
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
+
+            color: theme.colors.heading,
           }}
         >
           {tagline}
@@ -52,7 +74,8 @@ export const Header = (props: Header76Props) => {
         <h1
           style={{
             // fontSize: theme.typography.fontSize.xxLarge,
-            color: theme.colors.dark,
+            color: theme.colors.secondaryHeading,
+
             fontFamily: theme.typography.fontFamilyHeading,
           }}
           className='mb-5 text-[2.2rem] md:text-[2.8rem] leading-8 md:leading-[42px]   font-bold md:mb-6  lg:text-[3.2rem] '
@@ -60,9 +83,7 @@ export const Header = (props: Header76Props) => {
           {heading}
           <span
             style={{
-              background: theme.colors.gradient,
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
+              color: theme.colors.heading,
             }}
           >
             {" "}
@@ -75,7 +96,7 @@ export const Header = (props: Header76Props) => {
             fontFamily: theme.typography.fontFamily,
             // fontSize: theme.typography.fontSize.base,
             fontWeight: theme.typography.fontWeight.regular,
-            color: theme.colors.primary,
+            color: theme.colors.secondaryHeading,
           }}
         >
           {description}
@@ -85,10 +106,13 @@ export const Header = (props: Header76Props) => {
             <Link to={button.route}>
               <PrimaryButton
                 sx={{
+                  background: theme.colors.heading,
+                  color: "#0E7490",
                   width: md ? "160px" : "193px",
                   height: md ? "45px" : "51px",
                   fontSize: md ? "18px" : "20px",
                   fontWeight: theme.typography.fontWeight.medium,
+                  borderRadius: "50px",
                 }}
                 key={index}
               >
@@ -96,7 +120,7 @@ export const Header = (props: Header76Props) => {
                 <FaArrowRightLong
                   style={{
                     marginLeft: "2px",
-                    color: theme.colors.secondary,
+                    color: "#0E7490",
                   }}
                 />
               </PrimaryButton>

@@ -15,6 +15,7 @@ import PrimaryButton from "../../inputs/primaryButton/Index";
 import { FaArrowRightLong } from "react-icons/fa6";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
+import image from "../../../constants/image";
 type ImageProps = {
   src: string;
   alt?: string;
@@ -124,7 +125,7 @@ export const ContactUs = (props: Contact7Props) => {
                   Name{" "}
                   <span
                     style={{
-                      background: theme.colors.gradient,
+                      background: "red",
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                     }}
@@ -136,8 +137,11 @@ export const ContactUs = (props: Contact7Props) => {
                   type='text'
                   id='name'
                   placeholder='Enter name'
-                  className='w-full rounded bg-[#FEE2E263] focus:shadow-medium focus:bg-transparent border-[2px]'
-                  style={{ borderColor: theme.colors.border }}
+                  className='w-full rounded   focus:shadow-medium focus:bg-transparent border-[2px]'
+                  style={{
+                    borderColor: theme.colors.border,
+                    background: theme.colors.fieldBackground,
+                  }}
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
@@ -155,7 +159,7 @@ export const ContactUs = (props: Contact7Props) => {
                   Email{" "}
                   <span
                     style={{
-                      background: theme.colors.gradient,
+                      background: "red",
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                     }}
@@ -167,8 +171,11 @@ export const ContactUs = (props: Contact7Props) => {
                   type='email'
                   placeholder='Enter email'
                   id='email'
-                  className='w-full rounded bg-[#FEE2E263] focus:shadow-medium focus:bg-transparent border-[2px]'
-                  style={{ borderColor: theme.colors.border }}
+                  className='w-full rounded  focus:shadow-medium focus:bg-transparent border-[2px]'
+                  style={{
+                    borderColor: theme.colors.border,
+                    background: theme.colors.fieldBackground,
+                  }}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -186,7 +193,7 @@ export const ContactUs = (props: Contact7Props) => {
                   Phone No{" "}
                   <span
                     style={{
-                      background: theme.colors.gradient,
+                      background: "red",
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                     }}
@@ -198,8 +205,11 @@ export const ContactUs = (props: Contact7Props) => {
                   type='number'
                   id='phone_number'
                   placeholder='Enter phone number'
-                  className='w-full rounded bg-[#FEE2E263] focus:shadow-medium focus:bg-transparent border-[2px]'
-                  style={{ borderColor: theme.colors.border }}
+                  className='w-full rounded  focus:shadow-medium focus:bg-transparent border-[2px]'
+                  style={{
+                    borderColor: theme.colors.border,
+                    background: theme.colors.fieldBackground,
+                  }}
                   value={phone_number}
                   onChange={(e) => setPhone_number(e.target.value)}
                 />
@@ -217,7 +227,7 @@ export const ContactUs = (props: Contact7Props) => {
                   Services{" "}
                   <span
                     style={{
-                      background: theme.colors.gradient,
+                      background: "red",
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                     }}
@@ -227,8 +237,11 @@ export const ContactUs = (props: Contact7Props) => {
                 </Label>
                 <select
                   id='services'
-                  className='w-full h-[48px] rounded bg-[#FEE2E263] active:border-[red] focus:shadow-medium focus:bg-transparent border-[2px]'
-                  style={{ borderColor: theme.colors.border }}
+                  className='w-full h-[48px] rounded  active:border-[red] focus:shadow-medium focus:bg-transparent border-[2px]'
+                  style={{
+                    borderColor: theme.colors.border,
+                    background: theme.colors.fieldBackground,
+                  }}
                   value={selectedService}
                   onChange={(e) => setSelectedService(e.target.value)}
                 >
@@ -257,7 +270,7 @@ export const ContactUs = (props: Contact7Props) => {
                 Message{" "}
                 <span
                   style={{
-                    background: theme.colors.gradient,
+                    background: "red",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                   }}
@@ -268,8 +281,11 @@ export const ContactUs = (props: Contact7Props) => {
               <Textarea
                 id='message'
                 placeholder='Type your message...'
-                style={{ borderColor: theme.colors.border }}
-                className='w-full min-h-[11.25rem] bg-[#FEE2E263] focus:shadow-medium focus:bg-transparent rounded border-[2px]'
+                style={{
+                  borderColor: theme.colors.border,
+                  background: theme.colors.fieldBackground,
+                }}
+                className={`w-full min-h-[11.25rem]  focus:shadow-medium focus:bg-transparent rounded border-[2px]`}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               />
@@ -278,7 +294,11 @@ export const ContactUs = (props: Contact7Props) => {
             <div className=' flex items-center space-x-2 text-sm '>
               <Checkbox
                 id='terms'
-                className={acceptTerms ? "!bg-red-500 border-red-500" : ""}
+                style={{
+                  background: acceptTerms ? theme.colors.gradient : "",
+                  border: acceptTerms ? theme.colors.border : "",
+                }}
+                // className={acceptTerms ? "!bg-red-500 border-red-500" : ""}
                 checked={acceptTerms}
                 onCheckedChange={setAcceptTerms}
               />
@@ -299,7 +319,7 @@ export const ContactUs = (props: Contact7Props) => {
                 </a>{" "}
                 <span
                   style={{
-                    background: theme.colors.gradient,
+                    background: "red",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                   }}
@@ -345,7 +365,7 @@ export const ContactUs = (props: Contact7Props) => {
 
 export const Contact7Defaults: Contact7Props = {
   image: {
-    src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+    src: image.ContactHeader,
     alt: "Relume placeholder image",
   },
   heading: "Send Us a Message",

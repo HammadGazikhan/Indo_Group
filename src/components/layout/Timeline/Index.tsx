@@ -118,7 +118,10 @@ export const Timeline = (props: Timeline13Props) => {
           >
             <div className='absolute flex h-full w-8 flex-col items-center justify-self-start md:justify-self-auto'>
               <div className='absolute z-10 h-16 w-1 bg-gradient-to-b from-background-primary to-transparent' />
-              <div className='h-full w-[3px] bg-red-600' />
+              <div
+                style={{ background: theme.colors.gradient }}
+                className='h-full w-[3px] '
+              />
               <div className='absolute bottom-0 z-0 h-16 w-1 bg-gradient-to-b from-transparent to-background-primary' />
             </div>
             <React.Fragment>
@@ -157,7 +160,11 @@ const TimelineItem = ({
   });
 
   const backgroundColor = {
-    backgroundColor: useTransform(scrollYProgress, [1, 1], ["red", "red"]),
+    backgroundColor: useTransform(
+      scrollYProgress,
+      [1, 1],
+      [theme.colors.border, theme.colors.border]
+    ),
   };
 
   return (
@@ -247,7 +254,6 @@ const TimelineContent = ({
       <Link to={item.primaryButton.route}>
         <PrimaryButton
           sx={{
-            background: "linear-gradient(90deg, #EF4444 0%, #B91C1C 100%)",
             color: theme.colors.secondary,
             fontWeight: theme.typography.fontWeight.bold,
             height: "45px",
