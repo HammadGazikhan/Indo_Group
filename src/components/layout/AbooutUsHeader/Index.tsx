@@ -15,7 +15,7 @@ const AboutUsHeader: React.FC<Header69Props> = ({ backgroundImage }) => {
       <img
         src={backgroundImage}
         alt='Header Image'
-        className='absolute top-0 left-0 w-full h-full object-cover'
+        className='absolute top-0 left-0 w-full h-full object-cover bg-bottom  bg-no-repeat'
       />
     </header>
   );

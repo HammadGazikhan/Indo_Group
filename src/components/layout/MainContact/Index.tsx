@@ -54,10 +54,6 @@ export const ContactUs = (props: Contact7Props) => {
       toast.error("Please fill in all required fields.");
       return;
     }
-    if (!acceptTerms) {
-      toast.error("You must accept the Terms & Conditions.");
-      return;
-    }
 
     // EmailJS Configuration
     const serviceID = "service_py8eg29"; // Replace with your EmailJS service ID
@@ -82,7 +78,7 @@ export const ContactUs = (props: Contact7Props) => {
         setPhone_number("");
         setSelectedService("");
         setMessage("");
-        setAcceptTerms(false);
+        // setAcceptTerms(false);
       })
       .catch(() => {
         toast.error("Failed to send message. Please try again.");
@@ -291,7 +287,7 @@ export const ContactUs = (props: Contact7Props) => {
               />
             </div>
 
-            <div className=' flex items-center space-x-2 text-sm '>
+            {/* <div className=' flex items-center space-x-2 text-sm '>
               <Checkbox
                 id='terms'
                 style={{
@@ -327,7 +323,7 @@ export const ContactUs = (props: Contact7Props) => {
                   *
                 </span>
               </Label>
-            </div>
+            </div> */}
 
             {/* Submit Button */}
             <div className='flex justify-start'>
@@ -355,7 +351,7 @@ export const ContactUs = (props: Contact7Props) => {
           <img
             src={image.src}
             alt={image.alt}
-            className='size-full object-cover'
+            className='size-full aspect-square rounded-2xl shadow-xlarge object-cover'
           />
         </div>
       </div>

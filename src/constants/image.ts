@@ -63,10 +63,10 @@ import HomeHeader14 from "../assets/image 21.jpg";
 import HomeHeader15 from "../assets/image 22.jpg";
 import HomeHeader16 from "../assets/image 23 (1).jpg";
 import HomeAchievment1 from "../assets/image 24.jpg";
-import HomeAchievment2 from "../assets/image 25.jpg";
-import HomeAchievment3 from "../assets/image 26.jpg";
-import HomeAchievment4 from "../assets/image 27.jpg";
-import HomeManpower1 from "../assets/image 28.jpg";
+import HomeAchievment2 from "../assets/image 25.png";
+import HomeAchievment3 from "../assets/image 26.png";
+import HomeAchievment4 from "../assets/image 27.png";
+import HomeManpower1 from "../assets/image 28.png";
 import HomeManpower2 from "../assets/image 29.jpg";
 import HomeManpower3 from "../assets/image 30.jpg";
 import HomeManpower4 from "../assets/image 31.jpg";
@@ -94,10 +94,10 @@ import AboutHeader from "../assets/image 45.jpg";
 import AboutImpact1 from "../assets/image 60.jpg";
 import AboutImpact2 from "../assets/image 61.jpg";
 import AboutImpact3 from "../assets/image 62.jpg";
-import AboutSector1 from "../assets/image 56.jpg";
-import AboutSector2 from "../assets/image 57.jpg";
-import AboutSector3 from "../assets/image 58.jpg";
-import AboutSector4 from "../assets/image 59.jpg";
+import AboutSector1 from "../assets/image 56.png";
+import AboutSector2 from "../assets/image 57.png";
+import AboutSector3 from "../assets/image 58.png";
+import AboutSector4 from "../assets/image 59.png";
 import ContactHeader from "../assets/Group 17.jpg";
 import HmClConstruction from "../assets/Image.jpg";
 import HmClConstruction1 from "../assets/construction1.jpeg";
@@ -210,6 +210,14 @@ import AboutIcon3 from "../assets/AboutCrown.svg";
 import bgFeaturedPhone from "../assets/BackgroundDesignSmall.svg";
 import Logo from "../assets/Frame.svg";
 import FooterLogo from "../assets/FooterFrame.svg";
+import Established1 from "../assets/image (1).png";
+import Established2 from "../assets/image-1 (1).png";
+import Established3 from "../assets/image-2 (1).png";
+import Established4 from "../assets/image-3 (1).png";
+import SolarCeo from "../assets/SolarCeo.jpg";
+import ManpowerManager from "../assets/ManpowerManager.jpg";
+import IndoFounder from "../assets/IndoFounder.jpg";
+
 const image: Record<string, string> = {
   Logo,
   FooterLogo,
@@ -420,6 +428,13 @@ const image: Record<string, string> = {
   AboutIcon2,
   AboutIcon3,
   bgFeaturedPhone,
+  Established1,
+  Established2,
+  Established3,
+  Established4,
+  SolarCeo,
+  ManpowerManager,
+  IndoFounder,
 };
 
 export default image;

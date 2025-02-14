@@ -95,7 +95,7 @@ export const TimelineData = {
         route: "/contact",
       },
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        src: image.Established1,
         alt: "Relume placeholder image 1",
       },
     },
@@ -120,7 +120,7 @@ export const TimelineData = {
         route: "/contact",
       },
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        src: image.Established2,
         alt: "Relume placeholder image 2",
       },
     },
@@ -144,7 +144,7 @@ export const TimelineData = {
         route: "/contact",
       },
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        src: image.Established3,
         alt: "Relume placeholder image 3",
       },
     },
@@ -168,7 +168,7 @@ export const TimelineData = {
         route: "/contact",
       },
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        src: image.Established4,
         alt: "Relume placeholder image 4",
       },
     },
@@ -184,7 +184,7 @@ export const TeamData = {
   teamMembers: [
     {
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        src: image.IndoFounder,
         alt: "Relume placeholder image 1",
       },
       name: "Mr. Naeem Ayaz Sundke",
@@ -199,7 +199,7 @@ export const TeamData = {
     },
     {
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        src: image.ManpowerManager,
         alt: "Relume placeholder image 2",
       },
       name: "Mr. Iftekar Ayaz Sundke",
@@ -229,7 +229,7 @@ export const TeamData = {
     },
     {
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        src: image.SolarCeo,
         alt: "Relume placeholder image 4",
       },
       name: "Miss Azra N. Sundke",

@@ -1,69 +1,62 @@
 /** @format */
 
-import React from "react";
-import { Button, Typography } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
 import { Link } from "react-router-dom";
-import { theme } from "../../constants/theme";
+import { motion } from "framer-motion";
 
-const PageNotFound: React.FC = () => {
-  const defaulttheme = useTheme();
+const NotFoundPage = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        textAlign: "center",
-        height: "100vh",
-        backgroundColor: defaulttheme.palette.background.default,
-        color: defaulttheme.palette.text.primary,
-      }}
-    >
-      {/* Gradient-styled 404 Text */}
-      <Typography
-        variant='h1'
-        style={{
-          background: theme.colors.gradient,
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-          fontWeight: theme.typography.fontWeight.bold,
-          fontFamily: theme.typography.fontFamily,
-          marginBottom: "20px",
-        }}
+    <div className='flex items-center justify-center min-h-screen bg-gray-100 p-6'>
+      <motion.div
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className='text-center max-w-md'
       >
-        404
-      </Typography>
+        {/* Illustration */}
+        <div className='mb-8'>
+          <svg
+            viewBox='0 0 200 200'
+            className='w-40 h-40 drop-shadow-lg mx-auto'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <circle cx='100' cy='100' r='90' fill='#F0F4F8' />
+            <path
+              d='M80,120 Q100,80 120,120'
+              fill='none'
+              stroke='#139ABF'
+              strokeWidth='8'
+            />
+            <circle cx='80' cy='80' r='10' fill='#139ABF' />
+            <circle cx='120' cy='80' r='10' fill='#139ABF' />
+          </svg>
+        </div>
 
-      {/* Subtitle */}
-      <Typography
-        variant='h5'
-        style={{
-          fontWeight: theme.typography.fontWeight.medium,
-          fontFamily: theme.typography.fontFamily,
-          marginBottom: "30px",
-        }}
-      >
-        Oops! The page you're looking for doesn't exist.
-      </Typography>
+        {/* Text */}
+        <h1 className='text-7xl font-bold text-[#139ABF] drop-shadow-md'>
+          404
+        </h1>
+        <p className='text-2xl font-semibold text-gray-900 mt-2'>
+          Oops! Page not found
+        </p>
+        <p className='text-lg text-gray-600 mt-2 leading-relaxed'>
+          The page you're looking for doesn't exist or has been moved.
+        </p>
 
-      {/* Home Button */}
-      <Link to='/' style={{ textDecoration: "none" }}>
-        <Button
-          variant='contained'
-          style={{
-            background: theme.colors.gradient,
-            color: defaulttheme.palette.primary.contrastText,
-            fontWeight: theme.typography.fontWeight.medium,
-            padding: "10px 20px",
-          }}
-        >
-          Go Back to Home
-        </Button>
-      </Link>
+        {/* Button */}
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <Link
+            style={{
+              background: "linear-gradient(90deg, #0E7490 0%, #139ABF 100%)",
+            }}
+            to='/'
+            className='inline-block mt-6 px-6 py-3 hove  text-white font-semibold hover:shadow-large rounded-lg shadow-md transition-all hover:bg-indigo-700'
+          >
+            Go Back Home
+          </Link>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };
 
-export default PageNotFound;
+export default NotFoundPage;

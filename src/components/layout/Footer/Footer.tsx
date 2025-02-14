@@ -104,11 +104,11 @@ export const Footer = (props: Footer3Props) => {
               </div>
             </div>
             <div className='grid grid-flow-col grid-cols-[max-content] items-start justify-start gap-x-3'>
-              {socialMediaLinks.map((link, index) => (
+              {/* {socialMediaLinks.map((link, index) => (
                 <a key={index} href={link.url}>
                   {link.icon}
                 </a>
-              ))}
+              ))} */}
             </div>
           </div>
           <div className='grid grid-cols-1 items-start gap-x-6 gap-y-10 md:grid-cols-2 md:gap-x-8 md:gap-y-4'>
@@ -164,7 +164,7 @@ export const Footer3Defaults: Footer3Props = {
   },
   contact: {
     label: "Contact:",
-    phone: "7378666783 , 9822054197 , 9970392823 , 8668700280",
+    phone: "7378666783 , 9822054197 ",
     email: "indocnd@gmail.com",
   },
   columnLinks: [
@@ -198,7 +198,7 @@ export const Footer3Defaults: Footer3Props = {
     { url: "#", icon: <BiLogoLinkedinSquare className='size-6 md:size-8' /> },
     { url: "#", icon: <BiLogoYoutube className='size-6 md:size-8' /> },
   ],
-  footerText: "© FireFox Digital marketing. All rights reserved.",
+  footerText: "© Foxtale Digital marketing. All rights reserved.",
   footerLinks: [
     { title: "", url: "" },
     { title: "", url: "" },

@@ -21,7 +21,7 @@ const SwiperComponent: React.FC<SwiperComponentProps> = ({ images }) => {
       //     `<li class="${className} hidden md:block custom-bullet"></li>`,
       // }}
       loop={true}
-      className='h-[400px] md:h-[600px] lg:h-[700px]'
+      className='aspect-square'
       style={{ width: "100%" }}
     >
       {images.map((image, index) => (
