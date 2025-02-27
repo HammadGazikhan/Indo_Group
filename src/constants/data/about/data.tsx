@@ -214,7 +214,7 @@ export const TeamData = {
     },
     {
       image: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
+        src: image.ConstructionManager,
         alt: "Relume placeholder image 3",
       },
       name: "Mr. Saad N. Sundke",

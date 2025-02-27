@@ -79,9 +79,16 @@ export const Footer = (props: Footer3Props) => {
       <div className=''>
         <div className='grid grid-cols-1 gap-x-[4vw] gap-y-12 pb-8 md:gap-y-16 md:pb-8 lg:grid-cols-[1fr_0.6fr] lg:gap-y-4 lg:pb-4'>
           <div>
-            <div className='rb-6 mb-6 md:mb-8'>
-              <Link to={`${logo.url}`}>
-                <img src={logo.src} alt={logo.alt} className='inline-block' />
+            <div className='rb-6 mb-6 md:mb-8 relative'>
+              <Link to={`${logo.url}`} className=''>
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className='inline-block w-[130px]'
+                />
+                <p className='text-sm absolute -bottom-2 font-medium left-12'>
+                  Vision is Forever
+                </p>
               </Link>
             </div>
             <div className='rb-6 mb-6 md:mb-8'>
@@ -154,7 +161,7 @@ export const Footer = (props: Footer3Props) => {
 export const Footer3Defaults: Footer3Props = {
   logo: {
     url: "/",
-    src: image.FooterLogo,
+    src: image.Logo,
     alt: "Logo image",
   },
   address: {

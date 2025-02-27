@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.662e729b.css",
-    "main.js": "/static/js/main.92fce296.js",
+    "main.css": "/static/css/main.b67058b2.css",
+    "main.js": "/static/js/main.3ebabe10.js",
     "static/js/453.68693753.chunk.js": "/static/js/453.68693753.chunk.js",
     "static/media/construction7.jpeg": "/static/media/construction7.5db2f5f5c2da72fc11e7.jpeg",
     "static/media/construction8.jpeg": "/static/media/construction8.5db2f5f5c2da72fc11e7.jpeg",
@@ -26,9 +26,11 @@
     "static/media/image 32.jpg": "/static/media/image 32.d0a5a61a79f5d2cae1dc.jpg",
     "static/media/Image.jpg": "/static/media/Image.a802f99d153a10c89bf3.jpg",
     "static/media/image 35.jpg": "/static/media/image 35.9ad1281865d9e0a0dbd0.jpg",
+    "static/media/FooterLogo.svg": "/static/media/FooterLogo.5cf0c93ad2ed68e7bdf1ea5a85eb8511.svg",
     "static/media/image 36.jpg": "/static/media/image 36.524e639a0ad76547afc7.jpg",
     "static/media/image 61.jpg": "/static/media/image 61.fe7a82e23b2a61d5bc83.jpg",
     "static/media/image 40.jpg": "/static/media/image 40.8d1272ffad9ca012c3f0.jpg",
+    "static/media/NavBarLogo.svg": "/static/media/NavBarLogo.857f5465eef4123fb989c8e25f6580af.svg",
     "static/media/image 46.jpg": "/static/media/image 46.4cae97997f1a75903beb.jpg",
     "static/media/image 29.jpg": "/static/media/image 29.5b228e848ff38104ea8c.jpg",
     "static/media/image 77.png": "/static/media/image 77.65d915eb5a6ab5c37769.png",
@@ -40,6 +42,7 @@
     "static/media/image 81.png": "/static/media/image 81.4f2a2f7fe32e261474f1.png",
     "static/media/ManpowerManager.jpg": "/static/media/ManpowerManager.89372017f49c62596d5c.jpg",
     "static/media/image 30.jpg": "/static/media/image 30.921925ea47da15e1116e.jpg",
+    "static/media/ConstractionManager.png": "/static/media/ConstractionManager.41c734e72fb39947e437.png",
     "static/media/image 79.png": "/static/media/image 79.1ec2dcdca4eb2335e6dc.png",
     "static/media/Electrical5.jpeg": "/static/media/Electrical5.57cba2295eb175f15b71.jpeg",
     "static/media/image 62.jpg": "/static/media/image 62.1262a4d1bbbc217b30f2.jpg",
@@ -159,8 +162,6 @@
     "static/media/solar3.webp": "/static/media/solar3.1d0c64ed629ebcc5c4c4.webp",
     "static/media/solar2.webp": "/static/media/solar2.5e08344da07657cb23d9.webp",
     "static/media/solar6.webp": "/static/media/solar6.87dd9e2bdfd93afb9de4.webp",
-    "static/media/Frame.svg": "/static/media/Frame.dff4f60f6df6c40bf0566f0b020eac79.svg",
-    "static/media/FooterFrame.svg": "/static/media/FooterFrame.77d77d5f2ccb1c74902ed90871e0c6b3.svg",
     "static/media/Electrical14.jpg": "/static/media/Electrical14.f9427f9a90736b00ac5d.jpg",
     "static/media/image 7.svg": "/static/media/image 7.c5833237c42161c806125a705f0b321c.svg",
     "static/media/solar8.jpg": "/static/media/solar8.6fbe0612ae9625fecab3.jpg",
@@ -218,12 +219,12 @@
     "static/media/UserCheck.svg": "/static/media/UserCheck.ad71f56235382fec1c35ea1d36d4ba3b.svg",
     "index.html": "/index.html",
     "static/media/Leaf.svg": "/static/media/Leaf.c4cf64779924320a9f259c32f151065f.svg",
-    "main.662e729b.css.map": "/static/css/main.662e729b.css.map",
-    "main.92fce296.js.map": "/static/js/main.92fce296.js.map",
+    "main.b67058b2.css.map": "/static/css/main.b67058b2.css.map",
+    "main.3ebabe10.js.map": "/static/js/main.3ebabe10.js.map",
     "453.68693753.chunk.js.map": "/static/js/453.68693753.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.662e729b.css",
-    "static/js/main.92fce296.js"
+    "static/css/main.b67058b2.css",
+    "static/js/main.3ebabe10.js"
   ]
 }

@@ -208,8 +208,8 @@ import AboutIcon1 from "../assets/AboutHandshake.svg";
 import AboutIcon2 from "../assets/AboutGift.svg";
 import AboutIcon3 from "../assets/AboutCrown.svg";
 import bgFeaturedPhone from "../assets/BackgroundDesignSmall.svg";
-import Logo from "../assets/Frame.svg";
-import FooterLogo from "../assets/FooterFrame.svg";
+import Logo from "../assets/NavBarLogo.svg";
+import FooterLogo from "../assets/FooterLogo.svg";
 import Established1 from "../assets/image (1).png";
 import Established2 from "../assets/image-1 (1).png";
 import Established3 from "../assets/image-2 (1).png";
@@ -217,7 +217,7 @@ import Established4 from "../assets/image-3 (1).png";
 import SolarCeo from "../assets/SolarCeo.jpg";
 import ManpowerManager from "../assets/ManpowerManager.jpg";
 import IndoFounder from "../assets/IndoFounder.jpg";
-
+import ConstructionManager from "../assets/ConstractionManager.png";
 const image: Record<string, string> = {
   Logo,
   FooterLogo,
@@ -435,6 +435,7 @@ const image: Record<string, string> = {
   SolarCeo,
   ManpowerManager,
   IndoFounder,
+  ConstructionManager,
 };
 
 export default image;
