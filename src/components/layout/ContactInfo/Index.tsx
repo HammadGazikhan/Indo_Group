@@ -13,7 +13,7 @@ type ContactProps = {
   title: string;
   description: string;
   link: LinkProps;
-  Secondlink: LinkProps;
+  Secondlink?: LinkProps;
 };
 
 type Props = {
@@ -74,17 +74,6 @@ export const ContactInfo = (props: Contact24Props) => {
                 {contact.link.label}
               </a>
               <br />
-              <a
-                style={{
-                  background: theme.colors.heading,
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-                className='underline'
-                href={contact.link.url}
-              >
-                {contact.link.label}
-              </a>
             </div>
           ))}
         </div>

@@ -1,20 +1,22 @@
 /** @format */
 
 import type { ButtonProps } from "@relume_io/relume-ui";
-
-import { theme } from "../../../constants/theme";
 import { useEffect, useRef, useState } from "react";
+import { theme } from "../../../constants/theme";
 
+// Image Props Type
 type ImageProps = {
   src: string;
   alt?: string;
 };
 
+// Social Link Type
 type SocialLink = {
   href: string;
   icon: React.ReactNode;
 };
 
+// Team Member Type
 type TeamMember = {
   image: ImageProps;
   name: string;
@@ -23,6 +25,7 @@ type TeamMember = {
   socialLinks: SocialLink[];
 };
 
+// Component Props
 type Props = {
   tagline: string;
   heading: string;
@@ -39,6 +42,7 @@ export const Team20 = (props: Team20Props) => {
   const { tagline, heading, colorHeading, description, button, teamMembers } = {
     ...props,
   } as Props;
+
   return (
     <section
       style={{ background: theme.colors.background }}
@@ -66,7 +70,7 @@ export const Team20 = (props: Team20Props) => {
                 fontFamily: theme.typography.fontFamilyHeading,
                 fontWeight: theme.typography.fontWeight.ExtraBold,
               }}
-              className='mb-4 text-[2.2rem] md:text-[2.7rem] leading-none lg:leading-[50px] font-bold md:mb-6  lg:text-[3.2rem]'
+              className='mb-4 text-[2.2rem] md:text-[2.7rem] leading-none lg:leading-[50px] font-bold md:mb-6 lg:text-[3.2rem]'
             >
               {heading}
               <span
@@ -86,11 +90,12 @@ export const Team20 = (props: Team20Props) => {
                 fontFamily: theme.typography.fontFamily,
                 color: theme.colors.primaryLight,
               }}
-              className='md:text-[1.125rem] text-pretty  text-[1rem]'
+              className='md:text-[1.125rem] text-pretty text-[1rem]'
             >
               {description}
             </p>
           </div>
+
           <div className='grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-8 md:gap-y-16 lg:gap-x-12'>
             {teamMembers.map((member, index) => (
               <TeamMember key={index} member={member} />
@@ -108,12 +113,11 @@ const TeamMember = ({ member }: { member: TeamMember }) => {
   const descriptionRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
-    // Check if description exceeds 3 lines
     const element = descriptionRef.current;
     if (element) {
       setIsTruncated(element.scrollHeight > element.clientHeight);
     }
-  }, [member.description]);
+  }, [member.description, isExpanded]);
 
   return (
     <div className='flex flex-col'>
@@ -158,10 +162,12 @@ const TeamMember = ({ member }: { member: TeamMember }) => {
           style={{
             color: theme.colors.primaryLight,
             fontWeight: theme.typography.fontWeight.regular,
-            display: "-webkit-box",
-            WebkitLineClamp: isExpanded ? "none" : 3,
-            WebkitBoxOrient: "vertical",
             overflow: "hidden",
+            display: "-webkit-box",
+            WebkitBoxOrient: "vertical",
+            WebkitLineClamp: isExpanded ? "unset" : 3,
+            transition: "max-height 0.3s ease-in-out",
+            maxHeight: isExpanded ? "1000px" : "4.5rem",
           }}
           className='text-[1rem] text-pretty md:text-[1.125rem]'
         >
@@ -181,7 +187,7 @@ const TeamMember = ({ member }: { member: TeamMember }) => {
 
       {/* Social Links */}
       <div className='mt-6 grid grid-flow-col grid-cols-[max-content] gap-3 self-start'>
-        {member.socialLinks.map((link: any, index: any) => (
+        {member.socialLinks.map((link: SocialLink, index: number) => (
           <a key={index} href={link.href}>
             {link.icon}
           </a>
@@ -192,5 +198,3 @@ const TeamMember = ({ member }: { member: TeamMember }) => {
 };
 
 export default TeamMember;
-
-// const teamMembersData: TeamMember[] = [];
