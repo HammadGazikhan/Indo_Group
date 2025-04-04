@@ -110,19 +110,19 @@ export const Team20 = (props: Team20Props) => {
 const TeamMember = ({ member }: { member: TeamMember }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isTruncated, setIsTruncated] = useState(false);
-  const descriptionRef = useRef<HTMLParagraphElement>(null);
+  const descriptionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const element = descriptionRef.current;
-    if (element) {
-      setIsTruncated(element.scrollHeight > element.clientHeight);
+    const el = descriptionRef.current;
+    if (el) {
+      setIsTruncated(el.scrollHeight > el.clientHeight);
     }
-  }, [member.description, isExpanded]);
+  }, [member.description]);
 
   return (
     <div className='flex flex-col'>
       {/* Image Section */}
-      <div className='relative mb-5 aspect-square size-full overflow-hidden md:mb-6 md:pt-[100%]'>
+      <div className='relative mb-5 aspect-square overflow-hidden md:mb-6'>
         <img
           src={member.image.src}
           alt={member.image.alt}
@@ -155,33 +155,36 @@ const TeamMember = ({ member }: { member: TeamMember }) => {
         </h6>
       </div>
 
-      {/* Description with Read More */}
+      {/* Description */}
       <div>
-        <p
+        <div
           ref={descriptionRef}
+          className={`transition-all duration-300 ease-in-out overflow-hidden text-[1rem] md:text-[1.125rem] text-pretty`}
           style={{
+            maxHeight: isExpanded ? "1000px" : "4.8rem", // approx 3 lines
             color: theme.colors.primaryLight,
+            fontFamily: theme.typography.fontFamily,
             fontWeight: theme.typography.fontWeight.regular,
-            overflow: "hidden",
-            display: "-webkit-box",
-            WebkitBoxOrient: "vertical",
-            WebkitLineClamp: isExpanded ? "unset" : 3,
-            transition: "max-height 0.3s ease-in-out",
-            maxHeight: isExpanded ? "1000px" : "4.5rem",
           }}
-          className='text-[1rem] text-pretty md:text-[1.125rem]'
         >
           {member.description}
-        </p>
-        {/* Read More / Read Less Button */}
+        </div>
+
+        {/* Toggle Button - always visible */}
         {isTruncated && (
-          <button
-            onClick={() => setIsExpanded(!isExpanded)}
-            style={{ color: theme.colors.dark }}
-            className='text-[1rem] ease-in-out duration-100 md:text-[1.125rem] mt-2'
-          >
-            {isExpanded ? "Read Less" : "Read More"}
-          </button>
+          <div className='mt-2'>
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className='text-[1rem] md:text-[1.125rem]'
+              style={{
+                color: theme.colors.dark,
+                fontFamily: theme.typography.fontFamily,
+                fontWeight: theme.typography.fontWeight.medium,
+              }}
+            >
+              {isExpanded ? "Read Less" : "Read More"}
+            </button>
+          </div>
         )}
       </div>
 
@@ -196,5 +199,3 @@ const TeamMember = ({ member }: { member: TeamMember }) => {
     </div>
   );
 };
-
-export default TeamMember;
