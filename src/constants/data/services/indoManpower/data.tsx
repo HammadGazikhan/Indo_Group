@@ -323,7 +323,7 @@ export const Contactdata = {
       title: "Email",
       description: "",
       link: {
-        label: "indocnd@gmail.com",
+        label: "indo_mps@yahoo.com",
         url: "#",
       },
     },
@@ -332,7 +332,7 @@ export const Contactdata = {
         <BiPhone style={{ color: theme.colors.border }} className='size-8 ' />
       ),
       title: "Phone",
-      description: "+91 9970-392-823",
+      description: "+91 9970392823",
       link: {
         label: "Mr. Iftekar A. Sundke ",
         url: "#",

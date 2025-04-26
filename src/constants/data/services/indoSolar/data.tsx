@@ -362,7 +362,7 @@ export const Contactdata = {
       title: "Email",
       description: "",
       link: {
-        label: "indocnd@gmail.com",
+        label: " indoelectricalsnanapeth@gmail.com",
         url: "#",
       },
     },
@@ -371,9 +371,9 @@ export const Contactdata = {
         <BiPhone style={{ color: theme.colors.border }} className='size-8 ' />
       ),
       title: "Phone",
-      description: "+91 9822-054-197   Mr. Naeem A. Sundke",
+      description: "+91 9822054197  Mr. Naeem A. Sundke",
       link: {
-        label: "+91 9822-054-197  Miss Azra N. Sundke ",
+        label: "+91 8668700280  Miss Azra N. Sundke ",
         url: "#",
       },
     },

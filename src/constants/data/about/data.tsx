@@ -205,7 +205,7 @@ export const TeamData = {
       name: "Mr. Iftekar Ayaz Sundke",
       jobTitle: "Proprietor of Indo Manpower, Partner in Indo Construction",
       description:
-        "Started his career as a software engineer. Worked as a soft engineer in Saudi Arabia for 5 years while his elder brother was setting up a new business. After 5 years he returned to India to join his brother's business and took control over a newly established sector of the indo group - Indo Manpower. Under his control Indo Manpower progressed to become one of Maharashtra's leading Manpower Supplier working for MSEDCL.",
+        "Started his career as a software engineer. Worked in Saudi Arabia for 5 years while his elder brother was setting up a new business. After 5 years he returned to India to join his brother's business and took control over a newly established sector of the indo group - Indo Manpower. Under his control Indo Manpower progressed to become one of Maharashtra's leading Manpower Supplier working for MSEDCL.",
       socialLinks: [
         { href: "#", icon: <BiLogoLinkedinSquare className='size-6' /> },
         { href: "#", icon: <FaXTwitter className='size-6 p-0.5' /> },
@@ -406,7 +406,7 @@ export const Contactdata = {
       title: "Email",
       description: "",
       link: {
-        label: "hello@relume.io",
+        label: "indocnd@gmail.com",
         url: "#",
       },
     },

@@ -315,7 +315,7 @@ export const Contactdata = {
       title: "Email",
       description: "",
       link: {
-        label: "hello@relume.io",
+        label: "indocnd@gmail.com",
         url: "#",
       },
     },

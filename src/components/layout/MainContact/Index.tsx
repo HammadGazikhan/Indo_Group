@@ -56,9 +56,9 @@ export const ContactUs = (props: Contact7Props) => {
     }
 
     // EmailJS Configuration
-    const serviceID = "service_py8eg29"; // Replace with your EmailJS service ID
-    const templateID = "template_y1hi0ow"; // Replace with your EmailJS template ID
-    const publicKey = "8FVoCmWi63PSx8lPJ"; // Replace with your EmailJS public key
+    const serviceID = "service_tu8sm7r"; // Replace with your EmailJS service ID
+    const templateID = "template_b356srk"; // Replace with your EmailJS template ID
+    const publicKey = "00YW7Hgvtt24SVS05"; // Replace with your EmailJS public key
 
     const templateParams = {
       name,

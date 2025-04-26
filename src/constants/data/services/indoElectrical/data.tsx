@@ -178,7 +178,7 @@ export const Contactdata = {
       title: "Email",
       description: "",
       link: {
-        label: "hello@relume.io",
+        label: "indoelectricalsnanapeth@gmail.com",
         url: "#",
       },
     },
@@ -187,7 +187,7 @@ export const Contactdata = {
         <BiPhone style={{ color: theme.colors.border }} className='size-8 ' />
       ),
       title: "Phone",
-      description: "+91 9822-054-197",
+      description: "+91 9822054197",
       link: {
         label: "Mr. Naeem A. Sundke ",
         url: "#",
