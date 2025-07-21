@@ -1,0 +1,74 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^5.18.0",
+    "@mui/material": "^5.18.0",
+    "@mui/system": "^6.5.0",
+    "@mui/types": "^7.2.19",
+    "@mui/x-date-pickers": "^8.9.0",
+    "@relume_io/relume-tailwind": "^0.7.0",
+    "@relume_io/relume-ui": "^0.7.0",
+    "@tanstack/react-query": "^5.83.0",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.119",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "axios": "^1.10.0",
+    "date-fns": "^4.1.0",
+    "formik": "^2.4.6",
+    "framer-motion": "^12.23.3",
+    "js-cookie": "^3.0.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-dropzone": "^14.3.8",
+    "react-helmet-async": "^2.0.5",
+    "react-hook-form": "^7.60.0",
+    "react-hot-toast": "^2.4.1",
+    "react-router-dom": "^7.0.1",
+    "react-scripts": "5.0.1",
+    "react-spinners": "^0.14.1",
+    "recharts": "^3.1.0",
+    "swiper": "^11.1.15",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4",
+    "yup": "^1.6.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/js-cookie": "^3.0.6",
+    "install": "^0.13.0",
+    "npm": "^11.4.2",
+    "tailwindcss": "^3.4.15"
+  }
+}
