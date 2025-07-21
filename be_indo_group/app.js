@@ -12,10 +12,13 @@ dotenv.config();
 const app = express();
 app.use(apiLogger);
 
+// const allowedOrigins = process.env.CLIENT_URL?.split(",") || [];
+
 app.use(
   cors({
-    origin: process.env.CLIENT_URL, // or your React app's URL
-
+    origin: "*",
+    methods: "GET,POST,PUT,PATCH,DELETE",
+    allowedHeaders: "*",
     credentials: true,
   })
 );
