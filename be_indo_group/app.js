@@ -23,10 +23,10 @@ app.use(
   })
 );
 
-app.use((req, res, next) => {
-  res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
-  next();
-});
+// app.use((req, res, next) => {
+//   res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
+//   next();
+// });
 
 app.use(express.urlencoded({ extended: true }));
 
