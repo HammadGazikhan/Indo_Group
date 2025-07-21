@@ -32,8 +32,8 @@ app.use(cookieParser());
 app.use("/uploads", express.static("uploads"));
 
 // Routes
-app.use("/employee", employeeRoutes);
-app.use("/admin", adminRoutes);
+app.use("/api/employee", employeeRoutes);
+app.use("/api/admin", adminRoutes);
 
 // DB + Server
 mongoose
