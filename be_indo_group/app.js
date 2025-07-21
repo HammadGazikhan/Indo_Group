@@ -29,7 +29,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
 app.use(cookieParser());
-app.use("/uploads", express.static("uploads"));
+app.use("/api/uploads", express.static("uploads"));
 
 // Routes
 app.use("/api/employee", employeeRoutes);
