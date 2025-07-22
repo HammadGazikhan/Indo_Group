@@ -6,6 +6,7 @@ import employeeRoutes from "./routes/employee/employee.routes.js";
 import adminRoutes from "./routes/admin/admin.routes.js";
 import cors from "cors";
 import { apiLogger } from "./middleware/middleware.js";
+import helmet from "helmet";
 
 dotenv.config();
 
@@ -13,6 +14,8 @@ const app = express();
 app.use(apiLogger);
 
 // const allowedOrigins = process.env.CLIENT_URL?.split(",") || [];
+
+app.use(helmet()); // adds many headers including Referrer-Policy
 
 app.use(
   cors({
