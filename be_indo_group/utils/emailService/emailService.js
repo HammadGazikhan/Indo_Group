@@ -11,11 +11,22 @@ const transporter = nodemailer.createTransport({
 });
 
 export const sendEmail = async ({ to, subject, text, attachments }) => {
-  await transporter.sendMail({
-    from: process.env.ADMIN_EMAIL,
-    to,
-    subject,
-    text,
-    attachments, // Optional: for file attachments
-  });
+  try {
+    await transporter.sendMail({
+      from: process.env.ADMIN_EMAIL,
+      to,
+      subject,
+      text,
+      attachments, // Optional: for file attachments
+    });
+  } catch (error) {
+    console.error("Email sending error:", error);
+  }
+  // await transporter.sendMail({
+  //   from: process.env.ADMIN_EMAIL,
+  //   to,
+  //   subject,
+  //   text,
+  //   attachments, // Optional: for file attachments
+  // });
 };
