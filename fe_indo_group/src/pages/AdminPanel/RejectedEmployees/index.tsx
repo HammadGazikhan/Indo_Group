@@ -103,7 +103,7 @@ const RejectedEmployeeList = () => {
         columns={columns}
         data={tableData}
         actions={{
-          onView: handleView,
+          // onView: handleView,
           onDelete: handleDelete,
         }}
       />

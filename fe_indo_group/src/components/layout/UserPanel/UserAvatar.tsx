@@ -79,7 +79,7 @@ const AdminAvatar = () => {
             {user.email}
           </Typography>
         </Box>
-        <Divider />
+        <Divider className="md:hidden" />
         <MenuItem onClick={handleLogout}>Logout</MenuItem>
       </Menu>
     </Box>

@@ -35,7 +35,11 @@ const PrimaryButton = ({
         boxShadow: "none",
         "&:hover": {
           boxShadow: "2px 4px 4px 2px #00000040",
-          // background: "red",
+          opacity: 0.8,
+        },
+        "&.Mui-disabled": {
+          color: "white",
+          opacity: 0.5,
         },
         ...sx,
       }}

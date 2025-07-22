@@ -14,6 +14,7 @@ import DocumentPreviewCard from "../../../../components/layout/DocumentsPreview"
 import ConfirmDialog from "../../../../components/layout/ConformationDialog/index ";
 import EmployeeDetailsCard from "../../../../components/layout/UserPanel/EmployeeDetails";
 import SalarySlipsTable from "../../../../components/layout/UserPanel/SlipsTable";
+import CloseIcon from "@mui/icons-material/Close";
 
 const TerminatedEmployeeView = () => {
   const { id } = useParams();
@@ -85,7 +86,15 @@ const TerminatedEmployeeView = () => {
           {!employee.rejoinLetterSent && (
             <Stack direction="row" flexWrap={"wrap"} gap={2}>
               <Button variant="outlined" component="label">
-                Upload Rejoin Letter
+                {rejoiningLetter
+                  ? rejoiningLetter.name
+                  : "Upload Rejoin Letter"}
+                {rejoiningLetter && (
+                  <CloseIcon
+                    onClick={() => setRejoiningLetter(null)}
+                    sx={{ ml: 1, color: "red" }}
+                  />
+                )}
                 <input
                   hidden
                   type="file"

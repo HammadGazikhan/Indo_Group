@@ -17,34 +17,12 @@ import SendSalarySlipForm from "../../../../components/layout/UserPanel/SendSala
 
 const SalaryPage = () => {
   const { id } = useParams(); // employeeId
-  const [month, setMonth] = useState("");
-  const [file, setFile] = useState<File | null>(null);
 
   const { data: employee, isLoading } = useGetQuery(
     ["employee", id],
     `/admin/employees/${id}`,
     Boolean(id)
   );
-
-  const { mutate, isPending } = usePostMutation(
-    `/admin/salary-slip/${id}`,
-    (res) => {
-      toast.success(res.message);
-    },
-    (err) => {
-      toast.error(err?.response?.data?.message || "Failed to send slip");
-    }
-  );
-
-  const handleSubmit = () => {
-    if (!month || !file) return toast.error("Please select file and month");
-
-    const formData = new FormData();
-    formData.append("salarySlip", file);
-    formData.append("month", month);
-
-    mutate(formData);
-  };
 
   if (isLoading || !employee) return <Typography>Loading...</Typography>;
 
@@ -92,7 +70,7 @@ const SalaryPage = () => {
           </Stack>
         </CardContent>
       </Card> */}
-      <SendSalarySlipForm onSubmit={handleSubmit} loading={isPending} />
+      <SendSalarySlipForm id={id || ""} />
 
       {/* Salary Slip History Table */}
       <SalarySlipsTable slips={slips} />

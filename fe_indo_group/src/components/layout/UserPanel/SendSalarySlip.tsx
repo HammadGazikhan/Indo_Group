@@ -1,38 +1,74 @@
 import React, { useState } from "react";
-import {
-  TextField,
-  Button,
-  Stack,
-  Typography,
-  Card,
-  CardContent,
-} from "@mui/material";
+import { Button, Typography, Card, CardContent } from "@mui/material";
 import toast from "react-hot-toast";
+import * as Yup from "yup";
+import { Form, Formik, useFormikContext } from "formik";
+import InputField from "../../inputs/custom-input";
+import { usePostMutation } from "../../../hooks/useCrud";
 import ConfirmDialog from "../ConformationDialog/index ";
+import CustomFileButton from "../../inputs/custom-file-ipload";
+
+// ✅ Yup validation schema
+const validationSchema = Yup.object().shape({
+  month: Yup.string().required("Month is required"),
+  file: Yup.mixed()
+    .required("Salary slip file is required")
+    .test("fileType", "Only PDF or image files are allowed", (value) => {
+      return (
+        value &&
+        value instanceof File &&
+        ["application/pdf", "image/jpeg", "image/png"].includes(value.type)
+      );
+    }),
+});
 
 interface Props {
-  onSubmit: (formData: FormData) => void;
-  loading: boolean;
+  id: string;
 }
 
-const SendSalarySlipForm: React.FC<Props> = ({ onSubmit, loading }) => {
-  const [month, setMonth] = useState("");
-  const [file, setFile] = useState<File | null>(null);
+const SendSalarySlipForm: React.FC<Props> = ({ id }) => {
   const [confirmOpen, setConfirmOpen] = useState(false);
+  const [confirmData, setConfirmData] = useState<{
+    month: string;
+    file: File | null;
+  }>({
+    month: "",
+    file: null,
+  });
+  // const { resetForm } = useFormikContext();
 
-  const handleUploadClick = () => {
-    if (!month || !file) {
-      toast.error("Please select file and month");
-      return;
+  const { mutate, isPending: loading } = usePostMutation(
+    `/admin/salary-slip/${id}`,
+    (res) => {
+      toast.success(res.message);
+      // resetForm(); // ✅ Reset after success
+    },
+    (err) => {
+      toast.error(err?.response?.data?.message || "Failed to send slip");
     }
-    setConfirmOpen(true);
+  );
+
+  const handleUploadClick = async (values: {
+    month: string;
+    file: File | null;
+  }) => {
+    try {
+      await validationSchema.validate(values);
+      setConfirmData({ month: values.month, file: values.file });
+      setConfirmOpen(true);
+    } catch (err: any) {
+      toast.error(err.message);
+    }
   };
 
   const handleConfirm = () => {
+    if (!confirmData.file || !confirmData.month) return;
+
     const formData = new FormData();
-    formData.append("salarySlip", file as File);
-    formData.append("month", month);
-    onSubmit(formData);
+    formData.append("salarySlip", confirmData.file);
+    formData.append("month", confirmData.month);
+
+    mutate(formData);
     setConfirmOpen(false);
   };
 
@@ -43,35 +79,33 @@ const SendSalarySlipForm: React.FC<Props> = ({ onSubmit, loading }) => {
           <Typography variant="h6" gutterBottom>
             Send New Salary Slip
           </Typography>
-          <Stack direction="row" flexWrap="wrap" gap={2}>
-            <TextField
-              type="month"
-              label="Month"
-              InputLabelProps={{ shrink: true }}
-              value={month}
-              onChange={(e) => setMonth(e.target.value)}
-            />
-            <Button variant="outlined" component="label">
-              Upload Slip
-              <input
-                type="file"
-                hidden
+
+          <Formik
+            initialValues={{ month: "", file: null }}
+            validationSchema={validationSchema}
+            onSubmit={(values) => handleUploadClick(values)}
+          >
+            <Form className="grid mt-2 grid-cols-1 items-center gap-4 max-w-xs mx-auto">
+              <InputField name="month" type="month" label="Month" />
+              <CustomFileButton
+                name="file"
+                label="Upload Salary Slip"
                 accept="application/pdf,image/*"
-                onChange={(e) => setFile(e.target.files?.[0] || null)}
               />
-            </Button>
-            <Button
-              variant="contained"
-              disabled={loading || !file || !month}
-              onClick={handleUploadClick}
-            >
-              {loading ? "Sending..." : "Send"}
-            </Button>
-          </Stack>
+              <Button
+                variant="contained"
+                className="h-[56px] !rounded-[10px]"
+                disabled={loading}
+                type="submit"
+              >
+                {loading ? "Sending..." : "Send"}
+              </Button>
+            </Form>
+          </Formik>
         </CardContent>
       </Card>
 
-      {/* Confirm Dialog */}
+      {/* ✅ Confirm Dialog */}
       <ConfirmDialog
         open={confirmOpen}
         onClose={() => setConfirmOpen(false)}
@@ -83,16 +117,16 @@ const SendSalarySlipForm: React.FC<Props> = ({ onSubmit, loading }) => {
           <>
             <Typography>
               <strong>Month:</strong>{" "}
-              {month
-                ? new Date(`${month}-01`).toLocaleDateString("default", {
-                    year: "numeric",
-                    month: "long",
-                  })
+              {confirmData.month
+                ? new Date(`${confirmData.month}-01`).toLocaleDateString(
+                    "default",
+                    { year: "numeric", month: "long" }
+                  )
                 : "-"}
             </Typography>
-            {file && (
+            {confirmData.file && (
               <Typography mt={1}>
-                <strong>File:</strong> {file.name}
+                <strong>File:</strong> {confirmData.file.name}
               </Typography>
             )}
           </>

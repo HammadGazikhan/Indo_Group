@@ -22,13 +22,13 @@ const StatsCard = () => {
   } = useGetQuery(["dashboard"], "/admin/dashboard-stats");
 
   const dashboardItems = [
-    {
-      title: "Total Registered Employees",
-      icon: <GroupIcon fontSize="large" color="primary" />,
-      value: stats?.totalEmployees ?? 0,
-      bg: "#e3f2fd",
-      textColor: "#0d47a1",
-    },
+    // {
+    //   title: "Total Registered Employees",
+    //   icon: <GroupIcon fontSize="large" color="primary" />,
+    //   value: stats?.totalEmployees ?? 0,
+    //   bg: "#e3f2fd",
+    //   textColor: "#0d47a1",
+    // },
     {
       title: "Onboarded Employees",
       icon: <CheckCircleIcon fontSize="large" color="success" />,

@@ -87,7 +87,7 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggle }) => {
         },
       }}
     >
-      <Box p={2} position={"relative"}>
+      <Box p={1} position={"relative"}>
         <Link to="/">
           <img
             src={image.Logo}
@@ -106,7 +106,7 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggle }) => {
           </IconButton>
         )}
       </Box>
-      <List>
+      <List sx={{ pt: 0, pb: 0 }}>
         {navItems.map((item) => {
           const isActive = location.pathname === item.path;
 

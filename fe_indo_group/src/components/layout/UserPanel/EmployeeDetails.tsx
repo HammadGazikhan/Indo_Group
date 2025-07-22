@@ -107,7 +107,7 @@ const EmployeeDetailsCard: React.FC<Props> = ({ employee }) => {
             </Box>
           </Grid>
           {employee.rejoinLetterSent
-            ? employee.joiningLetterSent && (
+            ? employee.rejoinLetterSent && (
                 <Grid item xs={12}>
                   <Typography variant="body1" color="primary">
                     <strong>Rejoin Letter Sent:</strong>{" "}

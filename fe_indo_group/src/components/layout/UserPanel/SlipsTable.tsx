@@ -48,9 +48,24 @@ const SalarySlipsTable: React.FC<SalarySlipsTableProps> = ({ slips }) => {
               fullWidth
               sx={{
                 mb: 2,
-                border: "none",
-                " .MuiFormControl-root": {
-                  border: "none !important",
+                height: 48,
+                maxWidth: 400,
+                padding: "1px",
+                backgroundColor: "#f1f1f1", // ✅ your desired background color
+                borderRadius: 2, // optional rounded corners
+                "& .MuiInputBase-root .MuiInputBase-input": {
+                  padding: "11px 10px",
+                },
+                "& .MuiOutlinedInput-root": {
+                  "& fieldset": {
+                    border: "none", // ✅ remove border
+                  },
+                  "&:hover fieldset": {
+                    border: "none", // ✅ keep border removed on hover
+                  },
+                  "&.Mui-focused fieldset": {
+                    border: "none", // ✅ keep border removed on focus
+                  },
                 },
               }}
               value={searchTerm}

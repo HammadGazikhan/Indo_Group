@@ -31,22 +31,25 @@ export const registerEmployee = async (req, res) => {
     }
 
     // Check if user already exists with this phone
-    const existPhone = await employeeModal.findOne({
+    const user = await employeeModal.findOne({
+      email: email,
       phone: phone,
     });
-    if (existPhone) {
+
+    if (user?.email) {
+      return res
+        .status(409)
+        .json({ message: "User with this email already exists" });
+    }
+
+    // Check if user already exists with this email
+    // const existEmail = await employeeModal.findOne({
+    //   email: email,
+    // });
+    if (user?.phone === phone) {
       return res
         .status(409)
         .json({ message: "User with this phone number already exists" });
-    }
-    // Check if user already exists with this email
-    const existEmail = await employeeModal.findOne({
-      email: email,
-    });
-    if (existEmail) {
-      return res
-        .status(409)
-        .json({ message: "User with this email id already exists" });
     }
     // Create new employee
     const newEmployee = await employeeModal.create({

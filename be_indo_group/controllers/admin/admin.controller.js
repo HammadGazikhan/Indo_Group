@@ -322,12 +322,12 @@ export const rejoinEmployee = async (req, res) => {
     // Update employee rejoin details
     employee.isApproved = "approved";
     employee.rejoinLetterSent = true;
+    employee.rejoinLetterSentAt = new Date();
     employee.terminationLetterSent = false;
     employee.joiningLetterSent = false;
-    employee.rejoinLetterSentAt = new Date();
-    employee.terminationLetterSent = null;
     employee.terminationLetterSentAt = false;
-    employee.rejoinLetterUrl = "/" + file?.path;
+    employee.terminationLetterSentAt = null;
+    // employee.rejoinLetterUrl = "/" + file?.path;
 
     await employee.save();
 

@@ -24,7 +24,7 @@ import SecondaryButton from "../../inputs/secondaryButton/Index";
 import Cookies from "js-cookie";
 
 const EmployeeAuth = () => {
-  const [isLogin, setIsLogin] = useState(true);
+  const [isLogin, setIsLogin] = useState(false);
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
   const { setUser } = useUser();
   const { mutate: adminLoginMutation, isPending } = useAdminLogin();
@@ -58,7 +58,6 @@ const EmployeeAuth = () => {
       <div className="w-full max-w-3xl bg-white rounded-xl shadow-md overflow-hidden">
         <div className="w-full p-6 sm:p-10 max-h-screen overflow-y-auto">
           <div className="text-center mb-6">
-            <FiUser className="text-3xl text-indigo-600 mx-auto mb-2" />
             <h2
               style={{
                 color: theme.colors.dark,
@@ -161,8 +160,8 @@ const EmployeeAuth = () => {
                     validationSchema={registerSchema}
                     onSubmit={(values) => {
                       registerMutation(values, {
-                        onSuccess: () => {
-                          toast.success("Registered successfully");
+                        onSuccess: (res) => {
+                          toast.success(res.message || "Registration success");
                           setRegistrationSuccess(true);
                         },
                         onError: (err: any) => {
@@ -176,7 +175,7 @@ const EmployeeAuth = () => {
                   >
                     {({ setFieldValue }) => (
                       <Form className="space-y-4">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
                           <InputField
                             name="full_name"
                             label="Full Name"
@@ -243,14 +242,63 @@ const EmployeeAuth = () => {
                 )}
               </motion.div>
             ) : (
-              <div className="text-center">
-                <h3 className="text-xl font-bold text-green-600 mb-2">
-                  ✅ Thank you!
+              <div className="text-center p-6 max-w-md mx-auto bg-white rounded-lg shadow-md">
+                <div className="mb-4 animate-bounce">
+                  <svg
+                    className="w-16 h-16 mx-auto text-green-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-green-600 mb-3">
+                  Thank you! 🎉
                 </h3>
-                <p className="text-gray-600">
-                  Our HR team will reach out to you shortly via email.
-                </p>
-                <PrimaryButton className="mt-4" onClick={() => navigate("/")}>
+                <div className="flex items-center justify-center mb-4">
+                  <svg
+                    className="w-5 h-5 mr-2 text-gray-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                  <p className="text-gray-600">
+                    Our HR team will reach out to you shortly via email.
+                  </p>
+                </div>
+                <PrimaryButton
+                  className="mt-4 px-6 py-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition duration-200 flex items-center justify-center mx-auto"
+                  onClick={() => navigate("/")}
+                >
+                  <svg
+                    className="w-5 h-5 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                    ></path>
+                  </svg>
                   Go Home
                 </PrimaryButton>
               </div>

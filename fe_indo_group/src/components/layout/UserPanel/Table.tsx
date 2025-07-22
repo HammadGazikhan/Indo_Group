@@ -30,7 +30,7 @@ type Column = {
 };
 
 type ActionProps = {
-  onView: (row: any) => void;
+  onView?: (row: any) => void;
   onDelete?: (row: any) => void;
 };
 
@@ -254,13 +254,16 @@ const CustomTable: React.FC<EmployeeTableProps> = ({
                             flexWrap: "wrap !important",
                           }}
                         >
-                          <Button
-                            variant="outlined"
-                            color="primary"
-                            onClick={() => actions.onView(row)}
-                          >
-                            View
-                          </Button>
+                          {actions?.onView && (
+                            <Button
+                              variant="outlined"
+                              color="primary"
+                              onClick={() => actions.onView?.(row)}
+                            >
+                              View
+                            </Button>
+                          )}
+
                           {actions?.onDelete && (
                             <Button
                               variant="outlined"

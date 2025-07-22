@@ -1,13 +1,5 @@
 import React, { useRef, useState } from "react";
-import {
-  Box,
-  Typography,
-  Card,
-  CardContent,
-  Grid,
-  Button,
-  Stack,
-} from "@mui/material";
+import { Box, Typography, Button, Stack } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { UploadFile } from "@mui/icons-material";
 import { useNavigate, useParams } from "react-router-dom";
@@ -17,6 +9,7 @@ import DocumentPreviewCard from "../../../../components/layout/DocumentsPreview"
 import ConfirmDialog from "../../../../components/layout/ConformationDialog/index ";
 import SalarySlipsTable from "../../../../components/layout/UserPanel/SlipsTable";
 import EmployeeDetailsCard from "../../../../components/layout/UserPanel/EmployeeDetails";
+import CloseIcon from "@mui/icons-material/Close";
 
 const ApprovedEmployeeDetail = () => {
   const { id } = useParams();
@@ -92,7 +85,17 @@ const ApprovedEmployeeDetail = () => {
               className="border-dashed border-2 border-primary hover:bg-primary/10 text-primary font-semibold px-5 py-2 rounded-lg transition-all"
               startIcon={<UploadFile />}
             >
-              Upload Termination Letter
+              {terminationLetter
+                ? terminationLetter.name
+                : " Upload Termination Letter"}
+
+              {terminationLetter && (
+                <CloseIcon
+                  onClick={() => setTerminationLetter(null)}
+                  sx={{ ml: 1, color: "red" }}
+                />
+              )}
+
               <input
                 hidden
                 type="file"

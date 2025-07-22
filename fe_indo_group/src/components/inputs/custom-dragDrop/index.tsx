@@ -12,7 +12,6 @@ import {
 } from "@mui/material";
 import UploadFileIcon from "@mui/icons-material/UploadFile";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { theme } from "../../../constants/theme";
 
 interface CustomFileUploadProps {
   name: string;

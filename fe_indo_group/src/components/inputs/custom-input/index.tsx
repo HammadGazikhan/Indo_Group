@@ -57,8 +57,8 @@ const InputField: React.FC<InputFieldProps> = ({
         },
       }}
       sx={{
-        mt: 1.5,
-        mb: 2,
+        mt: 0,
+        mb: 0,
         "& .MuiInputBase-root": {
           borderRadius: "10px",
           fontSize: isSmallScreen ? "14px" : "16px",
