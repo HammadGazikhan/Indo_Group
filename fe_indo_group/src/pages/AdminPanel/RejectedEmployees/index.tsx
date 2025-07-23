@@ -16,17 +16,12 @@ const RejectedEmployeeList = () => {
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [selectedRow, setSelectedRow] = useState<any>(null);
 
-  const navigate = useNavigate();
   const {
     data: employees = [],
     isLoading,
     isError,
   } = useGetQuery(["employees"], "/admin/rejected-employees");
 
-  const handleView = (row: any) => {
-    navigate(`/admin/rejected-employees/${row._id}`);
-    console.log("Viewing employee:", row);
-  };
   const { mutate: deleteTerminatedEmployee, isPending: isDeleting } =
     useDeleteMutation(
       (res: any) => {
@@ -48,7 +43,7 @@ const RejectedEmployeeList = () => {
 
   const handleConfirmDelete = () => {
     if (selectedRow?._id) {
-      deleteTerminatedEmployee(`/admin/terminated/${selectedRow._id}`);
+      deleteTerminatedEmployee(`/admin/rejected-employees/${selectedRow._id}`);
     }
   };
   if (isLoading) {

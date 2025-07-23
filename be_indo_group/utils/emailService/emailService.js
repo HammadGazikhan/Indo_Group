@@ -19,8 +19,10 @@ export const sendEmail = async ({ to, subject, text, attachments }) => {
       text,
       attachments, // Optional: for file attachments
     });
+    return { success: true };
   } catch (error) {
     console.error("Email sending error:", error);
+    return { success: false, error: error };
   }
   // await transporter.sendMail({
   //   from: process.env.ADMIN_EMAIL,

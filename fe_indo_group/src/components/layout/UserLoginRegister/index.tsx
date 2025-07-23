@@ -54,9 +54,9 @@ const EmployeeAuth = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center px-2 py-10">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center px-2 py-12 ">
       <div className="w-full max-w-3xl bg-white rounded-xl shadow-md overflow-hidden">
-        <div className="w-full p-6 sm:p-10 max-h-screen overflow-y-auto">
+        <div className="w-full p-6 sm:p-10 ">
           <div className="text-center mb-6">
             <h2
               style={{

@@ -1,26 +1,32 @@
 import express from "express";
-import {
-  getPendingEmployees,
-  verifyEmployee,
-  uploadAdminDocs,
-  getAllEmployees,
-  loginAdmin,
-  createAdmin,
-  getSingleEmployee,
-  getRejectedEmployees,
-  getApprovedEmployees,
-  getAdminDashboardStats,
-  sendSalarySlip,
-  terminateEmployee,
-  getTerminatedEmployees,
-  rejoinEmployee,
-  deleteRegisteredEmployee,
-  deleteTerminatedEmployee,
-  deleteRejectedEmployee,
-  getMonthlyRegistrations,
-} from "../../controllers/admin/admin.controller.js";
 
 import { adminUpload } from "../../utils/upload/multer.js";
+import {
+  getAdminDashboardStats,
+  getMonthlyRegistrations,
+} from "../../controllers/admin/stats.controller.js";
+import {
+  getAllEmployees,
+  getApprovedEmployees,
+  getPendingEmployees,
+  getRejectedEmployees,
+  getSingleEmployee,
+  getTerminatedEmployees,
+} from "../../controllers/admin/adminGet.controller.js";
+import {
+  createAdmin,
+  loginAdmin,
+  rejoinEmployee,
+  sendSalarySlip,
+  terminateEmployee,
+  uploadAdminDocs,
+  verifyEmployee,
+} from "../../controllers/admin/adminPost.controller.js";
+import {
+  deleteRegisteredEmployee,
+  deleteRejectedEmployee,
+  deleteTerminatedEmployee,
+} from "../../controllers/admin/adminDelete.controller.js";
 
 const router = express.Router();
 
