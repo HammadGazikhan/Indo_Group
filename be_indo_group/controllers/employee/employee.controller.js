@@ -46,7 +46,7 @@ export const registerEmployee = async (req, res) => {
     // const existEmail = await employeeModal.findOne({
     //   email: email,
     // });
-    if (user?.phone === phone) {
+    if (user?.phone) {
       return res
         .status(409)
         .json({ message: "User with this phone number already exists" });
