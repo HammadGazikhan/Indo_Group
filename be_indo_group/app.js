@@ -6,6 +6,7 @@ import employeeRoutes from "./routes/employee/employee.routes.js";
 import adminRoutes from "./routes/admin/admin.routes.js";
 import cors from "cors";
 import { apiLogger } from "./middleware/middleware.js";
+import recaptchaRoutes from "./routes/google-recaptcha/recaptcha.routes.js";
 import helmet from "helmet";
 
 dotenv.config();
@@ -40,6 +41,7 @@ app.use("/api/uploads", express.static("uploads"));
 // Routes
 app.use("/api/employee", employeeRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/google-recaptcha", recaptchaRoutes);
 
 // DB + Server
 mongoose
