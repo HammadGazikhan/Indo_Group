@@ -13,9 +13,13 @@ const AdminLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         collapsed={collapsed}
       />
 
-      <Box sx={{ flexGrow: 1, bgcolor: "#f5f6fa", height: "100%" }}>
+      <Box sx={{ flexGrow: 1, height: "100%" }}>
         <Topbar onToggle={() => setCollapsed(!collapsed)} />
-        <Box m={0} p={{ xs: 2, sm: 3, md: 4 }}>
+        <Box
+          m={0}
+          sx={{ bgcolor: "#f5f6fa", height: { lg: "calc(100vh - 80px)" } }}
+          p={{ xs: 2, sm: 3, md: 4 }}
+        >
           {children}
         </Box>
       </Box>

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Box, Typography, Button, Stack } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useNavigate, useParams } from "react-router-dom";
@@ -8,6 +8,8 @@ import DocumentPreviewCard from "../../../../components/layout/DocumentsPreview"
 import ConfirmDialog from "../../../../components/layout/ConformationDialog/index ";
 import { Cancel, CheckCircle, UploadFile } from "@mui/icons-material";
 import EmployeeDetailsCard from "../../../../components/layout/UserPanel/EmployeeDetails";
+import CloseIcon from "@mui/icons-material/Close";
+import { useQueryClient } from "@tanstack/react-query";
 
 // ... rest of your imports
 
@@ -27,12 +29,17 @@ const EmployeeDetail = () => {
     }
   };
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const queryClient = useQueryClient();
+
+  useEffect(() => {
+    queryClient.invalidateQueries({ queryKey: ["employees"] });
+  }, [queryClient]);
 
   const {
     data: employee,
     isLoading,
     isError,
-  } = useGetQuery(["employee", id], `/admin/employees/${id}`, Boolean(id));
+  } = useGetQuery(["employees", id], `/admin/employees/${id}`, Boolean(id));
 
   const { mutate: updateStatus, isPending } = usePostMutation(
     `/admin/verify/${id}`,
@@ -64,7 +71,7 @@ const EmployeeDetail = () => {
 
   return (
     <Box display={"flex"} flexDirection={"column"} gap={2}>
-      <div className="flex flex-wrap items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-4">
         <Button
           startIcon={<ArrowBackIcon />}
           onClick={() => navigate(-1)}
@@ -79,10 +86,18 @@ const EmployeeDetail = () => {
           <Button
             variant="outlined"
             component="label"
-            className="border-dashed border-2 border-primary hover:bg-primary/10 text-primary font-semibold px-5 py-2 rounded-lg transition-all"
             startIcon={<UploadFile />}
           >
-            {joiningLetter ? "Letter Attached" : "Upload Joining Letter"}
+            <p className="max-w-[250px] overflow-hidden text-ellipsis whitespace-nowrap">
+              {" "}
+              {joiningLetter ? joiningLetter.name : "Upload Joining Letter"}
+            </p>
+            {joiningLetter && (
+              <CloseIcon
+                onClick={() => setJoiningLetter(null)}
+                sx={{ ml: 1, color: "red" }}
+              />
+            )}
             <input
               hidden
               type="file"

@@ -192,8 +192,8 @@ const CustomTable: React.FC<EmployeeTableProps> = ({
             sx={{
               width: "100%",
               overflowX: {
-                xs: "auto", // Scroll horizontally on extra-small screens (mobile)
-                sm: "auto", // Scroll on small screens too
+                xs: "auto !important", // Scroll horizontally on extra-small screens (mobile)
+                sm: "auto !important", // Scroll on small screens too
                 md: "visible", // No scroll on medium+ screens
               },
             }}
@@ -251,7 +251,7 @@ const CustomTable: React.FC<EmployeeTableProps> = ({
                           sx={{
                             display: "flex",
                             gap: 1,
-                            flexWrap: "wrap !important",
+                            flexWrap: "nowrap ",
                           }}
                         >
                           {actions?.onView && (

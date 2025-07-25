@@ -18,8 +18,11 @@ export const getSingleEmployee = async (req, res) => {
   try {
     const { id } = req.params;
     const employee = await employeeModal.findById(id);
-    if (!employee)
+    if (!employee) {
       return res.status(404).json({ message: "Employee not found" });
+    }
+    employee.seen = true;
+    await employee.save();
     res.status(200).json(employee);
   } catch (err) {
     res

@@ -27,6 +27,7 @@ import {
   deleteRejectedEmployee,
   deleteTerminatedEmployee,
 } from "../../controllers/admin/adminDelete.controller.js";
+import { authenticateAdmin } from "../../middleware/adminAuthentication.js";
 
 const router = express.Router();
 
@@ -39,39 +40,59 @@ const uploadAdminFields = adminUpload.fields([
 
 router.post("/register", createAdmin);
 router.post("/login", loginAdmin);
-router.get("/employees", getAllEmployees);
-router.get("/employees/:id", getSingleEmployee);
-router.get("/pending-employees", getPendingEmployees);
-router.get("/rejected-employees", getRejectedEmployees);
-router.get("/approved-employees", getApprovedEmployees);
-router.get("/dashboard-stats", getAdminDashboardStats);
+router.get("/employees", authenticateAdmin, getAllEmployees);
+router.get("/employees/:id", authenticateAdmin, getSingleEmployee);
+router.get("/pending-employees", authenticateAdmin, getPendingEmployees);
+router.get("/rejected-employees", authenticateAdmin, getRejectedEmployees);
+router.get("/approved-employees", authenticateAdmin, getApprovedEmployees);
+router.get("/dashboard-stats", authenticateAdmin, getAdminDashboardStats);
 router.post(
   "/salary-slip/:employeeId",
   adminUpload.single("salarySlip"),
+  authenticateAdmin,
   sendSalarySlip
 );
 router.post(
   "/terminate/:employeeId",
   adminUpload.single("terminationLetter"),
+  authenticateAdmin,
   terminateEmployee
 );
 
-router.get("/terminated-employees", getTerminatedEmployees);
+router.get("/terminated-employees", authenticateAdmin, getTerminatedEmployees);
 router.post(
   "/rejoin/:employeeId",
   adminUpload.single("rejoiningLetter"),
+  authenticateAdmin,
   rejoinEmployee
 );
 
 router.post(
   "/verify/:employeeId",
   adminUpload.fields([{ name: "joiningLetter", maxCount: 1 }]),
+  authenticateAdmin,
   verifyEmployee
 );
 router.post("/upload-docs/:employeeId", uploadAdminFields, uploadAdminDocs);
-router.delete("/employee/:employeeId", deleteRegisteredEmployee);
-router.delete("/terminated/:employeeId", deleteTerminatedEmployee);
-router.delete("/rejected-employees/:employeeId", deleteRejectedEmployee);
-router.get("/monthly-registrations", getMonthlyRegistrations);
+router.delete(
+  "/employee/:employeeId",
+  authenticateAdmin,
+  deleteRegisteredEmployee
+);
+router.delete(
+  "/terminated/:employeeId",
+  authenticateAdmin,
+  deleteTerminatedEmployee
+);
+router.delete(
+  "/rejected-employees/:employeeId",
+  authenticateAdmin,
+  deleteRejectedEmployee
+);
+router.get(
+  "/monthly-registrations",
+  authenticateAdmin,
+  getMonthlyRegistrations
+);
 
 export default router;

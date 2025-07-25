@@ -27,7 +27,7 @@ import { usePostMutation } from "../../../hooks/useCrud";
 
 const EmployeeAuth = () => {
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
-  const [captchaShowed, setCaptchaShowed] = useState(false);
+  // const [captchaShowed, setCaptchaShowed] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
   const { setUser } = useUser();
@@ -63,7 +63,6 @@ const EmployeeAuth = () => {
     "/google-recaptcha/verify-captcha",
     (data) => {
       if (data) {
-        setCaptchaShowed(false);
         toast.success("Human verified ✅");
       } else {
         toast.error("reCAPTCHA failed ❌");
@@ -204,7 +203,7 @@ const EmployeeAuth = () => {
                         {
                           onSuccess: (captchaRes) => {
                             if (captchaRes) {
-                              setCaptchaShowed(false);
+                              // setCaptchaShowed(false);
                               registerMutation(values, {
                                 onSuccess: (res) => {
                                   toast.success(
@@ -277,12 +276,14 @@ const EmployeeAuth = () => {
                             />
                           ))}
                         </div>
-                        <ReCAPTCHA
-                          sitekey={
-                            process.env.REACT_APP_RECAPTCHA_SITE_KEY as string
-                          }
-                          onChange={(token) => setCaptchaToken(token)}
-                        />
+                        <div className="w-full flex justify-center items-center">
+                          <ReCAPTCHA
+                            sitekey={
+                              process.env.REACT_APP_RECAPTCHA_SITE_KEY as string
+                            }
+                            onChange={(token) => setCaptchaToken(token)}
+                          />
+                        </div>
                         <div className="w-full flex justify-center gap-4 !mt-8 mx-auto">
                           <PrimaryButton
                             type="submit"

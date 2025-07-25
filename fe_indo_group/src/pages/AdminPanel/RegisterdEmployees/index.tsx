@@ -8,7 +8,7 @@ import {
   Avatar,
   Stack,
 } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import ConfirmDialog from "../../../components/layout/ConformationDialog/index ";
 
@@ -68,7 +68,23 @@ const AdminEmployeeList = () => {
 
   // ✅ Define columns including document preview
   const columns = [
-    { id: "full_name", label: "Name" },
+    {
+      id: "full_name",
+      label: "Name",
+      render: (row: any) => (
+        <Link
+          to={`/admin/employee/${row._id}`}
+          className="flex items-center gap-2 group"
+        >
+          {row.seen === false && (
+            <span className="w-2.5 h-2.5 rounded-full bg-blue-500 shadow-md group-hover:animate-ping " />
+          )}
+          <p className="text-sm font-medium text-gray-800  group-hover:cursor-pointer group-hover:underline group-hover:text-blue-600">
+            {row.full_name}
+          </p>
+        </Link>
+      ),
+    },
     { id: "email", label: "Email" },
     { id: "phone", label: "Phone" },
     { id: "dob", label: "DOB" },

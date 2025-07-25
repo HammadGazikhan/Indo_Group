@@ -14,7 +14,7 @@ api.interceptors.request.use((config) => {
   config.headers["X-Correlation-ID"] = generateCorrelationId();
 
   if (token) {
-    config.headers.Authorization = `${token}`;
+    config.headers.Authorization = `Bearer ${token}`;
   }
 
   return config;

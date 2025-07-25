@@ -41,6 +41,7 @@ const employeeSchema = new mongoose.Schema({
 
   terminationLetterSent: { type: Boolean, default: false },
   terminationLetterSentAt: Date,
+  seen: { type: Boolean, default: false },
 });
 
 export default mongoose.model("Employee", employeeSchema);

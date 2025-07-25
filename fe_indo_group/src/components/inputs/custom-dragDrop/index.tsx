@@ -73,7 +73,7 @@ const CustomFileUpload: React.FC<CustomFileUploadProps> = ({
 
   return (
     <Box className="w-full">
-      {label && (
+      {/* {label && (
         <Typography
           sx={{
             fontSize: "0.875rem",
@@ -85,7 +85,7 @@ const CustomFileUpload: React.FC<CustomFileUploadProps> = ({
         >
           {label}
         </Typography>
-      )}
+      )} */}
 
       <Paper
         elevation={0}
@@ -97,6 +97,7 @@ const CustomFileUpload: React.FC<CustomFileUploadProps> = ({
         }}
         onDragLeave={() => setDragOver(false)}
         sx={{
+          position: "relative",
           border: `2px dashed ${
             dragOver
               ? "#2563eb" // blue-600
@@ -112,6 +113,25 @@ const CustomFileUpload: React.FC<CustomFileUploadProps> = ({
           transition: "all 0.2s ease-in-out",
         }}
       >
+        {label && (
+          <Typography
+            sx={{
+              position: "absolute",
+              backgroundColor: "#fff",
+              padding: "0 2px",
+              top: "-0.7rem",
+              left: 12,
+              fontSize: "0.8rem",
+              fontWeight: 700,
+              color: meta.touched && meta.error ? "red" : "",
+            }}
+            variant="subtitle2"
+            mb={1}
+            fontWeight={500}
+          >
+            {label}
+          </Typography>
+        )}
         <UploadFileIcon className="text-gray-400" fontSize="large" />
         <Typography variant="body2" mt={1} className="text-sm text-gray-500">
           Drag & Drop or{" "}

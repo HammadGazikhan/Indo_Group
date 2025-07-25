@@ -28,94 +28,92 @@ function AdminPanel() {
   };
 
   return (
-    <div className="max-w-[1920px] mx-auto">
-      <Suspense fallback={<Loader isLoading />}>
-        <ScrollToTop />
-        <Routes>
-          <Route
-            path="/dashboard"
-            element={
-              <AdminLayout>
-                <Dashboard />
-              </AdminLayout>
-            }
-          />
-          <Route
-            path="/registered-employees"
-            element={
-              <AdminLayout>
-                <AdminEmployeeList />
-              </AdminLayout>
-            }
-          />
-          <Route
-            path="/employee/:id"
-            element={
-              <AdminLayout>
-                <EmployeeDetail />
-              </AdminLayout>
-            }
-          />
-          <Route
-            path="/rejected-employees"
-            element={
-              <AdminLayout>
-                <RejectedEmployeeList />
-              </AdminLayout>
-            }
-          />
+    <Suspense fallback={<Loader isLoading />}>
+      <ScrollToTop />
+      <Routes>
+        <Route
+          path="/dashboard"
+          element={
+            <AdminLayout>
+              <Dashboard />
+            </AdminLayout>
+          }
+        />
+        <Route
+          path="/registered-employees"
+          element={
+            <AdminLayout>
+              <AdminEmployeeList />
+            </AdminLayout>
+          }
+        />
+        <Route
+          path="/employee/:id"
+          element={
+            <AdminLayout>
+              <EmployeeDetail />
+            </AdminLayout>
+          }
+        />
+        <Route
+          path="/rejected-employees"
+          element={
+            <AdminLayout>
+              <RejectedEmployeeList />
+            </AdminLayout>
+          }
+        />
 
-          <Route
-            path="/approved-employees"
-            element={
-              <AdminLayout>
-                <ApprovedEmployeeList />
-              </AdminLayout>
-            }
-          />
-          <Route
-            path="/approved-employees/:id"
-            element={
-              <AdminLayout>
-                <ApprovedEmployeeDetail />
-              </AdminLayout>
-            }
-          />
-          <Route
-            path="/salary-slips"
-            element={
-              <AdminLayout>
-                <SalarySlips />
-              </AdminLayout>
-            }
-          />
-          <Route
-            path="/salary-slips/:id"
-            element={
-              <AdminLayout>
-                <SalaryPage />
-              </AdminLayout>
-            }
-          />
-          <Route
-            path="/terminated-employees"
-            element={
-              <AdminLayout>
-                <TerminateEmployee />
-              </AdminLayout>
-            }
-          />
-          <Route
-            path="/terminated-employees/:id"
-            element={
-              <AdminLayout>
-                <TerminatedEmployeeView />
-              </AdminLayout>
-            }
-          />
-        </Routes>
-      </Suspense>
-    </div>
+        <Route
+          path="/approved-employees"
+          element={
+            <AdminLayout>
+              <ApprovedEmployeeList />
+            </AdminLayout>
+          }
+        />
+        <Route
+          path="/approved-employees/:id"
+          element={
+            <AdminLayout>
+              <ApprovedEmployeeDetail />
+            </AdminLayout>
+          }
+        />
+        <Route
+          path="/salary-slips"
+          element={
+            <AdminLayout>
+              <SalarySlips />
+            </AdminLayout>
+          }
+        />
+        <Route
+          path="/salary-slips/:id"
+          element={
+            <AdminLayout>
+              <SalaryPage />
+            </AdminLayout>
+          }
+        />
+        <Route
+          path="/terminated-employees"
+          element={
+            <AdminLayout>
+              <TerminateEmployee />
+            </AdminLayout>
+          }
+        />
+        <Route
+          path="/terminated-employees/:id"
+          element={
+            <AdminLayout>
+              <TerminatedEmployeeView />
+            </AdminLayout>
+          }
+        />
+      </Routes>
+    </Suspense>
   );
 }
 

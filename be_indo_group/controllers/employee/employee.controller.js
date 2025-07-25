@@ -1,6 +1,9 @@
 import employeeModal from "../../models/employee.modal.js";
 import { sendEmail } from "../../utils/emailService/emailService.js";
 // import generateToken from "../../utils/generateTokens/generateToken.js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 // Register employee with file upload
 export const registerEmployee = async (req, res) => {
@@ -70,6 +73,17 @@ export const registerEmployee = async (req, res) => {
       });
     } catch (emailErr) {
       console.error("Email send failed:", emailErr.message);
+      // Not failing the request, just logging the issue
+    }
+
+    try {
+      await sendEmail({
+        to: process.env.ADMIN_EMAIL,
+        subject: "New Employee Registered",
+        text: `New Employee Registered\n\nName: ${full_name}\nEmail: ${email}\nPhone: ${phone}\nDOB: ${dob}\nWork Experience: ${work_experience}`,
+      });
+    } catch (err) {
+      console.error("Email send failed:", err.message);
       // Not failing the request, just logging the issue
     }
 

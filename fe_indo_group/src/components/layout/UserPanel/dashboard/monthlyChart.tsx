@@ -1,18 +1,19 @@
 import {
-  LineChart,
-  Line,
+  BarChart,
+  Bar,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
   LabelList,
+  ReferenceLine,
 } from "recharts";
-import { Box, Card, CardContent, Typography, useTheme } from "@mui/material";
+import {  Card, CardContent, Typography, useTheme } from "@mui/material";
 import { useGetQuery } from "../../../../hooks/useCrud";
 
 const EmployeeGrowthChart = () => {
-  const { data, isLoading } = useGetQuery(
+  const { data = [], isLoading } = useGetQuery(
     ["monthly-registrations"],
     "/admin/monthly-registrations"
   );
@@ -21,14 +22,22 @@ const EmployeeGrowthChart = () => {
 
   if (isLoading) return <Typography>Loading chart...</Typography>;
 
+  // Format month to short label
   const formatMonth = (month: string) => {
     try {
-      const date = new Date(`${month}-01`); // expecting format: 2024-03
-      return date.toLocaleString("default", { month: "short" }); // Jan, Feb, etc.
+      const date = new Date(`${month}-01`);
+      return date.toLocaleString("default", { month: "short" });
     } catch {
       return month;
     }
   };
+
+  // Calculate average registrations
+  const total = data.reduce(
+    (acc: number, item: any) => acc + item.registrations,
+    0
+  );
+  const average = data.length ? total / data.length : 0;
 
   return (
     <Card sx={{ width: "100%" }}>
@@ -41,8 +50,9 @@ const EmployeeGrowthChart = () => {
         >
           Monthly Registrations
         </Typography>
-        <ResponsiveContainer width="100%" height={300}>
-          <LineChart
+
+        <ResponsiveContainer width="100%" height={320}>
+          <BarChart
             data={data}
             margin={{ top: 20, right: 20, left: 0, bottom: 20 }}
           >
@@ -50,35 +60,48 @@ const EmployeeGrowthChart = () => {
             <XAxis
               dataKey="month"
               tickFormatter={formatMonth}
-              tick={{ fontSize: 12, fill: "#666" }}
+              tick={{ fontSize: 12, fill: "#555" }}
             />
             <YAxis
               allowDecimals={false}
-              tick={{ fontSize: 12, fill: "#666" }}
+              tick={{ fontSize: 12, fill: "#555" }}
             />
             <Tooltip
+              formatter={(value: number) => [`${value}`, "Registrations"]}
+              labelFormatter={(label: string) => `Month: ${formatMonth(label)}`}
               contentStyle={{
                 backgroundColor: "#fff",
                 border: "1px solid #ccc",
               }}
-              formatter={(value: any, name: any) => [
-                `${value}`,
-                "Registrations",
-              ]}
-              labelFormatter={(label) =>
-                `Month: ${formatMonth(label as string)}`
-              }
             />
-            <Line
-              type="monotone"
+
+            {/* Average Line */}
+            <ReferenceLine
+              y={Math.round(average)}
+              label={{
+                position: "top",
+                value: `Avg: ${Math.round(average)}`,
+                fill: "#888",
+                fontSize: 12,
+              }}
+              stroke="#8884d8"
+              strokeDasharray="3 3"
+            />
+
+            <Bar
               dataKey="registrations"
-              stroke={theme.palette.primary.main}
-              strokeWidth={3}
-              dot={{ r: 4 }}
+              fill={theme.palette.primary.main}
+              radius={[4, 4, 0, 0]}
+              maxBarSize={40}
             >
-              <LabelList dataKey="registrations" position="top" fontSize={10} />
-            </Line>
-          </LineChart>
+              <LabelList
+                dataKey="registrations"
+                position="top"
+                fontSize={12}
+                fill="#333"
+              />
+            </Bar>
+          </BarChart>
         </ResponsiveContainer>
       </CardContent>
     </Card>

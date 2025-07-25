@@ -21,6 +21,7 @@ import {
 } from "@mui/icons-material";
 import image from "../../../constants/image";
 import CloseIcon from "@mui/icons-material/Close";
+import { useGetQuery } from "../../../hooks/useCrud";
 interface SidebarProps {
   collapsed: boolean;
   onToggle: () => void;
@@ -61,7 +62,14 @@ const navItems = [
 const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggle }) => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm")); // true on xs/sm
+  const { data: employees } = useGetQuery(
+    ["employees"],
+    "/admin/pending-employees"
+  );
 
+  const UnSeen = employees?.filter((emp: any) => emp.seen === false) || 0;
+
+  console.log(UnSeen, "unseen");
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -120,6 +128,7 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggle }) => {
                 onClick={() => navigate(item.path)}
                 selected={isActive}
                 sx={{
+                  position: "relative",
                   "& .MuiListItemIcon-root": {
                     minWidth: "40px !important",
                     height: "56px !important",
@@ -135,6 +144,12 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggle }) => {
                   {item.icon}
                 </ListItemIcon>
                 {!collapsed && <ListItemText primary={item.label} />}
+                {item.label === "Employee Applications" &&
+                  UnSeen.length > 0 && (
+                    <p className="w-4 h-4 bg-blue-500 text-[11px] font-bold text-white rounded-full flex items-center justify-center absolute top-3 left-2">
+                      {UnSeen.length}
+                    </p>
+                  )}
               </ListItemButton>
             </Tooltip>
           );
