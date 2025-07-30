@@ -16,7 +16,7 @@ const SalarySlips = () => {
     data: employees = [],
     isLoading,
     isError,
-  } = useGetQuery(["employees"], "/admin/approved-employees");
+  } = useGetQuery(["appproved-employees"], "/admin/approved-employees");
 
   const handleView = (row: any) => {
     navigate(`/admin/salary-slips/${row._id}`);

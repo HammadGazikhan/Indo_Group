@@ -18,7 +18,7 @@ const TerminateEmployee = () => {
     data: employees = [],
     isLoading,
     isError,
-  } = useGetQuery(["employees"], "/admin/terminated-employees");
+  } = useGetQuery(["terminated-employees"], "/admin/terminated-employees");
 
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [selectedRow, setSelectedRow] = useState<any>(null);

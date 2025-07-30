@@ -22,6 +22,7 @@ import {
 import image from "../../../constants/image";
 import CloseIcon from "@mui/icons-material/Close";
 import { useGetQuery } from "../../../hooks/useCrud";
+import { useEffect, useState } from "react";
 interface SidebarProps {
   collapsed: boolean;
   onToggle: () => void;
@@ -60,6 +61,7 @@ const navItems = [
   },
 ];
 const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggle }) => {
+  const [view, setView] = useState(0);
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm")); // true on xs/sm
   const { data: employees } = useGetQuery(
@@ -67,9 +69,11 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggle }) => {
     "/admin/pending-employees"
   );
 
-  const UnSeen = employees?.filter((emp: any) => emp.seen === false) || 0;
+  useEffect(() => {
+    const UnSeen = employees?.filter((emp: any) => emp.seen === false) || 0;
+    setView(UnSeen.length);
+  }, [employees]);
 
-  console.log(UnSeen, "unseen");
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -144,12 +148,11 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggle }) => {
                   {item.icon}
                 </ListItemIcon>
                 {!collapsed && <ListItemText primary={item.label} />}
-                {item.label === "Employee Applications" &&
-                  UnSeen.length > 0 && (
-                    <p className="w-4 h-4 bg-blue-500 text-[11px] font-bold text-white rounded-full flex items-center justify-center absolute top-3 left-2">
-                      {UnSeen.length}
-                    </p>
-                  )}
+                {item.label === "Employee Applications" && view > 0 && (
+                  <p className="w-4 h-4 bg-blue-500 text-[11px] font-bold text-white rounded-full flex items-center justify-center absolute top-3 left-2">
+                    {view}
+                  </p>
+                )}
               </ListItemButton>
             </Tooltip>
           );

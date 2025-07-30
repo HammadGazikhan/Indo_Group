@@ -39,7 +39,11 @@ const EmployeeDetail = () => {
     data: employee,
     isLoading,
     isError,
-  } = useGetQuery(["employees", id], `/admin/employees/${id}`, Boolean(id));
+  } = useGetQuery(
+    ["employees-detail ", id],
+    `/admin/employees/${id}`,
+    Boolean(id)
+  );
 
   const { mutate: updateStatus, isPending } = usePostMutation(
     `/admin/verify/${id}`,

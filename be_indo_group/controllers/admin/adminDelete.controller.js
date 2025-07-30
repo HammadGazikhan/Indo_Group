@@ -1,5 +1,6 @@
 import employeeModal from "../../models/employee.modal.js";
 import { sendEmail } from "../../utils/emailService/emailService.js";
+import deleteFileIfExists from "../../utils/helpers/deleteDocuments.js";
 
 export const deleteRegisteredEmployee = async (req, res) => {
   try {
@@ -16,6 +17,15 @@ export const deleteRegisteredEmployee = async (req, res) => {
         message: "Only pending (registered) employees can be deleted",
       });
     }
+
+    const documents = {
+      aadhaar: employee.aadhaar,
+      pan: employee.pan,
+      ssc: employee.ssc,
+      hsc: employee.hsc,
+      degree: employee.degree,
+    };
+    deleteFileIfExists(documents); // adjust based on your schema
 
     await employeeModal.findByIdAndDelete(employeeId);
 
@@ -51,6 +61,14 @@ export const deleteTerminatedEmployee = async (req, res) => {
         message: "Only terminated employees can be deleted",
       });
     }
+    const documents = {
+      aadhaar: employee.aadhaar,
+      pan: employee.pan,
+      ssc: employee.ssc,
+      hsc: employee.hsc,
+      degree: employee.degree,
+    };
+    deleteFileIfExists(documents);
 
     await employeeModal.findByIdAndDelete(employeeId);
 
@@ -79,6 +97,14 @@ export const deleteRejectedEmployee = async (req, res) => {
         message: "Only Rejected employees can be deleted",
       });
     }
+    const documents = {
+      aadhaar: employee.aadhaar,
+      pan: employee.pan,
+      ssc: employee.ssc,
+      hsc: employee.hsc,
+      degree: employee.degree,
+    };
+    deleteFileIfExists(documents);
 
     await employeeModal.findByIdAndDelete(employeeId);
 

@@ -16,7 +16,7 @@ const ApprovedEmployeeList = () => {
     data: employees = [],
     isLoading,
     isError,
-  } = useGetQuery(["employees"], "/admin/approved-employees");
+  } = useGetQuery(["appproved-employees"], "/admin/approved-employees");
 
   const handleView = (row: any) => {
     navigate(`/admin/approved-employees/${row._id}`);

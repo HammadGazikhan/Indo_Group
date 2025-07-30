@@ -8,7 +8,6 @@ import {
   Avatar,
   Stack,
 } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 import ConfirmDialog from "../../../components/layout/ConformationDialog/index ";
 import toast from "react-hot-toast";
 
@@ -20,7 +19,7 @@ const RejectedEmployeeList = () => {
     data: employees = [],
     isLoading,
     isError,
-  } = useGetQuery(["employees"], "/admin/rejected-employees");
+  } = useGetQuery(["rejectedemployees"], "/admin/rejected-employees");
 
   const { mutate: deleteTerminatedEmployee, isPending: isDeleting } =
     useDeleteMutation(
